@@ -3,6 +3,7 @@
 {
   # https://nixos.wiki/wiki/Nginx
   services = {
+    # https://search.nixos.org/options?channel=unstable&query=services.nginx
     nginx = {
       enable = true;
 
@@ -33,6 +34,15 @@
       # acceptTerms = true;
       # defaults = {
       # };
+    };
+  };
+
+  networking = {
+    firewall = {
+      allowedTCPPorts = [
+        80   # Default HTTP
+        443  # Default HTTPS
+      ];
     };
   };
 }
