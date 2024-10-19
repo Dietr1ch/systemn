@@ -4,23 +4,27 @@
 #
 # NetworkManager
 # > ResolvConf
-#   > Avahi
-#   > AdGuardHome   | #53 Upstream filtering rules
-#     > DNSCrypt-proxy2   | #51 static filtering
-#       > (Friendly peer DNSCrypt-proxy2)
-#       > (Internet)
+#   > resolved              | 127.0.0.53,127.0.0.54
+#     > avahi
+#     > adguardhome         | 127.0.0.55 Upstream filtering rules
+#       > DNSCrypt-proxy2   | 127.0.0.56 static filtering
+#         > (Friendly peer DNSCrypt-proxy2)
+#         > (Internet)
 # ≯ systemd-resolved (disabled)
 
 {
   services = {
-    # https://search.nixos.org/options?channel=unstable&query=services.resolvconf
-    # resolvconf = {
-    #   enable = false;
-    # };
-
     # https://search.nixos.org/options?channel=unstable&query=services.resolved
+    #
+    # Listens DNS on 127.0.0.53:53 and 127.0.0.54:53
     resolved = {
-      enable = lib.mkDefault false;
+      enable = lib.mkDefault true;
+
+      # Setting fallbackDns to avoid default list
+      fallbackDns = [
+        "127.0.0.55"  # adguardhome
+        # "127.0.0.56"  # dnscrypt-proxy2 (behind adguardhome already)
+      ];
     };
 
     # https://search.nixos.org/options?channel=unstable&query=services.avahi
@@ -50,14 +54,54 @@
       };
     };
 
+    # https://search.nixos.org/options?channel=unstable&query=services.adguardhome
+    #
+    # Listens DNS on 127.0.0.55:53
+    adguardhome = {
+      enable = true;
+
+      # Web UI: http://127.0.0.1:3053
+      host = "127.0.0.1";
+      port = 3053;
+      mutableSettings = false;
+
+      # https://github.com/AdguardTeam/AdGuardHome/wiki/Configuration#configuration-file
+      settings = {
+        enable = true;
+
+        dns = {
+          # Serve on 127.0.0.55:53
+          bind_hosts = [
+            "127.0.0.55"
+          ];
+          port = 53;
+
+          upstream_dns = [
+            "127.0.0.56:53"  # dnscrypt-proxy2
+          ];
+        };
+        filtering = {
+          protection_enabled = true;
+          filtering_enabled = true;
+        };
+        # ../../../secrets.nix
+        filters = map(url: { enabled = true; url = url; }) [
+          "https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt"  # The Big List of Hacked Malware Web Sites
+          "https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt"  # malicious url blocklist
+        ];
+      };
+    };
+
     # https://search.nixos.org/options?channel=unstable&query=services.dnscrypt-proxy2
+    #
+    # Listens DNS on 127.0.0.56:53
     dnscrypt-proxy2 = {
       enable = true;
 
       # https://github.com/DNSCrypt/dnscrypt-proxy/blob/master/dnscrypt-proxy/example-dnscrypt-proxy.toml
       settings = {
         listen_addresses = [
-          "[::]:51"  # IPv4 + IPv6
+          "127.0.0.56:53"
         ];
         ipv4_servers = true;
         ipv6_servers = true;
@@ -75,48 +119,21 @@
         };
       };
     };
-
-    # https://search.nixos.org/options?channel=unstable&query=services.adguardhome
-    adguardhome = {
-      enable = true;
-
-      # Web UI: http://127.0.0.1:3053
-      host = "127.0.0.1";
-      port = 3053;
-      mutableSettings = false;
-
-      settings = {
-        enable = true;
-
-        http = {
-          address = "127.0.0.1:53";
-        };
-        dns = {
-          upstream_dns = [
-            "127.0.0.1:51"  # dnscrypt-proxy2
-          ];
-        };
-        filtering = {
-          protection_enabled = true;
-          filtering_enabled = true;
-        };
-        # ../../../secrets.nix
-        filters = map(url: { enabled = true; url = url; }) [
-          "https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt"  # The Big List of Hacked Malware Web Sites
-          "https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt"  # malicious url blocklist
-        ];
-      };
-    };
   };
 
 
   # https://nixos.wiki/wiki/Networking
   networking = {
     enableIPv6 = true;
+
+    # https://search.nixos.org/options?channel=unstable&query=networking.nameservers
     nameservers = [
+      # NOTE: Can't use specify ports (:53) as it breaks bandwhich's resolve.conf parsing.
+
       # Host DNS
-      "127.0.0.1"
-      "::1"
+      "127.0.0.55"  # adguardhome
+      # "127.0.0.56"  # dnscrypt-proxy2 (behind adguardhome already)
+
       # Local DNS
       # "192.168.1.31"
 
