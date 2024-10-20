@@ -12,18 +12,30 @@
       recommendedProxySettings = true;
       # recommendedTlsSettings = true;
 
+      # Config file mentioned in /etc/systemd/system/nginx.service
       virtualHosts = {
+
+        # $HOSTNAME.local
         "${config.networking.hostName}.local" = {
           # addSSL = true;
           # enableACME = true;
 
+          # https://search.nixos.org/options?channel=unstable&show=services.nginx.virtualHosts.%3Cname%3E.locations
+          # https://nginx.org/en/docs/http/ngx_http_core_module.html#location
           locations = {
+            "~ /\\." = {
+              extraConfig = ''
+			          deny all;
+              '';
+            };
+
             "/" = {
-              # /srv/web/
+              # /srv/web/$HOSTNAME
               root = "/srv/web/${config.networking.hostName}/";
             };
           };
         };
+
       };
     };
   };
