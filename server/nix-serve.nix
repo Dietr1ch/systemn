@@ -3,10 +3,15 @@
 {
   services = {
     # https://search.nixos.org/options?channel=unstable&type=packages&query=nix-serve
+    #
+    # Listens HTTP on 127.0.0.1:5000
     nix-serve = {
       enable = true;
       # Use nix-serve-ng. https://github.com/aristanetworks/nix-serve-ng
       package = pkgs.nix-serve-ng;
+
+      bindAddress = "127.0.0.1";
+      port = 5000;
 
       openFirewall = true;
       extraParams = lib.concatStringsSep " " [
