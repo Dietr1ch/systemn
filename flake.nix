@@ -12,17 +12,15 @@
       all = import ./all.nix;
 
       # System - Things in between the hardware and the user level
-      system = import ./system;
+      system = import ./system;  # ./system/default.nix
 
-      system-base = import ./system/base;
+      system-base = import ./system/base;  # ./system/base/default.nix
 
       system-boot-silent = import ./system/boot/silent.nix;
       system-boot-plymouth = import ./system/boot/plymouth.nix;
 
-      system-shell = import ./system/shell;
-      # Fish
-      # Command-not-found
-      # Documentation
+      system-shell = import ./system/shell.nix;
+
       system-security = import ./system/security;
       # Audit
       system-storage = import ./system/storage;
