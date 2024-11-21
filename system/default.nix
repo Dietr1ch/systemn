@@ -2,9 +2,10 @@
 
 {
   imports = [
-    ./base     # ./base/default.nix
-    ./boot     # ./boot/default.nix
-    ./storage  # ./storage/default.nix
+    ./base      # ./base/default.nix
+    ./boot      # ./boot/default.nix
+    ./input     # ./input/default.nix
+    ./storage   # ./storage/default.nix
 
     ./shell.nix
   ];

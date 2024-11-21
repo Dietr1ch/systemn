@@ -24,10 +24,10 @@
       system-security = import ./system/security;
       # Audit
       system-storage = import ./system/storage;  # ./system/storage/default.nix
-      system-locale = import ./system/locale;
-      system-input-mouse = import ./system/input/mouse;
-      system-input-trackpad = import ./system/input/trackpad;
-      system-input-keyboard = import ./system/input/keyboard;
+      # system-locale = import ./system/locale.nix;
+      system-input-mouse = import ./system/input/mouse.nix;
+      system-input-touchpad = import ./system/input/touchpad.nix;
+      system-input-keyboard = import ./system/input/keyboard.nix;
       # Networking
       system-networking-connectivity-dns = import ./system/networking/connectivity/dns.nix;
       # system-networking-connectivity-wireguard = import ./system/networking/connectivity/wireguard.nix;
