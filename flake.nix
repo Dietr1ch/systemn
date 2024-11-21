@@ -29,6 +29,7 @@
       system-input-touchpad = import ./system/input/touchpad.nix;
       system-input-keyboard = import ./system/input/keyboard.nix;
       # Networking
+      system-networking = import ./system/networking;
       system-networking-connectivity-dns = import ./system/networking/connectivity/dns.nix;
       # system-networking-connectivity-wireguard = import ./system/networking/connectivity/wireguard.nix;
       system-networking-connectivity-zerotier = import ./system/networking/connectivity/zerotier.nix;

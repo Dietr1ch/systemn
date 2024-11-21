@@ -1,11 +1,15 @@
 { config, lib, pkgs, ... }:
 
 {
+  imports = [
+    ./dns.nix
+    # ./wireguard.nix
+    # ./zerotier.nix
+  ];
+
   # https://nixos.wiki/wiki/Networking
   # https://search.nixos.org/options?channel=unstable&query=networking
   networking = {
-    enable = true;
-
     enableIPv6 = true;
 
     # https://search.nixos.org/options?channel=unstable&query=networking.networkmanager
