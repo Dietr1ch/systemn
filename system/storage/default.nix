@@ -1,11 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  boot = {
-    supportedFilesystems = [
-      "ntfs"  # TODO Why would we need this at boot? UEFI uses FAT32
-    ];
-  };
+  imports = [
+    ./smartd.nix
+  ];
 
   environment = {
     systemPackages = with pkgs; [
