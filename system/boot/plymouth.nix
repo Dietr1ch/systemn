@@ -4,6 +4,7 @@
   imports = [
     ./silent.nix
   ];
+
   boot = {
     kernelParams = [
       "splash"

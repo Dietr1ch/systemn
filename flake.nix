@@ -14,11 +14,10 @@
       # System - Things in between the hardware and the user level
       system = import ./system;
 
-      system-base = import ./system/base.nix;
+      system-base = import ./system/base;
 
       system-boot-silent = import ./system/boot/silent.nix;
       system-boot-plymouth = import ./system/boot/plymouth.nix;
-      system-preload = import ./system/preload.nix;
 
       system-shell = import ./system/shell;
       # Fish
