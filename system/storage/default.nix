@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./fstrim.nix
     ./smartd.nix
   ];
 

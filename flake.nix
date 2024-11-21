@@ -23,10 +23,7 @@
 
       system-security = import ./system/security;
       # Audit
-      system-storage = import ./system/storage;
-      # fstrim
-      # Quota
-      # Filesystem support: ntfs
+      system-storage = import ./system/storage;  # ./system/storage/default.nix
       system-locale = import ./system/locale;
       system-input-mouse = import ./system/input/mouse;
       system-input-trackpad = import ./system/input/trackpad;
