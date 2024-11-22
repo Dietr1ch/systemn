@@ -1,12 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  console = {
-    keyMap = "dvorak-programmer";
-  };
-
   services = {
     xserver = {
+      exportConfiguration = true;
       xkb = {
         layout = "us";
         variant = "dvp";
