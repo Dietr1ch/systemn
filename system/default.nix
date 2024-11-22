@@ -7,7 +7,5 @@
     ./input       # ./input/default.nix
     ./networking  # ./networking/default.nix
     ./storage     # ./storage/default.nix
-
-    ./shell.nix
   ];
 }

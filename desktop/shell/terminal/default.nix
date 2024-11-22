@@ -1,6 +1,10 @@
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
+  imports = [
+    ./fonts.nix
+  ];
+
   users = {
     defaultUserShell = pkgs.fish;
   };

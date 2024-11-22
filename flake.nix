@@ -19,8 +19,6 @@
       system-boot-silent = import ./system/boot/silent.nix;
       system-boot-plymouth = import ./system/boot/plymouth.nix;
 
-      system-shell = import ./system/shell.nix;
-
       system-security = import ./system/security;
       # Audit
       system-storage = import ./system/storage;  # ./system/storage/default.nix
@@ -39,7 +37,7 @@
 
       system-hardware-bluetooth = import ./system/hardware/bluetooth;
 
-      desktop = import ./desktop;
+      desktop = import ./desktop;  # ./desktop/default.nix
       desktop-login-sddm = import ./desktop/login/sddm;
       desktop-fonts = import ./desktop/fonts;
       desktop-shell-terminal = import ./desktop/shell/terminal;
