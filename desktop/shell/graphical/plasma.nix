@@ -11,8 +11,16 @@
     };
 
     desktopManager = {
-      plasma6.enable = true;
+      plasma6 = {
+        enable = true;
+        enableQt5Integration = false;
+      };
     };
+  };
+
+  programs = {
+    # https://nixos.wiki/wiki/KDE#GTK_themes_are_not_applied_in_Wayland_applications
+    dconf.enable = true;
   };
 
   environment = {
@@ -46,6 +54,17 @@
       xz
       zip
     ];
+  };
+  qt = {
+    enable = true;
+  };
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-kde
+      ];
+    };
   };
 
   networking = {
