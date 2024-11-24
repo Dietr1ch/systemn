@@ -37,4 +37,10 @@
       '';
     };
   };
+
+  environment = {
+    systemPackages = with pkgs; [
+      nixos-icons
+    ];
+  };
 }
