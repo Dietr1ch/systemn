@@ -25,8 +25,8 @@
 
   environment = {
     systemPackages = with pkgs; [
-      plasma-pa
-      plasma-nm
+      kdePackages.plasma-pa
+      kdePackages.plasma-nm
 
       cryptsetup
       plasma-vault
