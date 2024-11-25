@@ -3,6 +3,8 @@
 {
   imports = [
     ./dns.nix
+
+    ./ssh.nix
     # ./wireguard.nix
     # ./zerotier.nix
   ];
