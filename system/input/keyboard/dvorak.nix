@@ -1,6 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
+  console = {
+    keyMap = "dvorak-programmer";
+  };
   services = {
     xserver = {
       exportConfiguration = true;
