@@ -27,6 +27,11 @@
     # Firewall
     # --------
     # https://nixos.wiki/wiki/Firewall
+    firewall = {
+      enable = true;
+
+      allowPing = true;
+    };
 
     # Use nftables as the Firewall
     nftables = {
