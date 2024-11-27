@@ -65,6 +65,7 @@
 
       workstation-shares = import ./workstation/shares;
       # Postgres
+      workstation-virtualisation = import ./workstation/virtualisation;  # ./workstation/virtualisation/default.nix
       workstation-database-postgres = import ./workstation/database/postgres.nix;
 
       network = import ./network;
