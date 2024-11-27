@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   security.rtkit.enable = true;
@@ -7,6 +7,7 @@
     # https://search.nixos.org/options?channel=unstable&query=services.pipewire
     pipewire = {
       enable = true;
+      audio.enable = true;
 
       alsa = {
         enable = true;
