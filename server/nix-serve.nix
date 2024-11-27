@@ -2,7 +2,7 @@
 
 {
   services = {
-    # https://search.nixos.org/options?channel=unstable&type=packages&query=nix-serve
+    # https://search.nixos.org/options?channel=unstable&query=nix-serve
     #
     # Listens HTTP on 127.0.0.1:5000
     nix-serve = {

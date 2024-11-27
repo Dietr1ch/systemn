@@ -2,7 +2,7 @@
 
 {
   programs = {
-    # https://search.nixos.org/options?channel=unstable&show=programs.gamemode.settings&query=gamemode
+    # https://search.nixos.org/options?channel=unstable&query=gamemode
     gamemode = {
       enable = true;
       enableRenice = true;
