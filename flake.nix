@@ -22,7 +22,7 @@
       system-security = import ./system/security;
       # Audit
       system-storage = import ./system/storage;  # ./system/storage/default.nix
-      # system-locale = import ./system/locale.nix;
+
       system-input-mouse = import ./system/input/mouse.nix;
       system-input-touchpad = import ./system/input/touchpad.nix;
       system-input-keyboard = import ./system/input/keyboard.nix;
@@ -33,40 +33,25 @@
       # system-networking-connectivity-wireguard = import ./system/networking/connectivity/wireguard.nix;
       system-networking-connectivity-zerotier = import ./system/networking/connectivity/zerotier.nix;
 
-      server-web = import ./server/web.nix;
-      server-nix-serve = import ./server/nix-serve.nix;
-
       system-hardware-bluetooth = import ./system/hardware/bluetooth;
 
       desktop = import ./desktop;  # ./desktop/default.nix
-      desktop-login-sddm = import ./desktop/login/sddm;
-      desktop-fonts = import ./desktop/fonts;
-      desktop-shell-terminal = import ./desktop/shell/terminal;
-      # Alacritty
-      # tmux
-      # Helix
-      # Fd, ripgrep, broot
-      desktop-shell-kde = import ./desktop/shell/kde;
-      # Portal
-      # GTK / Qt5 integration
-      desktop-shell-hyprland = import ./desktop/shell/hyprland;
-      # Portal
+      desktop-gaming = import ./desktop/gaming;  # ./desktop/gaming/default.nix
+      desktop-shell-graphical = import ./desktop/shell/graphical;  # ./desktop/shell/graphical/default.nix
+      desktop-shell-terminal = import ./desktop/shell/terminal;  # ./desktop/shell/terminal/default.nix
 
       audio = import ./audio;
       # Pipewire
       # Musnix
 
-      gaming = import ./gaming;
-      # Steam
-      # Create %games
-      # Gamemode - Including no sudo for %games
-
       # laptop = import ./laptop/;
 
-      workstation-shares = import ./workstation/shares;
-      # Postgres
+      server-web = import ./server/web.nix;
+      server-nix-serve = import ./server/nix-serve.nix;
+
       workstation-virtualisation = import ./workstation/virtualisation;  # ./workstation/virtualisation/default.nix
       workstation-database-postgres = import ./workstation/database/postgres.nix;
+      #workstation-shares = import ./workstation/shares;
 
       network = import ./network;
       # OpenSnitch
@@ -75,7 +60,6 @@
       # Tools: openssh, wol, wget, sshfs-fuse
 
       info = import ./info;
-      # neofetch
       # lsusb
       # lspci
       # lscpu
