@@ -26,13 +26,6 @@
     };
   };
 
-  users.groups = {
-    # Users that will play games (Higher limits)
-    "games" = {
-      gid = 666;
-    };
-  };
-
   services = {
     udev = {
       extraRules = ''
@@ -73,9 +66,7 @@
 
   environment = {
     systemPackages = with pkgs; [
-      coreutils
       gamemode
-
       libnotify
     ];
   };

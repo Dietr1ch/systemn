@@ -24,6 +24,16 @@
     '';
   };
 
+  users = {
+    groups = {
+      # Users that will play games (Higher limits)
+      "games" = {
+        gid = 666;
+      };
+    };
+  };
+
+
   environment = {
     systemPackages = with pkgs; [
       openvr_git
