@@ -32,6 +32,7 @@
       system-input-keyboard-dvorak = import ./system/input/keyboard/dvorak.nix;
       # Networking
       system-networking = import ./system/networking;  # ./system/networking/default.nix
+      system-networking-connectivity = import ./system/networking/connectivity/default.nix;
       system-networking-connectivity-dns = import ./system/networking/connectivity/dns.nix;
       # system-networking-connectivity-wireguard = import ./system/networking/connectivity/wireguard.nix;
       system-networking-connectivity-zerotier = import ./system/networking/connectivity/zerotier.nix;
