@@ -44,11 +44,14 @@
       # Pipewire
       # Musnix
 
-      # laptop = import ./laptop/;
-
       server-web = import ./server/web.nix;
       server-nix-serve = import ./server/nix-serve.nix;
 
+
+      # laptop = import ./laptop/;
+      laptop-power = import ./laptop/power.nix;
+
+      workstation-power = import ./workstation/power.nix;
       workstation-virtualisation = import ./workstation/virtualisation;  # ./workstation/virtualisation/default.nix
       workstation-database-postgres = import ./workstation/database/postgres.nix;
       #workstation-shares = import ./workstation/shares;
@@ -57,7 +60,6 @@
       # OpenSnitch
       # NFS
       # Samba
-      # Tools: openssh, wol, wget, sshfs-fuse
 
       info = import ./info;
       # lsusb
