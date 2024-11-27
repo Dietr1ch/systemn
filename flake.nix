@@ -63,9 +63,9 @@
 
       # laptop = import ./laptop/;
 
-      workstation-database = import ./workstation/database;
       workstation-shares = import ./workstation/shares;
       # Postgres
+      workstation-database-postgres = import ./workstation/database/postgres.nix;
 
       network = import ./network;
       # OpenSnitch
