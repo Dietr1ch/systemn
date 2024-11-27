@@ -21,4 +21,10 @@
       '';
     };
   };
+
+  environment = {
+    systemPackages = with pkgs; [
+      sshfs-fuse
+    ];
+  };
 }

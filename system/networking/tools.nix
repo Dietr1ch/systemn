@@ -1,12 +1,15 @@
 { config, lib, pkgs, ... }:
 
 {
+  programs = {
+    wireshark = {
+      enable = true;
+    };
+  };
   environment = {
     systemPackages = with pkgs; [
-      wol
       wget
-      sshfs-fuse
-      nmap
+      wol
     ];
   };
 }

@@ -5,9 +5,6 @@
     mtr = {
       enable = true;
     };
-    wireshark = {
-      enable = true;
-    };
   };
 
   environment = {
