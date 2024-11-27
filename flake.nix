@@ -11,6 +11,8 @@
     in {
       all = import ./all.nix;
 
+      hardware-keyboard-ergodox_ez = import ./hardware/keyboard/ergodox_ez.nix;
+
       # System - Things in between the hardware and the user level
       system = import ./system;  # ./system/default.nix
 
