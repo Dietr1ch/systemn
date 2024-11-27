@@ -1,11 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
-  services = {
-    xserver = {
-      enable = true;
-    };
+  programs.xwayland.enable = lib.mkDefault false;
+  services.xserver.enable = lib.mkForce false;
 
+  services = {
     displayManager = {
       defaultSession = "plasma";
     };
