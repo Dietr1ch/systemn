@@ -5,6 +5,7 @@
     ./connectivity  # connectivity/default.nix
 
     ./information.nix
+    ./firewall.nix
     ./tools.nix
   ];
 
