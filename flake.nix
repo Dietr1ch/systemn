@@ -67,6 +67,7 @@
       # Server
       # ------
       server-web = import ./server/web.nix;
+      server-monero = import ./server/monero.nix;
       server-nix-serve = import ./server/nix-serve.nix;
 
       # Drafts
