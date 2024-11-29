@@ -25,6 +25,16 @@
       '';
 
       # https://search.nixos.org/packages?channel=unstable&query=postgresql17Packages
+      #
+      # Extensions here become available to Databases, but must be enabled
+      # per-database.
+      #
+      # Listing available extensions,
+      #   psql $DATABASE --command 'select * from pg_available_extensions'
+      # Listing enabled extensions,
+      #   psql $DATABASE --command 'select * from pg_extension'
+      # Adding extensions to DB,
+      #   sudo --user postgres psql $DATABASE --command 'create extension $EXTENSION' 
       extensions = with pkgs.postgresqlPackages; [
         pg_cron    # Cron jobs
         pg_hll     # Hyper-log-log
