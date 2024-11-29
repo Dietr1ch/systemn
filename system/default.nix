@@ -9,6 +9,7 @@
     ./security    # ./security/default.nix
     ./storage     # ./storage/default.nix
 
+    ./memory.nix
     ./hardware-update.nix
   ];
 }

@@ -25,6 +25,17 @@
     };
   };
 
+  systemd = {
+    services = {
+      sshd = {
+        # https://www.freedesktop.org/software/systemd/man/systemd.service.html
+        serviceConfig = {
+          "OOMScoreAdjust" = -1000;
+        };
+      };
+    };
+  };
+
   environment = {
     systemPackages = with pkgs; [
       sshfs-fuse

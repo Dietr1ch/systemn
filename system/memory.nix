@@ -19,6 +19,19 @@
     ];
   };
 
+  systemd = {
+    # https://search.nixos.org/options?channel=unstable&query=systemd.oomd
+    oomd = {
+      enableRootSlice = true;
+      enableSystemSlice = true;
+      enableUserSlices = true;
+
+      # https://man.archlinux.org/man/systemd-oomd.8
+      # extraConfig = ''
+      # '';
+    };
+  };
+
   environment = {
     systemPackages = with pkgs; [
       libhugetlbfs
