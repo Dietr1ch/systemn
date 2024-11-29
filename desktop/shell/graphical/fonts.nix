@@ -9,39 +9,29 @@
 
     packages = with pkgs; [
       # corefonts
-      inconsolata
       dejavu_fonts
-      noto-fonts
-      noto-fonts-emoji
+      inconsolata
       liberation_ttf
-      fira-code
-      fira-code-symbols
-
-      # mplus-outline-fonts
+      noto-fonts
+      # ??
       dina-font
       proggyfonts
       terminus_font
 
+      # Programming
+      fira-code
+      fira-code-nerdfont
+      fira-code-symbols
+
+
+      # Icons, Symbols, Emoji
+      emacs-all-the-icons-fonts
+      font-awesome
+
       powerline-fonts
 
-      # Programming
-      source-code-pro
-
-      # https://www.nerdfonts.com/
-      # https://discourse.nixos.org/t/home-manager-nerdfonts/11226/2
-      (pkgs.nerdfonts.override {
-        fonts = [
-          "DroidSansMono"
-          "FiraCode"
-          "Hack"
-          "RobotoMono"
-          "Noto"
-          "SourceCodePro"
-          "Ubuntu"
-        ];
-      })
-
-      emacs-all-the-icons-fonts
+      emojione
+      noto-fonts-emoji
     ];
   };
 }
