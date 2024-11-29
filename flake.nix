@@ -43,6 +43,7 @@
       system-networking-connectivity-dns = import ./system/networking/connectivity/dns.nix;
       # system-networking-connectivity-wireguard = import ./system/networking/connectivity/wireguard.nix;
       system-networking-connectivity-zerotier = import ./system/networking/connectivity/zerotier.nix;
+      system-networking-firewall = import ./system/networking/firewall.nix;
 
       # Desktop
       # -------
