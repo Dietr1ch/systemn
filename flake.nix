@@ -11,10 +11,14 @@
     in {
       all = import ./all.nix;
 
+      # Hardware
+      # --------
       hardware-keyboard-ergodox_ez = import ./hardware/keyboard/ergodox_ez.nix;
       hardware-bluetooth = import ./hardware/bluetooth.nix;
 
-      # System - Things in between the hardware and the user level
+      # System
+      # ------
+      # Things in between the hardware and the user level
       system = import ./system;  # ./system/default.nix
 
       system-base = import ./system/base;  # ./system/base/default.nix
@@ -39,24 +43,35 @@
 
       system-hardware-bluetooth = import ./system/hardware/bluetooth;
 
+      # Desktop
+      # -------
       desktop = import ./desktop;  # ./desktop/default.nix
       desktop-gaming = import ./desktop/gaming;  # ./desktop/gaming/default.nix
       desktop-sound = import ./desktop/sound;  # ./desktop/sound.nix
       desktop-shell-graphical = import ./desktop/shell/graphical;  # ./desktop/shell/graphical/default.nix
       desktop-shell-terminal = import ./desktop/shell/terminal;  # ./desktop/shell/terminal/default.nix
 
-      server-web = import ./server/web.nix;
-      server-nix-serve = import ./server/nix-serve.nix;
 
-
-      # laptop = import ./laptop/;
+      # Laptop
+      # ------
+      laptop = import ./laptop/default.nix;
       laptop-power = import ./laptop/power.nix;
 
+      # Workstation
+      # -----------
+      workstation = import ./workstation/default.nix;
       workstation-power = import ./workstation/power.nix;
       workstation-virtualisation = import ./workstation/virtualisation;  # ./workstation/virtualisation/default.nix
       workstation-database-postgres = import ./workstation/database/postgres.nix;
       #workstation-shares = import ./workstation/shares;
 
+      # Server
+      # ------
+      server-web = import ./server/web.nix;
+      server-nix-serve = import ./server/nix-serve.nix;
+
+      # Drafts
+      # ------
       network = import ./network;
       # OpenSnitch
       # NFS
