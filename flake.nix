@@ -41,8 +41,6 @@
       # system-networking-connectivity-wireguard = import ./system/networking/connectivity/wireguard.nix;
       system-networking-connectivity-zerotier = import ./system/networking/connectivity/zerotier.nix;
 
-      system-hardware-bluetooth = import ./system/hardware/bluetooth;
-
       # Desktop
       # -------
       desktop = import ./desktop;  # ./desktop/default.nix

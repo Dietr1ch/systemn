@@ -12,8 +12,9 @@
         };
       };
 
+      # NOTE: This conflicts with WirePlumber
       # https://github.com/pali/hsphfpd-prototype
-      hsphfpd.enable = true;
+      # hsphfpd.enable = true;
     };
   };
 }
