@@ -16,6 +16,7 @@
       hardware-keyboard-ergodox_ez = import ./hardware/keyboard/ergodox_ez.nix;
       hardware-bluetooth = import ./hardware/bluetooth.nix;
       hardware-graphics = import ./hardware/graphics.nix;
+      hardware-truerng = import ./hardware/truerng.nix;
 
       # System
       # ------
