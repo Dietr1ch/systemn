@@ -29,6 +29,7 @@
       system-boot-plymouth = import ./system/boot/plymouth.nix;
 
       system-security = import ./system/security;
+      system-security-yubikey = import ./system/security/yubikey.nix;
       # Audit
       system-storage = import ./system/storage;  # ./system/storage/default.nix
 

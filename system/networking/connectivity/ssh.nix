@@ -2,7 +2,10 @@
 
 {
   programs = {
-    mosh.enable = true;
+    mosh = {
+      enable = true;
+    };
+    # Key agents on ../../security/yubikey.nix
   };
 
   services = {
