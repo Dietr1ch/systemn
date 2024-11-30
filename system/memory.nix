@@ -4,13 +4,13 @@
   boot = {
     kernel = {
       sysctl = {
-        "vm.nr_hugepages" = 8 * 1024;  # 8MB
+        "vm.nr_hugepages" = 1024;  # 1024pages * 2MB/page = 2GB
       };
     };
 
     kernelParams = [
       # grep 'huge' /proc/meminfo
-      # 8G will be reserved for huge pages
+      # 4G will be reserved for huge pages
       # "hugepagesz=512M"
       # "hugepages=8"
 
