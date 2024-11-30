@@ -20,7 +20,6 @@
 
       # Programming
       fira-code
-      fira-code-nerdfont
       fira-code-symbols
 
 
