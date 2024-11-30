@@ -1,24 +1,6 @@
 { config, pkgs, lib, ... }:
 
 {
-  boot = {
-    kernel = {
-      sysctl = {
-        "vm.nr_hugepages" = 1024;  # 1024pages * 2MB/page = 2GB
-      };
-    };
-
-    kernelParams = [
-      # grep 'huge' /proc/meminfo
-      # 4G will be reserved for huge pages
-      # "hugepagesz=512M"
-      # "hugepages=8"
-
-      # By default only explicit hugepages request will use them
-      # cat /sys/kernel/mm/transparent_hugepage/enabled
-    ];
-  };
-
   systemd = {
     # https://search.nixos.org/options?channel=unstable&query=systemd.oomd
     oomd = {
@@ -38,7 +20,7 @@
       "-" = {
         sliceConfig = {
           "ManagedOOMMemoryPressure" = lib.mkForce "auto";
-          "ManagedOOMMemoryPressureLimit" = "95%";
+          "ManagedOOMMemoryPressureLimit" = 0;
           "ManagedOOMPreference" = "none";
           "ManagedOOMSwap" = "auto";
           "MemoryPressureThresholdUSec" = "200ms";
@@ -48,7 +30,7 @@
       "system" = {
         sliceConfig = {
           "ManagedOOMMemoryPressure" = lib.mkForce "auto";
-          "ManagedOOMMemoryPressureLimit" = "95%";
+          "ManagedOOMMemoryPressureLimit" = 0;
           "ManagedOOMPreference" = "none";
           "ManagedOOMSwap" = "auto";
           "MemoryPressureThresholdUSec" = "200ms";
@@ -58,7 +40,7 @@
       "user-" = {
         sliceConfig = {
           "ManagedOOMMemoryPressure" = lib.mkForce "auto";
-          "ManagedOOMMemoryPressureLimit" = "95%";
+          "ManagedOOMMemoryPressureLimit" = 0;
           "ManagedOOMPreference" = "none";
           "ManagedOOMSwap" = "auto";
           "MemoryPressureThresholdUSec" = "200ms";
