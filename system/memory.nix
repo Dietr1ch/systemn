@@ -23,7 +23,6 @@
           "ManagedOOMMemoryPressureLimit" = 0;
           "ManagedOOMPreference" = "none";
           "ManagedOOMSwap" = "auto";
-          "MemoryPressureThresholdUSec" = "200ms";
           "MemoryPressureWatch" = "auto";
         };
       };
@@ -33,7 +32,6 @@
           "ManagedOOMMemoryPressureLimit" = 0;
           "ManagedOOMPreference" = "none";
           "ManagedOOMSwap" = "auto";
-          "MemoryPressureThresholdUSec" = "200ms";
           "MemoryPressureWatch" = "auto";
         };
       };
