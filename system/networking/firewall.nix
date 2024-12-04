@@ -47,13 +47,13 @@
           };
         };
 
-        systemd-resolved = {
+        "0-Allow-resolved" = {
           created = "2024-11-27T14:00:00Z04:00";
           updated = "2024-11-27T14:00:00Z04:00";
 
-          name = "systemd-resolved";
+          name = "0-Allow-resolved";
           enabled = true;
-          precedence = false;
+          precedence = true;
           action = "allow";
           duration = "always";
           # TODO: Restrict to loopback

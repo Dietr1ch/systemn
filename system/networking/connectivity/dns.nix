@@ -12,6 +12,14 @@
 #         > (Internet)
 # ≯ systemd-resolved (disabled)
 
+# Firewall rules:
+#
+# # 0-Open-resolved:     127.0.0.*     => 127.0.0.53-54
+# # 0-Allow-resolved:    127.0.0.53-54 => 127.0.0.55
+# # 0-Allow-adguardhome: 127.0.0.55    => 127.0.0.56
+# 0-Allow-DNSCrypt:    127.0.0.56    => *
+# # 1-RejectDNS:                  *    /> #53
+
 {
   services = {
     # https://search.nixos.org/options?channel=unstable&query=services.resolved
@@ -25,7 +33,7 @@
         "127.0.0.55"  # adguardhome
         # "127.0.0.56"  # dnscrypt-proxy2 (behind adguardhome already)
       ];
-    };
+    };  # ..services.resolved
 
     # https://search.nixos.org/options?channel=unstable&query=services.avahi
     avahi = {
@@ -52,7 +60,7 @@
         workstation = true;  # Register a service of type “_workstation._tcp” on the local LAN.
         userServices = true;
       };
-    };
+    };  # ..services.avahi
 
     # https://search.nixos.org/options?channel=unstable&query=services.adguardhome
     #
@@ -90,7 +98,7 @@
           "https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt"  # malicious url blocklist
         ];
       };
-    };
+    };  # ..services.adguardhome
 
     # https://search.nixos.org/options?channel=unstable&query=services.dnscrypt-proxy2
     #
@@ -118,8 +126,33 @@
           # };
         };
       };
-    };
-  };
+    };  # ..services.dnscrypt-proxy2
+
+    # https://wiki.nixos.org/wiki/OpenSnitch
+    # https://search.nixos.org/options?channel=unstable&query=services.opensnitch
+    opensnitch = {
+      rules = {
+
+        "0-Allow-DNSCrypt" = {
+          created = "2024-11-27T14:00:00Z04:00";
+          updated = "2024-11-27T14:00:00Z04:00";
+
+          name = "0-Allow-DNSCrypt";
+          enabled = true;
+          precedence = true;
+          action = "allow";
+          duration = "always";
+          operator = {
+            type ="simple";
+            sensitive = false;
+            operand = "process.path";
+            data = "${lib.getBin pkgs.dnscrypt-proxy2}/dnscrypt-proxy";
+          };
+        };
+
+      };
+    };  # ..services.opensnitch
+  };  # ..services
 
 
   # https://nixos.wiki/wiki/Networking
@@ -130,21 +163,11 @@
     nameservers = [
       # NOTE: Can't use specify ports (:53) as it breaks bandwhich's resolve.conf parsing.
 
-      # Host DNS
+      # "127.0.0.53"  # resolved. Self
+      # "127.0.0.54"  # resolved. Self
       "127.0.0.55"  # adguardhome
       # "127.0.0.56"  # dnscrypt-proxy2 (behind adguardhome already)
-
-      # Local DNS
-      # "192.168.1.31"
-
-      # Remote
-      # Cloudflare IPv4 DNS
-      # "1.1.1.1"
-      # "1.0.0.1"
-      # Google IPv4 DNS
-      # "8.8.8.8"
-      # "8.8.4.4"
-    ];
+    ];  # ..networking.nameservers
 
     hosts = {
       # "::1" = [
@@ -170,7 +193,7 @@
         "google-analytics.com"
         "www.google-analytics.com"
       ];
-    };
+    };  # ..networking.hosts
 
     # https://search.nixos.org/options?channel=unstable&query=networking.networkmanager
     networkmanager = {
@@ -183,13 +206,13 @@
         # See https://man.archlinux.org/man/NetworkManager.conf.5#CONNECTION_SECTION
         "connection.mdns" = 2;
       };
-    };
+    };  # ..networking.networkmanager
 
     # https://search.nixos.org/options?channel=unstable&query=networking.resolvconf
     resolvconf = {
       useLocalResolver = false;
     };
-  };
+  };  # ..networking
 
   systemd = {
     services = {
@@ -200,5 +223,5 @@
         };
       };
     };
-  };
+  };  # ..systemd
 }
