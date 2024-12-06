@@ -1,19 +1,21 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   environment = {
     systemPackages = with pkgs; [
-      lshw
-      aha
-      clinfo
+      lshw  # Hardware
+      lsof  # Open files
+
+      clinfo  # OpenCL
       pciutils
       usbutils
+      glxinfo
 
-      unixtools.top
-      lsof
-      powertop
+      htop
+      nethogs
 
-      # ../storage.nix
+      procps  # /proc
+      lm_sensors
     ];
   };
 }

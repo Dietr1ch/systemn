@@ -1,11 +1,12 @@
-{ config, lib, pkgs, ... }:
+{ ... }:
 
 {
   imports = [
-    ./nix.nix
     ./identity.nix
-    ./information.nix
 
+    ./information.nix
+    ./editor.nix
+    ./nix.nix
     ./preload.nix
   ];
 }
