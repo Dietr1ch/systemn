@@ -4,7 +4,7 @@
   services = {
     # https://search.nixos.org/options?channel=unstable&query=services.scx
     scx = {
-      enable = lib.mkDefault true;
+      enable = lib.mkDefault false;
 
       # scheduler = "scx_bpfland";
       # scheduler = "scx_central";
