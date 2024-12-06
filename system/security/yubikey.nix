@@ -4,10 +4,11 @@
 # https://github.com/drduh/YubiKey-Guide
 {
   programs = {
-    # https://search.nixos.org/packages?channel=unstable&query=programs.gnupg
+    # https://search.nixos.org/options?channel=unstable&query=programs.ssh
     ssh = {
       startAgent = false;
     };
+    # https://search.nixos.org/options?channel=unstable&query=programs.gnupg
     gnupg = {
       agent = {
         enableSSHSupport = true;
@@ -20,7 +21,7 @@
   };
 
   services = {
-    # https://search.nixos.org/packages?channel=unstable&query=services.udev
+    # https://search.nixos.org/options?channel=unstable&query=services.udev
     udev = {
       packages = with pkgs; [
         yubikey-personalization
