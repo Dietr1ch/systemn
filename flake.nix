@@ -25,6 +25,7 @@
 
       system-base = import ./system/base;  # ./system/base/default.nix
 
+      system-boot-efi = import ./system/boot/efi.nix;
       system-boot-silent = import ./system/boot/silent.nix;
       system-boot-plymouth = import ./system/boot/plymouth.nix;
 
