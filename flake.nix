@@ -18,6 +18,7 @@
       hardware-keyboard-ergodox_ez = import ./hardware/keyboard/ergodox_ez.nix;
       hardware-truerng = import ./hardware/truerng.nix;
       hardware-printing = import ./hardware/printing.nix;
+      hardware-scanning = import ./hardware/scanning.nix;
       # Laptop
       hardware-laptop = import ./hardware/laptop;  # ./hardware/laptop/default.nix
       hardware-laptop-power = import ./hardware/laptop/power.nix;
