@@ -7,6 +7,9 @@
       ripgrep
       ## Logs
       less
+
+      ## Version Control
+      git
     ];
 
     variables = {
