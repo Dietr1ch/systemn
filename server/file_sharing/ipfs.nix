@@ -1,8 +1,8 @@
-{ config, lib, pkgs, ... }:
+{ ... }:
 
 {
   services = {
-    kubo = {
+    ipfs = {
       enable = true;
 
       autoMount = true;
