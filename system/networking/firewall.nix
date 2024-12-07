@@ -22,8 +22,9 @@
     opensnitch = {
       enable = true;
 
+      # https://search.nixos.org/options?channel=unstable&query=services.opensnitch.settings
       settings = {
-        # DefaultAction = "deny";
+        DefaultAction = "deny";
 
         # Use nftables as the Firewall
         Firewall = "nftables";
