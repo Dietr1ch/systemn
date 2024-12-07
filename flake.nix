@@ -13,10 +13,16 @@
 
       # Hardware
       # --------
-      hardware-keyboard-ergodox_ez = import ./hardware/keyboard/ergodox_ez.nix;
       hardware-bluetooth = import ./hardware/bluetooth.nix;
       hardware-graphics = import ./hardware/graphics.nix;
+      hardware-keyboard-ergodox_ez = import ./hardware/keyboard/ergodox_ez.nix;
       hardware-truerng = import ./hardware/truerng.nix;
+      # Laptop
+      hardware-laptop = import ./hardware/laptop;  # ./hardware/laptop/default.nix
+      hardware-laptop-power = import ./hardware/laptop/power.nix;
+      # Workstation
+      hardware-workstation = import ./hardware/workstation;  # ./hardware/workstation/default.nix
+      hardware-workstation-power = import ./hardware/workstation/power.nix;  # ./hardware/workstation/power.nix
 
       # System
       # ------
@@ -55,15 +61,9 @@
       desktop-shell-terminal = import ./desktop/shell/terminal;  # ./desktop/shell/terminal/default.nix
 
 
-      # Laptop
-      # ------
-      laptop = import ./laptop/default.nix;
-      laptop-power = import ./laptop/power.nix;
-
       # Workstation
       # -----------
-      workstation = import ./workstation/default.nix;
-      workstation-power = import ./workstation/power.nix;
+      workstation = import ./workstation;  # ./workstation/default.nix
       workstation-virtualisation = import ./workstation/virtualisation;  # ./workstation/virtualisation/default.nix
       #workstation-shares = import ./workstation/shares;
 
