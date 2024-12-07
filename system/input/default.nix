@@ -1,9 +1,9 @@
-{ config, lib, pkgs, ... }:
+{ ... }:
 
 {
   imports = [
+    ./keyboard.nix
     ./mouse.nix
     ./touchpad.nix
-    ./keyboard.nix
   ];
 }

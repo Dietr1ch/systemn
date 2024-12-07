@@ -1,10 +1,11 @@
-{ config, lib, pkgs, ... }:
+{ ... }:
 
 {
   services = {
     libinput = {
       enable = true;
 
+      # https://search.nixos.org/options?channel=unstable&query=services.libinput.touchpad
       touchpad = {
         accelProfile = "adaptive";
 
