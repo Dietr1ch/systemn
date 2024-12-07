@@ -34,7 +34,7 @@
       # Listing enabled extensions,
       #   psql $DATABASE --command 'select * from pg_extension'
       # Adding extensions to DB,
-      #   sudo --user postgres psql $DATABASE --command 'create extension $EXTENSION' 
+      #   sudo --user postgres psql $DATABASE --command 'create extension $EXTENSION'
       extensions = with pkgs.postgresqlPackages; [
         pg_cron    # Cron jobs
         pg_hll     # Hyper-log-log
