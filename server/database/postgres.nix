@@ -11,7 +11,7 @@
         "scratch"
       ];
 
-      authentication = pkgs.lib.mkOverride 10 ''
+      authentication = lib.mkOverride 10 ''
         #type database dbUser authMethod
         local all      all    trust
       '';
