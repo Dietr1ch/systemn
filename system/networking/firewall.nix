@@ -20,11 +20,11 @@
     # https://wiki.nixos.org/wiki/OpenSnitch
     # https://search.nixos.org/options?channel=unstable&query=services.opensnitch
     opensnitch = {
-      enable = true;
+      enable = lib.mkDefault true;
 
       # https://search.nixos.org/options?channel=unstable&query=services.opensnitch.settings
       settings = {
-        DefaultAction = "deny";
+        # DefaultAction = lib.mkDefault "deny";
 
         # Use nftables as the Firewall
         Firewall = "nftables";
