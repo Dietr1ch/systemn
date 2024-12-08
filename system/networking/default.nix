@@ -24,19 +24,5 @@
         noarp  # Avoid checking if the IP is taken
       '';
     };
-
-    # Firewall
-    # --------
-    # https://nixos.wiki/wiki/Firewall
-    firewall = {
-      enable = true;
-
-      allowPing = true;
-    };
-
-    # Use nftables as the Firewall
-    nftables = {
-      enable = true;
-    };
   };
 }

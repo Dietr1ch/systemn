@@ -37,7 +37,7 @@
       system-boot-silent = import ./system/boot/silent.nix;
       system-boot-plymouth = import ./system/boot/plymouth.nix;
 
-      system-security = import ./system/security;
+      system-security = import ./system/security;  # ./system/security/default.nix
       system-security-yubikey = import ./system/security/yubikey.nix;
       # Audit
       system-storage = import ./system/storage;  # ./system/storage/default.nix
@@ -93,7 +93,6 @@
       # glxinfo
       # vulkan-tools
       info-network = import ./info/network;
-      # nmap
 
       users = import ./users;
       # Default shell
