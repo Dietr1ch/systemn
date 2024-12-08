@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 {
   services = {
@@ -20,5 +20,11 @@
       # scheduler = "scx_simple";
       # scheduler = "scx_userland";
     };
+  };
+
+  environment = {
+    systemPackages = with pkgs; [
+      cpufrequtils
+    ];
   };
 }
