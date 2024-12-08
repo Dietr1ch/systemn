@@ -53,6 +53,14 @@
       xz
       zip
     ];
+
+    plasma6 = {
+      excludePackages = with pkgs.kdePackages; [
+        # konsole
+        elisa
+        # print-manager
+      ];
+    };
   };
   qt = {
     enable = true;
