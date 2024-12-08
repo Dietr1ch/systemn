@@ -10,6 +10,7 @@
       pciutils
       usbutils
       glxinfo
+      vulkan-tools
 
       htop
       nethogs
