@@ -4,10 +4,15 @@
   programs = {
     # ~/Code/github/Dietr1ch/nixpkgs/nixos/modules/programs/xwayland.nix
     xwayland.enable = lib.mkDefault false;  # TODO: Drop xwayland when feasible
+    # ~/Code/github/Dietr1ch/nixpkgs/nixos/modules/programs/kdeconnect.nix
+    kdeconnect.enable = true;
+    # TODO: Consider dropping kde-pim
+    # kde-pim.enable = lib.mkForce false;  # Drop KDE PIM (KMail, Kontact, ...)
   };
 
   services = {
     xserver.enable = lib.mkForce false;
+    orca.enable = lib.mkForce false;  # No screenreading, sorry :(
   };
 
   services = {
@@ -80,22 +85,6 @@
       enable = true;
       extraPortals = with pkgs; [
         xdg-desktop-portal-kde
-      ];
-    };
-  };
-
-  networking = {
-    firewall = {
-      # TCP
-      allowedTCPPortRanges = [
-        # KDE Connect
-        { from = 1714; to = 1764; }
-      ];
-
-      # UDP
-      allowedUDPPortRanges = [
-        # KDE Connect
-        { from = 1714; to = 1764; }
       ];
     };
   };
