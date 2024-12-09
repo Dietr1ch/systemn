@@ -1,8 +1,14 @@
 { pkgs, lib, ... }:
 
 {
-  programs.xwayland.enable = lib.mkDefault false;
-  services.xserver.enable = lib.mkForce false;
+  programs = {
+    # ~/Code/github/Dietr1ch/nixpkgs/nixos/modules/programs/xwayland.nix
+    xwayland.enable = lib.mkDefault false;  # TODO: Drop xwayland when feasible
+  };
+
+  services = {
+    xserver.enable = lib.mkForce false;
+  };
 
   services = {
     displayManager = {
