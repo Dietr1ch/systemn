@@ -38,6 +38,10 @@
       kdePackages.kio-gdrive
       kdePackages.kio-zeroconf
 
+      # KDE Connect
+      plasma5Packages.kdeconnect-kde  # TODO consider dropping plasma5Packages.kdeconnect-kde
+      kdePackages.kdeconnect-kde
+
       # Theme
       kdePackages.breeze
       kdePackages.breeze-icons
