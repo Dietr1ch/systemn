@@ -1,5 +1,6 @@
 { pkgs, lib, ... }:
 
+# ~/Code/github/Dietr1ch/nixpkgs/nixos/modules/services/desktop-managers/plasma6.nix
 {
   programs = {
     # ~/Code/github/Dietr1ch/nixpkgs/nixos/modules/programs/xwayland.nix
@@ -26,11 +27,6 @@
         enableQt5Integration = true;
       };
     };
-  };
-
-  programs = {
-    # https://nixos.wiki/wiki/KDE#GTK_themes_are_not_applied_in_Wayland_applications
-    dconf.enable = true;
   };
 
   environment = {
