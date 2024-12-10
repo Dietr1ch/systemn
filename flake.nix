@@ -9,8 +9,6 @@
     nixosModules = let
       import = path: path; # let the module system know what we are exporting
     in {
-      all = import ./all.nix;
-
       # Hardware
       # --------
       hardware-bluetooth = import ./hardware/bluetooth.nix;
