@@ -48,7 +48,6 @@
       # KDE Connect
       plasma5Packages.kdeconnect-kde  # TODO consider dropping plasma5Packages.kdeconnect-kde
       kdePackages.kdeconnect-kde
-      sshfs-fuse
 
       # Theme
       kdePackages.breeze
