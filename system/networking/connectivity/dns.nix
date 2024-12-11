@@ -135,8 +135,8 @@
       rules = {
 
         "0-Allow-DNSCrypt" = {
-          created = "2024-11-27T14:00:00Z04:00";
-          updated = "2024-11-27T14:00:00Z04:00";
+          created = "2024-11-27T22:00:00-03:00";
+          updated = "2024-11-27T22:00:00-03:00";
 
           name = "0-Allow-DNSCrypt";
           enabled = true;
@@ -152,8 +152,8 @@
         };
 
         "0-Allow-resolved" = {
-          created = "2024-11-27T14:00:00Z04:00";
-          updated = "2024-11-27T14:00:00Z04:00";
+          created = "2024-11-27T22:00:00-03:00";
+          updated = "2024-11-27T22:00:00-03:00";
 
           name = "0-Allow-resolved";
           enabled = true;

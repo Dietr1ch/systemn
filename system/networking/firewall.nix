@@ -32,8 +32,8 @@
       rules = {
 
         systemd-timesyncd = {
-          created = "2024-11-27T14:00:00Z04:00";
-          updated = "2024-11-27T14:00:00Z04:00";
+          created = "2024-11-27T22:00:00-03:00";
+          updated = "2024-11-27T22:00:00-03:00";
 
           name = "systemd-timesyncd";
           enabled = true;
