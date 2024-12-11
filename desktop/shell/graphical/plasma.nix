@@ -34,6 +34,7 @@
       kdePackages.plasma-pa
       kdePackages.plasma-nm
 
+      kdePackages.kleopatra
       cryptsetup
       plasma-vault
 
