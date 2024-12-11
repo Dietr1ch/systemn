@@ -151,6 +151,24 @@
           };
         };
 
+        "0-Allow-resolved" = {
+          created = "2024-11-27T14:00:00Z04:00";
+          updated = "2024-11-27T14:00:00Z04:00";
+
+          name = "0-Allow-resolved";
+          enabled = true;
+          precedence = true;
+          action = "allow";
+          duration = "always";
+          # TODO: Restrict resolved whitelist to IPv4 localhost
+          operator = {
+            type ="simple";
+            sensitive = false;
+            operand = "process.path";
+            data = "${lib.getBin pkgs.systemd}/lib/systemd/systemd-resolved";
+          };  # "0-Allow-resolved".operator
+        };  # "0-Allow-resolved"
+
 
       };  # ..services.opensnitch.rules
     };  # ..services.opensnitch

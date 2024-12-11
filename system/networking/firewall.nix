@@ -48,24 +48,6 @@
           };
         };
 
-        "0-Allow-resolved" = {
-          created = "2024-11-27T14:00:00Z04:00";
-          updated = "2024-11-27T14:00:00Z04:00";
-
-          name = "0-Allow-resolved";
-          enabled = true;
-          precedence = true;
-          action = "allow";
-          duration = "always";
-          # TODO: Restrict to loopback
-          operator = {
-            type ="simple";
-            sensitive = false;
-            operand = "process.path";
-            data = "${lib.getBin pkgs.systemd}/lib/systemd/systemd-resolved";
-          };
-        };
-
       };
     };  # ..services.opensnitch;
   };
