@@ -1,6 +1,7 @@
 { ... }:
 
 {
+  # https://search.nixos.org/options?channel=unstable&query=nix
   nix = {
     optimise = {
       automatic = true;
@@ -19,6 +20,11 @@
       # trusted-public-keys = [
       # ];
     };
+
+    extraOptions = ''
+      # Ensure we can still build when a server is not accessible
+      fallback = true
+    '';
 
     gc = {
       automatic = true;
