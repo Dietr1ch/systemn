@@ -14,7 +14,7 @@
     nftables = {
       enable = true;
     };
-  };
+  };  # ..networking
 
   services = {
     # https://wiki.nixos.org/wiki/OpenSnitch
@@ -31,11 +31,11 @@
       };
       rules = {
 
-        systemd-timesyncd = {
+        "0-ALLOW-timesyncd" = {
           created = "2024-11-27T22:00:00-03:00";
           updated = "2024-11-27T22:00:00-03:00";
 
-          name = "systemd-timesyncd";
+          name = "0-ALLOW-timesyncd";
           enabled = true;
           precedence = false;
           action = "allow";
@@ -46,11 +46,11 @@
             data = "${lib.getBin pkgs.systemd}/lib/systemd/systemd-timesyncd";
             type = "simple";
           };
-        };
+        };  # "0-ALLOW-timesyncd"
 
-      };
-    };  # ..services.opensnitch;
-  };
+      };  # ..services.opensnitch.rules
+    };  # ..services.opensnitch
+  };  # ..services
 }
 
 

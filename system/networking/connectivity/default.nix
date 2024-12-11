@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./dns.nix
+    ./dns  # ./dns/default.nix
 
     ./ssh.nix
     # ./wireguard.nix
