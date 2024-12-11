@@ -144,10 +144,10 @@
           action = "allow";
           duration = "always";
           operator = {
-            type ="simple";
-            sensitive = false;
             operand = "process.path";
+
             data = "${lib.getBin pkgs.dnscrypt-proxy2}/dnscrypt-proxy";
+            type ="simple";
           };
         };
 
@@ -162,10 +162,10 @@
           duration = "always";
           # TODO: Restrict resolved whitelist to IPv4 localhost
           operator = {
-            type ="simple";
-            sensitive = false;
             operand = "process.path";
+
             data = "${lib.getBin pkgs.systemd}/lib/systemd/systemd-resolved";
+            type ="simple";
           };  # "0-Allow-resolved".operator
         };  # "0-Allow-resolved"
 
