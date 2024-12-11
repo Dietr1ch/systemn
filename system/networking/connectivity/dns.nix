@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 # Intended setup:
 #
@@ -169,6 +169,83 @@
           };  # "0-Allow-resolved".operator
         };  # "0-Allow-resolved"
 
+        # XXX: Should be enabled by default once we match with `user.name`
+        "0-Allow-Avahi-IPv4_multicast" = lib.mkIf (config.users.users.avahi.uid != null) {
+          created = "2024-12-10T22:00:00-03:00";
+          updated = "2024-12-10T22:00:00-03:00";
+
+          name = "0-Allow-Avahi-IPv4_multicast";
+          enabled = true;
+          precedence = true;
+          action = "allow";
+          duration = "always";
+          operator = {
+            operand = "list";
+
+            list = [
+              {
+                operand = "dest.network";
+
+                data = "224.0.0.0/24";  # IPv4 Multicast (https://en.wikipedia.org/wiki/Multicast_address#IPv4)
+                type = "network";
+              }
+              {
+                operand = "dest.port";
+
+                data = 5353;
+                type = "simple";
+              }
+              {
+                # TODO: Use the `user.name` matcher once supported (https://github.com/evilsocket/opensnitch/issues/1236)
+                operand = "user.id";
+
+                data = "${toString config.users.users.avahi.uid}";
+                type = "simple";
+              }
+            ];
+            type = "list";
+          };  # # "0-Allow-Avahi-IPv4_multicast".operator
+        };  # "0-Allow-Avahi-IPv4_multicast"
+
+        # XXX: Should be enabled by default once we match with `user.name`
+        "0-Allow-Avahi-IPv6_multicast" = lib.mkIf (config.users.users.avahi.uid != null) {
+          created = "2024-12-10T22:00:00-03:00";
+          updated = "2024-12-10T22:00:00-03:00";
+
+          name = "0-Allow-Avahi-IPv6_multicast";
+          enabled = true;
+          precedence = true;
+          action = "allow";
+          duration = "always";
+          operator = {
+            operand = "list";
+
+            list = [
+              {
+                operand = "dest.network";
+
+                # Link-local IPv6 Multicast (https://en.wikipedia.org/wiki/Multicast_address#IPv6)
+                # NOTE: Address is actually ffX2::/16, but the flags under X don't matter.
+                data = "ff02::/16";
+                type = "network";
+              }
+              {
+                operand = "dest.port";
+
+                data = "5353";
+                type = "simple";
+              }
+              {
+                # TODO: Use the `user.name` matcher once supported (https://github.com/evilsocket/opensnitch/issues/1236)
+                operand = "user.id";
+
+                data = "${toString config.users.users.avahi.uid}";
+                type = "simple";
+              }
+            ];
+            type = "list";
+          };  # "0-Allow-Avahi-IPv6_multicast".operator
+        };  # "0-Allow-Avahi-IPv6_multicast"
 
       };  # ..services.opensnitch.rules
     };  # ..services.opensnitch
