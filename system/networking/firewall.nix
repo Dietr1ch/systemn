@@ -67,7 +67,7 @@
         };
 
       };
-    };
+    };  # ..services.opensnitch;
   };
 }
 

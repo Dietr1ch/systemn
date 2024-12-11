@@ -36,6 +36,7 @@
     };  # ..services.resolved
 
     # https://search.nixos.org/options?channel=unstable&query=services.avahi
+    # ~/Code/github/Dietr1ch/nixpkgs/nixos/modules/services/networking/avahi-daemon.nix
     avahi = {
       enable = lib.mkDefault true;
 
@@ -150,7 +151,8 @@
           };
         };
 
-      };
+
+      };  # ..services.opensnitch.rules
     };  # ..services.opensnitch
   };  # ..services
 
@@ -221,7 +223,7 @@
           StateDirectory = "dnscrypt-proxy";
           ReadWritePaths = "/var/lib/dnscrypt-proxy"; # Cache directory for dnscrypt-proxy2, persist this
         };
-      };
-    };
+      };  # ..systemd.services.dnscrypt-proxy2
+    };  # ..systemd.services
   };  # ..systemd
 }
