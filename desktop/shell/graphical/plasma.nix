@@ -75,10 +75,9 @@
     ];
 
     plasma6 = {
-      excludePackages = with pkgs.kdePackages; [
-        # konsole
-        elisa
-        # print-manager
+      excludePackages = with pkgs; [
+        kdePackages.elisa
+        kdePackages.xwaylandvideobridge
       ];
     };
   };
