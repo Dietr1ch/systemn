@@ -22,6 +22,7 @@
     };
 
     desktopManager = {
+      # ~/Code/github/Dietr1ch/nixpkgs/nixos/modules/services/desktop-managers/plasma6.nix
       plasma6 = {
         enable = true;
         enableQt5Integration = true;
@@ -31,8 +32,8 @@
 
   environment = {
     systemPackages = with pkgs; [
-      kdePackages.plasma-pa
-      kdePackages.plasma-nm
+      kdePackages.plasma-pa  # NOTE: Enabled through Pulse Audio, hardware.pulseaudio.enable
+      kdePackages.plasma-nm  # NOTE: Enabled through NetworkManager, networking.networkmanager.(enable)
 
       kdePackages.kleopatra
       cryptsetup
