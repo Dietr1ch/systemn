@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   hardware = {
@@ -7,5 +7,12 @@
       enable = true;
       enable32Bit = true;
     };
+  };
+
+  environment = {
+    systemPackages = with pkgs; [
+      libGL
+      egl-wayland
+    ];
   };
 }
