@@ -11,8 +11,17 @@
     # https://search.nixos.org/options?channel=unstable&query=programs.gnupg
     gnupg = {
       agent = {
+        enable = true;
+
         enableSSHSupport = true;
         enableBrowserSocket = true;
+        enableExtraSocket = true;
+
+        # https://www.gnupg.org/documentation/manuals/gnupg24/gpg-agent.1.html
+        settings = {
+          "default-cache-ttl" = 1 * 60;  # Keep entries for 1m after each use.
+          "max-cache-ttl" = 15 * 60;  # Cache entries expire after 15m.
+        };
       };
       dirmngr = {
         enable = true;
