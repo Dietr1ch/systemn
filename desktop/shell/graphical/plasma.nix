@@ -32,6 +32,13 @@
 
   environment = {
     systemPackages = with pkgs; [
+      # Qt
+      qt6.qtwayland
+      qt5.qtwayland
+      kdePackages.kwayland
+      libsForQt5.kwayland
+
+
       kdePackages.plasma-pa  # NOTE: Enabled through Pulse Audio, hardware.pulseaudio.enable
       kdePackages.plasma-nm  # NOTE: Enabled through NetworkManager, networking.networkmanager.(enable)
 
@@ -74,9 +81,6 @@
         # print-manager
       ];
     };
-  };
-  qt = {
-    enable = true;
   };
   xdg = {
     portal = {
