@@ -15,7 +15,7 @@
 
       openFirewall = true;
       extraParams = lib.concatStringsSep " " [
-        "--priority 40"  # Match priority of https://cache.nixos.org/nix-cache-info
+        "--priority 35"  # Slightly higher priority than https://cache.nixos.org/nix-cache-info
       ];
 
       # ../secrets.nix
