@@ -65,6 +65,7 @@
       kdePackages.breeze-gtk
 
       # Ark
+      kdePackages.ark
       arj
       lrzip
       pbzip2
