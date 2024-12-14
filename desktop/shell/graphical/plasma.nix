@@ -25,7 +25,6 @@
       # ~/Code/github/Dietr1ch/nixpkgs/nixos/modules/services/desktop-managers/plasma6.nix
       plasma6 = {
         enable = true;
-        enableQt5Integration = true;
       };
     };
   };
@@ -34,9 +33,7 @@
     systemPackages = with pkgs; [
       # Qt
       qt6.qtwayland
-      qt5.qtwayland
       kdePackages.kwayland
-      libsForQt5.kwayland
 
 
       kdePackages.plasma-pa  # NOTE: Enabled through Pulse Audio, hardware.pulseaudio.enable
@@ -55,7 +52,6 @@
       kdePackages.kio-zeroconf
 
       # KDE Connect
-      plasma5Packages.kdeconnect-kde  # TODO consider dropping plasma5Packages.kdeconnect-kde
       kdePackages.kdeconnect-kde
 
       # Theme
