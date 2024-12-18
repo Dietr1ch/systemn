@@ -1,6 +1,13 @@
 { lib, pkgs, ... }:
 
 {
+  programs = {
+    # https://search.nixos.org/options?channel=unstable&query=corectrl
+    corectrl = {
+      enable = true;
+    };
+  };
+
   services = {
     # https://search.nixos.org/options?channel=unstable&query=services.scx
     scx = {
