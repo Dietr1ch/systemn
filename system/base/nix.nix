@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 
 {
   # https://search.nixos.org/options?channel=unstable&query=nix
@@ -7,12 +7,15 @@
       automatic = true;
     };
 
+    # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html
     settings = {
       auto-optimise-store = true;
       experimental-features = [
         "nix-command"
         "flakes"
       ];
+
+      connect-timeout = lib.mkDefault 2;
 
       # ../../secrets.nix
       # substituters = [
