@@ -11,7 +11,7 @@
 
       # Filesystems
       cryptsetup
-      e2fsprogs   # fsck.ext4
+      # e2fsprogs   # fsck.ext4  # TODO: Add e2fsprogs once it builds
       f2fs-tools  # fsck.f2fs
       ntfs3g      # NTFS
       exfat       # ExFAT
