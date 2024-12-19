@@ -35,7 +35,6 @@
       qt6.qtwayland
       kdePackages.kwayland
 
-
       kdePackages.plasma-pa  # NOTE: Enabled through Pulse Audio, hardware.pulseaudio.enable
       kdePackages.plasma-nm  # NOTE: Enabled through NetworkManager, networking.networkmanager.(enable)
 
@@ -72,9 +71,10 @@
     ];
 
     plasma6 = {
-      excludePackages = with pkgs; [
-        kdePackages.elisa
-        kdePackages.xwaylandvideobridge
+      excludePackages = with pkgs.kdePackages; [
+        elisa
+        kate
+        xwaylandvideobridge
       ];
     };
   };
