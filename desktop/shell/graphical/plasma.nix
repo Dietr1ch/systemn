@@ -61,9 +61,11 @@
 
       # Ark
       kdePackages.ark
-      arj
+      # TODO: Consider adding `arj` once it builds
+      # arj
       lrzip
-      pbzip2
+      # TODO: Consider adding `pbzip2` once it builds
+      # pbzip2
       pigz
       pixz
       xz
