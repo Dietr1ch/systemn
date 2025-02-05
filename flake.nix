@@ -31,6 +31,7 @@
       system = import ./system;  # ./system/default.nix
 
       system-base = import ./system/base;  # ./system/base/default.nix
+      system-base-hardware_information = import ./system/base/hardware_information.nix;
 
       system-boot-efi = import ./system/boot/efi.nix;
       system-boot-silent = import ./system/boot/silent.nix;

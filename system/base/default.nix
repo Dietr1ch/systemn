@@ -9,5 +9,7 @@
     ./nix.nix
     ./preload.nix
     ./tools.nix
+
+    # ./hardware_information.nix
   ];
 }
