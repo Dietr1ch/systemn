@@ -12,8 +12,8 @@
     settings = {
       auto-optimise-store = true;
       extra-experimental-features = [
-        "nix-command"
-        "flakes"
+        "nix-command"  # https://nix.dev/manual/nix/2.24/development/experimental-features#xp-feature-nix-command
+        "flakes"  # https://nix.dev/manual/nix/2.24/development/experimental-features#xp-feature-flakes
       ];
 
       connect-timeout = lib.mkDefault 2;
