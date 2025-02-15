@@ -7,7 +7,8 @@
       automatic = true;
     };
 
-    # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html
+    # Generates /etc/nix/nix.conf
+    # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html#available-settings
     settings = {
       auto-optimise-store = true;
       experimental-features = [
@@ -18,9 +19,9 @@
       connect-timeout = lib.mkDefault 2;
 
       # ../../secrets.nix
-      # substituters = [
+      # extra-substituters = [
       # ];
-      # trusted-public-keys = [
+      # extra-trusted-public-keys = [
       # ];
     };
 
