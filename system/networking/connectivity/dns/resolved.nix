@@ -80,6 +80,44 @@
         };  # "0-OPEN-resolved-53"
         # TODO: Allow querying resolved at 127.0.0.54:53
 
+        # Link-local Multicast Name Resolution (LLMNR)
+        "0-ALLOW-resolved-llmnr" = {
+          created = "2024-11-27T22:00:00-03:00";
+          updated = "2024-11-27T22:00:00-03:00";
+
+          name = "0-ALLOW-resolved-llmnr";
+          enabled = true;
+          precedence = true;
+          action = "allow";
+          duration = "always";
+          operator = {
+            operand = "list";
+
+            list = [
+              {
+                operand = "dest.network";
+
+                # ff02/16 is the multicast link local scope
+                data = "ff02::/16";
+                type = "network";
+              }
+              {
+                operand = "dest.port";
+
+                data = "5355";
+                type = "simple";
+              }
+              {
+                operand = "user.id";
+
+                data = "153";
+                type = "simple";
+              }
+            ];
+            type = "list";
+          };
+        };  # "0-ALLOW-resolved-llmnr"
+
         # INTENT: Resolved can reach AdGuardHome
         "0-ALLOW-resolved-adguardhome" = {
           created = "2024-11-27T22:00:00-03:00";
