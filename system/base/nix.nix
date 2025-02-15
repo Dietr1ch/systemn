@@ -11,7 +11,7 @@
     # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html#available-settings
     settings = {
       auto-optimise-store = true;
-      experimental-features = [
+      extra-experimental-features = [
         "nix-command"
         "flakes"
       ];
