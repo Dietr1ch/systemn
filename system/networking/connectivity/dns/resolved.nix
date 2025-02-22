@@ -95,22 +95,21 @@
 
             list = [
               {
-                operand = "dest.network";
-
-                # ff02/16 is the multicast link local scope
-                data = "ff02::/16";
-                type = "network";
-              }
-              {
                 operand = "dest.port";
 
-                data = "5355";
+                data = "5353";
                 type = "simple";
               }
               {
                 operand = "user.id";
 
                 data = "153";
+                type = "simple";
+              }
+              {
+                operand = "process.path";
+
+                data = "${lib.getBin pkgs.systemd}/lib/systemd/systemd-resolved";
                 type = "simple";
               }
             ];
@@ -149,7 +148,7 @@
                 operand = "process.path";
 
                 data = "${lib.getBin pkgs.systemd}/lib/systemd/systemd-resolved";
-                type ="simple";
+                type = "simple";
               }
             ];
             type = "list";
