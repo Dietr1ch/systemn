@@ -40,7 +40,7 @@
 
       kdePackages.kleopatra
       cryptsetup
-      plasma-vault
+      kdePackages.plasma-vault
 
       # Dolphin
       kdePackages.dolphin
@@ -84,7 +84,7 @@
     portal = {
       enable = true;
       extraPortals = with pkgs; [
-        xdg-desktop-portal-kde
+        kdePackages.xdg-desktop-portal-kde
       ];
     };
   };
