@@ -72,11 +72,12 @@
       # Server
       # ------
       server-database-postgres = import ./server/database/postgres.nix;
-      server-web = import ./server/web.nix;
+      server-file_sharing-ipfs = import ./server/file_sharing/ipfs.nix;
       server-monero = import ./server/monero.nix;
       server-nix_serve = import ./server/nix-serve.nix;
       server-nix_ssh = import ./server/nix-ssh.nix;
-      server-file_sharing-ipfs = import ./server/file_sharing/ipfs.nix;
+      server-transmission = import ./server/transmission.nix;
+      server-web = import ./server/web.nix;
 
       # Drafts
       # ------
