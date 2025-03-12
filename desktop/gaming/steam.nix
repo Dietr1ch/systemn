@@ -2,6 +2,7 @@
 
 {
   programs = {
+    # https://search.nixos.org/options?channel=unstable&query=programs.steam
     steam = {
       enable = true;
 

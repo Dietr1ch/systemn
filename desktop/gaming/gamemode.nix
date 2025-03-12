@@ -2,7 +2,7 @@
 
 {
   programs = {
-    # https://search.nixos.org/options?channel=unstable&query=gamemode
+    # https://search.nixos.org/options?channel=unstable&query=programs.gamemode
     gamemode = {
       enable = true;
       enableRenice = true;
@@ -22,6 +22,15 @@
           start = "${pkgs.libnotify}/bin/notify-send --urgency 'low' --expire-time '15' 'GameMode started'";
           end   = "${pkgs.libnotify}/bin/notify-send --urgency 'low' --expire-time '15' 'GameMode ended'";
         };
+      };
+    };
+
+    # https://search.nixos.org/options?channel=unstable&query=programs.steam
+    steam = {
+      package = pkgs.steam.override {
+        extraPkgs = (pkgs: with pkgs; [
+          gamemode
+        ]);
       };
     };
   };
