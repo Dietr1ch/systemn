@@ -9,6 +9,15 @@
     ./tools.nix
   ];
 
+  boot = {
+    kernel = {
+      sysctl = {
+        # https://wiki.archlinux.org/title/Sysctl#Enable_TCP_Fast_Open
+        "net.ipv4.tcp_fastopen" = 3;
+      };
+    };
+  };
+
   # https://search.nixos.org/options?channel=unstable&query=networking
   networking = {
     dhcpcd = {
