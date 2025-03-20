@@ -11,10 +11,6 @@
 
   # https://search.nixos.org/options?channel=unstable&query=networking
   networking = {
-    networkmanager = {
-      enable = true;
-    };
-
     dhcpcd = {
       enable = true;
 
