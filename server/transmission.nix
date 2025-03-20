@@ -10,6 +10,8 @@
       package = pkgs.transmission_4;
 
       openPeerPorts = true;
+      # https://search.nixos.org/options?channel=unstable&show=services.transmission.performanceNetParameters
+      performanceNetParameters = true;
       settings = {
         # https://github.com/transmission/transmission/wiki/Editing-Configuration-Files
         peer-port-random-on-start = true;
