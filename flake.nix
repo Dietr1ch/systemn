@@ -76,6 +76,7 @@
       server-monero = import ./server/monero.nix;
       server-nix_serve = import ./server/nix-serve.nix;
       server-nix_ssh = import ./server/nix-ssh.nix;
+      server-ollama = import ./server/ollama.nix;
       server-syncthing = import ./server/syncthing.nix;
       server-transmission = import ./server/transmission.nix;
       server-web = import ./server/web.nix;
