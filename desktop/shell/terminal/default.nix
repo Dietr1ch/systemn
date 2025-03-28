@@ -2,8 +2,9 @@
 
 {
   imports = [
-    ./fonts.nix
     ./colours.nix
+    ./fonts.nix
+    ./pay-respects.nix
   ];
 
   users = {

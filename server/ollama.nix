@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 
 {
   services = {
@@ -15,6 +15,16 @@
         "gemma3"  # https://ollama.com/library/gemma3
         "qwq"  # https://ollama.com/library/qwq
       ];
+    };
+  };
+
+  programs = {
+    pay-respects = {
+      aiIntegration = {
+        locale = "en-GB";
+        model = "deepseek-r1";
+        url = "http://127.0.0.1:${toString config.services.ollama.port}/v1/chat/completions";
+      };
     };
   };
 }
