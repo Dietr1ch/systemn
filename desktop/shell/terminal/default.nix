@@ -4,7 +4,7 @@
   imports = [
     ./colours.nix
     ./fonts.nix
-    ./pay-respects.nix
+    # ./pay-respects.nix
   ];
 
   users = {

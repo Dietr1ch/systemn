@@ -61,6 +61,7 @@
       desktop-sound = import ./desktop/sound.nix;
       desktop-shell-graphical = import ./desktop/shell/graphical;  # ./desktop/shell/graphical/default.nix
       desktop-shell-terminal = import ./desktop/shell/terminal;  # ./desktop/shell/terminal/default.nix
+      desktop-shell-terminal-pay_respects = import ./desktop/shell/terminal/pay-respects.nix;
 
 
       # Workstation
