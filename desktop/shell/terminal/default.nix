@@ -16,7 +16,7 @@
       enable = true;
     };
 
-    command-not-found = {
+    nix-index = {
       enable = true;
     };
   };
