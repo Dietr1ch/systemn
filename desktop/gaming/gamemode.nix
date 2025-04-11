@@ -19,8 +19,8 @@
           inhibit_screensaver = 1;
         };
         custom = {
-          start = "${pkgs.libnotify}/bin/notify-send --urgency 'low' --expire-time '15' 'GameMode started'";
-          end   = "${pkgs.libnotify}/bin/notify-send --urgency 'low' --expire-time '15' 'GameMode ended'";
+          start = "${pkgs.libnotify}/bin/notify-send --urgency 'low' --expire-time '1500' 'GameMode started'";
+          end   = "${pkgs.libnotify}/bin/notify-send --urgency 'low' --expire-time '1500' 'GameMode ended'";
         };
       };
     };
