@@ -14,9 +14,44 @@
   services = {
     xserver.enable = lib.mkForce false;
     orca.enable = lib.mkForce false;  # No screenreading, sorry :(
-  };
 
-  services = {
+    opensnitch = {
+      rules = {
+
+        # INTENT: KDEConnect can use the local network (IPv6 ff02::/64)
+        "0-OPEN-kdeconnect-ff02" = {
+          created = "2024-11-27T22:00:00-03:00";
+          updated = "2024-11-27T22:00:00-03:00";
+
+          name = "0-OPEN-kdeconnect-ff02";
+          enabled = true;
+          precedence = true;
+          action = "allow";
+          duration = "always";
+          operator = {
+            operand = "list";
+
+            list = [
+              {
+                operand = "dest.network";
+
+                data = "ff02::/64";
+                type = "simple";
+              }
+              {
+                operand = "process.path";
+
+                data = "${lib.getBin pkgs.kdePackages.kdeconnect-kde}/bin/.kdeconnectd-wrapped";
+                type = "simple";
+              }
+            ];
+            type = "list";
+          };
+        };  # "0-OPEN-kdeconnect-ff02"
+
+      };  # ..services.opensnitch.rules
+    };  # ..services.opensnitch
+
     displayManager = {
       defaultSession = "plasma";
     };
@@ -27,7 +62,7 @@
         enable = true;
       };
     };
-  };
+  };  # ..services
 
   environment = {
     systemPackages = with pkgs; [
