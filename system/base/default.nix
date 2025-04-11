@@ -4,11 +4,12 @@
   imports = [
     ./identity.nix
 
-    ./information.nix
     ./editor.nix
+    ./information.nix
     ./nix.nix
     ./preload.nix
     ./tools.nix
+    # TODO ./tracing.nix once it builds
 
     # ./hardware_information.nix
   ];
