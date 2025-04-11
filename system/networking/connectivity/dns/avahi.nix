@@ -56,7 +56,7 @@
               {
                 operand = "dest.port";
 
-                data = 5353;
+                data = "5353";
                 type = "simple";
               }
               {
