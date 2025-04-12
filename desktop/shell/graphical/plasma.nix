@@ -19,12 +19,12 @@
       # https://github.com/evilsocket/opensnitch/wiki/Rules
       rules = {
 
-        # INTENT: KDEConnect can use the local network (IPv6 ff02::/64)
-        "0-OPEN-kdeconnect-ff02" = {
+        # INTENT: KDEConnect can discover the local network (IPv6 ff02::/64 on port 5353)
+        "0-OPEN-kdeconnect-ff02_64-5353" = {
           created = "2024-11-27T22:00:00-03:00";
           updated = "2024-11-27T22:00:00-03:00";
 
-          name = "0-OPEN-kdeconnect-ff02";
+          name = "0-OPEN-kdeconnect-ff02_64-5353";
           enabled = true;
           precedence = true;
           action = "allow";
@@ -40,6 +40,12 @@
                 type = "network";
               }
               {
+                operand = "dest.port";
+
+                data = "5353";
+                type = "simple";
+              }
+              {
                 operand = "process.path";
 
                 data = "${lib.getBin pkgs.kdePackages.kdeconnect-kde}/bin/.kdeconnectd-wrapped";
@@ -48,7 +54,143 @@
             ];
             type = "list";
           };
-        };  # "0-OPEN-kdeconnect-ff02"
+        };  # "0-OPEN-kdeconnect-ff02_64-5353"
+
+        # INTENT: KDEConnect can discover the local network (IPv6 fe80::/64 on port 5353)
+        "0-OPEN-kdeconnect-fe80_64-5353" = {
+          created = "2024-11-27T22:00:00-03:00";
+          updated = "2024-11-27T22:00:00-03:00";
+
+          name = "0-OPEN-kdeconnect-fe80_64-5353";
+          enabled = true;
+          precedence = true;
+          action = "allow";
+          duration = "always";
+          operator = {
+            operand = "list";
+
+            list = [
+              {
+                operand = "dest.network";
+
+                data = "fe80::/64";
+                type = "network";
+              }
+              {
+                operand = "dest.port";
+
+                data = "5353";
+                type = "simple";
+              }
+              {
+                operand = "process.path";
+
+                data = "${lib.getBin pkgs.kdePackages.kdeconnect-kde}/bin/.kdeconnectd-wrapped";
+                type = "simple";
+              }
+            ];
+            type = "list";
+          };
+        };  # "0-OPEN-kdeconnect-fe80_64-5353"
+
+        # INTENT: KDEConnect can discover the local network (IPv4 224.0.0.0/24 on port 5353)
+        "0-OPEN-kdeconnect-224-5353" = {
+          created = "2024-11-27T22:00:00-03:00";
+          updated = "2024-11-27T22:00:00-03:00";
+
+          name = "0-OPEN-kdeconnect-224-5353";
+          enabled = true;
+          precedence = true;
+          action = "allow";
+          duration = "always";
+          operator = {
+            operand = "list";
+
+            list = [
+              {
+                operand = "dest.network";
+
+                data = "224.0.0.0/24";
+                type = "network";
+              }
+              {
+                operand = "dest.port";
+
+                data = "5353";
+                type = "simple";
+              }
+              {
+                operand = "process.path";
+
+                data = "${lib.getBin pkgs.kdePackages.kdeconnect-kde}/bin/.kdeconnectd-wrapped";
+                type = "simple";
+              }
+            ];
+            type = "list";
+          };
+        };  # "0-OPEN-kdeconnect-224-5353"
+
+        # INTENT: KDEConnect can do IPv4 broadcast
+        "0-OPEN-kdeconnect-ipv4_broadcast" = {
+          created = "2024-11-27T22:00:00-03:00";
+          updated = "2024-11-27T22:00:00-03:00";
+
+          name = "0-OPEN-kdeconnect-ipv4_broadcast";
+          enabled = true;
+          precedence = true;
+          action = "allow";
+          duration = "always";
+          operator = {
+            operand = "list";
+
+            list = [
+              {
+                operand = "dest.ip";
+
+                data = "255.255.255.255";
+                type = "simple";
+              }
+              {
+                operand = "process.path";
+
+                data = "${lib.getBin pkgs.kdePackages.kdeconnect-kde}/bin/.kdeconnectd-wrapped";
+                type = "simple";
+              }
+            ];
+            type = "list";
+          };
+        };  # "0-OPEN-kdeconnect-ipv4_broadcast"
+
+        # INTENT: KDEConnect can reach out to the local network
+        "0-OPEN-kdeconnect-192_168" = {
+          created = "2024-11-27T22:00:00-03:00";
+          updated = "2024-11-27T22:00:00-03:00";
+
+          name = "0-OPEN-kdeconnect-192_168";
+          enabled = true;
+          precedence = true;
+          action = "allow";
+          duration = "always";
+          operator = {
+            operand = "list";
+
+            list = [
+              {
+                operand = "dest.network";
+
+                data = "192.168.0.0/16";
+                type = "network";
+              }
+              {
+                operand = "process.path";
+
+                data = "${lib.getBin pkgs.kdePackages.kdeconnect-kde}/bin/.kdeconnectd-wrapped";
+                type = "simple";
+              }
+            ];
+            type = "list";
+          };
+        };  # "0-OPEN-kdeconnect-192_168"
 
       };  # ..services.opensnitch.rules
     };  # ..services.opensnitch
