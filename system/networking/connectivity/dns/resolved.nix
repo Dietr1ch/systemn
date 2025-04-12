@@ -16,6 +16,7 @@
     };  # ..services.resolved
 
     opensnitch = {
+      # https://github.com/evilsocket/opensnitch/wiki/Rules
       rules = {
 
         # INTENT: Anyone can query resolved at 127.0.0.1:53

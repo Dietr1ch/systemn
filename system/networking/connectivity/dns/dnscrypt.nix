@@ -31,6 +31,7 @@
     };  # ..services.dnscrypt-proxy2
 
     opensnitch = {
+      # https://github.com/evilsocket/opensnitch/wiki/Rules
       rules = {
 
         # Intent: DNSCrypt binary can reach out everywhere

@@ -31,6 +31,7 @@
     };  # ..services.avahi
 
     opensnitch = {
+      # https://github.com/evilsocket/opensnitch/wiki/Rules
       rules = {
 
         # XXX: Should be enabled by default once we match with `user.name`

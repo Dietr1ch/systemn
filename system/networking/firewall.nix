@@ -29,6 +29,8 @@
         # Use nftables as the Firewall
         Firewall = "nftables";
       };
+
+      # https://github.com/evilsocket/opensnitch/wiki/Rules
       rules = {
 
         "0-ALLOW-timesyncd" = {

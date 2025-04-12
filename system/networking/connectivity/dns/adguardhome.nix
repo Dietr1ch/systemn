@@ -41,6 +41,7 @@
     };  # ..services.adguardhome
 
     opensnitch = {
+      # https://github.com/evilsocket/opensnitch/wiki/Rules
       rules = {
 
         # TODO: Whitelist DNSCrypt (127.0.0.56:53)

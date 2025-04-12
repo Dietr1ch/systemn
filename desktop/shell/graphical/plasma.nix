@@ -16,6 +16,7 @@
     orca.enable = lib.mkForce false;  # No screenreading, sorry :(
 
     opensnitch = {
+      # https://github.com/evilsocket/opensnitch/wiki/Rules
       rules = {
 
         # INTENT: KDEConnect can use the local network (IPv6 ff02::/64)
@@ -36,7 +37,7 @@
                 operand = "dest.network";
 
                 data = "ff02::/64";
-                type = "simple";
+                type = "network";
               }
               {
                 operand = "process.path";
