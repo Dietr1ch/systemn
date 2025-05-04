@@ -266,5 +266,22 @@
       ];
     };
   };
+
+  # https://search.nixos.org/options?channel=unstable&show=qt
+  qt = {
+    enable = true;
+    style = lib.mkDefault "breeze";
+    platformTheme = lib.mkDefault "kde6";
+  };
+
+  boot = {
+    # https://search.nixos.org/options?channel=unstable&query=boot.loader
+    loader = {
+      # https://search.nixos.org/options?channel=unstable&query=boot.grub
+      grub = {
+        theme = lib.mkDefault "${pkgs.kdePackages.breeze-grub}/grub/themes/breeze";
+      };
+    };
+  };
 }
 
