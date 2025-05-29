@@ -5,6 +5,8 @@
     ./fonts.nix
 
     ./login-sddm.nix
+
+    # ./hyprland.nix
     ./plasma.nix
   ];
 
