@@ -6,6 +6,7 @@
     # ~/Code/github/Dietr1ch/nixpkgs/nixos/modules/programs/xwayland.nix
     xwayland.enable = lib.mkDefault false;  # TODO: Drop xwayland when feasible
     # ~/Code/github/Dietr1ch/nixpkgs/nixos/modules/programs/kdeconnect.nix
+    # https://search.nixos.org/options?channel=unstable&query=kdeconnect
     kdeconnect.enable = true;
     # TODO: Consider dropping kde-pim
     # kde-pim.enable = lib.mkForce false;  # Drop KDE PIM (KMail, Kontact, ...)
@@ -17,6 +18,7 @@
 
     opensnitch = {
       # https://github.com/evilsocket/opensnitch/wiki/Rules
+      # https://search.nixos.org/options?channel=unstable&query=services.opensnitch.rules
       rules = {
 
         # INTENT: KDEConnect can discover the local network (IPv6 ff02::/64 on port 5353)
