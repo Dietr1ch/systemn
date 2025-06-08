@@ -232,6 +232,7 @@
 
       # KDE Connect
       kdePackages.kdeconnect-kde
+      kdePackages.plasma-browser-integration
 
       # Theme
       kdePackages.breeze
