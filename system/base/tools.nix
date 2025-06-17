@@ -3,7 +3,8 @@
 {
   environment = {
     systemPackages = with pkgs; [
-      # broot  # NOTE: This brings in llvm, rustc, cargo. Not worth compiling for nixos-unstable
+      killall
+
       ripgrep
       ## Logs
       less
