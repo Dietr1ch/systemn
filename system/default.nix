@@ -1,15 +1,15 @@
-{ config, lib, pkgs, ... }:
+{ ... }:
 
 {
   imports = [
-    ./base        # ./base/default.nix
+    ./base
     ./base/hardware_information.nix
-    ./boot        # ./boot/default.nix
-    ./files       # ./files/default.nix
-    ./input       # ./input/default.nix
-    ./networking  # ./networking/default.nix
-    ./security    # ./security/default.nix
-    ./storage     # ./storage/default.nix
+    ./boot
+    ./files
+    ./input
+    ./networking
+    ./security
+    ./storage
 
     ./cpu.nix
     ./memory.nix
