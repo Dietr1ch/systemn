@@ -214,6 +214,7 @@
       # Qt
       qt6.qtwayland
       kdePackages.kwayland
+      kdePackages.qtbase
 
       kdePackages.plasma-pa  # NOTE: Enabled through Pulse Audio, hardware.pulseaudio.enable
       kdePackages.plasma-nm  # NOTE: Enabled through NetworkManager, networking.networkmanager.(enable)
@@ -236,9 +237,10 @@
 
       # Theme
       kdePackages.breeze
+      # kdePackages.breeze-grub
+      kdePackages.breeze-gtk
       kdePackages.breeze-icons
       kdePackages.breeze-plymouth
-      kdePackages.breeze-gtk
 
       # Ark
       kdePackages.ark
