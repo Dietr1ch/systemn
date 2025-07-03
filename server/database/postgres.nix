@@ -7,6 +7,7 @@
     postgresql = {
       enable = true;
 
+      enableJIT = true;
       ensureDatabases = [
         "scratch"
       ];
