@@ -4,6 +4,7 @@
   imports = [
     ./dns  # ./dns/default.nix
 
+    ./fail2ban.nix
     ./ssh.nix
     # ./wireguard.nix
     # ./zerotier.nix
