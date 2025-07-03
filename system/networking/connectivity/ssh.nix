@@ -12,6 +12,8 @@
     openssh = {
       enable = true;
 
+      startWhenNeeded = true;
+
       # /etc/ssh/sshd_config
       settings = {
         PasswordAuthentication = false;
