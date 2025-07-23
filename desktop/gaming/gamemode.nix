@@ -18,9 +18,17 @@
 
           inhibit_screensaver = 1;
         };
+        # /etc/gamemode.ini
         custom = {
-          start = "${pkgs.libnotify}/bin/notify-send --urgency 'low' --expire-time '1500' 'GameMode started'";
-          end   = "${pkgs.libnotify}/bin/notify-send --urgency 'low' --expire-time '1500' 'GameMode ended'";
+          script_timeout = 5;
+          start = ''
+            ${pkgs.libnotify}/bin/notify-send --urgency 'low' --expire-time '1500' 'GameMode started'
+            ${pkgs.kdePackages.qttools}/bin/qdbus org.kde.KWin /Compositor suspend
+          '';
+          end = ''
+            ${pkgs.kdePackages.qttools}/bin/qdbus org.kde.KWin /Compositor resume
+            ${pkgs.libnotify}/bin/notify-send --urgency 'low' --expire-time '1500' 'GameMode ended'
+          '';
         };
       };
     };
