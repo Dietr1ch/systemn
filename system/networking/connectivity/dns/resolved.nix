@@ -19,36 +19,6 @@
       # https://github.com/evilsocket/opensnitch/wiki/Rules
       rules = {
 
-        # INTENT: Anyone can query resolved at 127.0.0.1:53
-        "0-OPEN-resolved-1" = {
-          created = "2024-11-27T22:00:00-03:00";
-          updated = "2024-11-27T22:00:00-03:00";
-
-          name = "0-OPEN-resolved-1";
-          enabled = true;
-          precedence = true;
-          action = "allow";
-          duration = "always";
-          operator = {
-            operand = "list";
-
-            list = [
-              {
-                operand = "dest.ip";
-
-                data = "127.0.0.1";
-                type = "simple";
-              }
-              {
-                operand = "dest.port";
-
-                data = "53";
-                type = "simple";
-              }
-            ];
-            type = "list";
-          };
-        };  # "0-OPEN-resolved-1"
         # INTENT: Anyone can query resolved at 127.0.0.53:53
         "0-OPEN-resolved-53" = {
           created = "2024-11-27T22:00:00-03:00";
