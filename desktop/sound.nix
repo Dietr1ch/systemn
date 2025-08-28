@@ -19,7 +19,7 @@
       wireplumber = {
         enable = true;
         extraLv2Packages = with pkgs; [
-          lsp-plugins  # https://search.nixos.org/packages?channel=unstable&query=lsp-plugins
+          lsp-plugins # https://search.nixos.org/packages?channel=unstable&query=lsp-plugins
         ];
       };
     };

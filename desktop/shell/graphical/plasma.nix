@@ -4,7 +4,7 @@
 {
   programs = {
     # ~/Code/github/Dietr1ch/nixpkgs/nixos/modules/programs/xwayland.nix
-    xwayland.enable = lib.mkDefault false;  # TODO: Drop xwayland when feasible
+    xwayland.enable = lib.mkDefault false; # TODO: Drop xwayland when feasible
     # ~/Code/github/Dietr1ch/nixpkgs/nixos/modules/programs/kdeconnect.nix
     # https://search.nixos.org/options?channel=unstable&query=kdeconnect
     kdeconnect.enable = true;
@@ -14,7 +14,7 @@
 
   services = {
     xserver.enable = lib.mkForce false;
-    orca.enable = lib.mkForce false;  # No screenreading, sorry :(
+    orca.enable = lib.mkForce false; # No screenreading, sorry :(
 
     opensnitch = {
       # https://github.com/evilsocket/opensnitch/wiki/Rules
@@ -56,7 +56,7 @@
             ];
             type = "list";
           };
-        };  # "0-OPEN-kdeconnect-ff02_64-5353"
+        }; # "0-OPEN-kdeconnect-ff02_64-5353"
 
         # INTENT: KDEConnect can discover the local network (IPv6 fe80::/64 on port 5353)
         "0-OPEN-kdeconnect-fe80_64-5353" = {
@@ -93,7 +93,7 @@
             ];
             type = "list";
           };
-        };  # "0-OPEN-kdeconnect-fe80_64-5353"
+        }; # "0-OPEN-kdeconnect-fe80_64-5353"
 
         # INTENT: KDEConnect can discover the local network (IPv4 224.0.0.0/24 on port 5353)
         "0-OPEN-kdeconnect-224-5353" = {
@@ -130,7 +130,7 @@
             ];
             type = "list";
           };
-        };  # "0-OPEN-kdeconnect-224-5353"
+        }; # "0-OPEN-kdeconnect-224-5353"
 
         # INTENT: KDEConnect can do IPv4 broadcast
         "0-OPEN-kdeconnect-ipv4_broadcast" = {
@@ -161,7 +161,7 @@
             ];
             type = "list";
           };
-        };  # "0-OPEN-kdeconnect-ipv4_broadcast"
+        }; # "0-OPEN-kdeconnect-ipv4_broadcast"
 
         # INTENT: KDEConnect can reach out to the local network
         "0-OPEN-kdeconnect-192_168" = {
@@ -192,10 +192,10 @@
             ];
             type = "list";
           };
-        };  # "0-OPEN-kdeconnect-192_168"
+        }; # "0-OPEN-kdeconnect-192_168"
 
-      };  # ..services.opensnitch.rules
-    };  # ..services.opensnitch
+      }; # ..services.opensnitch.rules
+    }; # ..services.opensnitch
 
     displayManager = {
       defaultSession = "plasma";
@@ -207,7 +207,7 @@
         enable = true;
       };
     };
-  };  # ..services
+  }; # ..services
 
   environment = {
     systemPackages = with pkgs; [
@@ -216,8 +216,8 @@
       kdePackages.kwayland
       kdePackages.qtbase
 
-      kdePackages.plasma-pa  # NOTE: Enabled through Pulse Audio, hardware.pulseaudio.enable
-      kdePackages.plasma-nm  # NOTE: Enabled through NetworkManager, networking.networkmanager.(enable)
+      kdePackages.plasma-pa # NOTE: Enabled through Pulse Audio, hardware.pulseaudio.enable
+      kdePackages.plasma-nm # NOTE: Enabled through NetworkManager, networking.networkmanager.(enable)
 
       kdePackages.kleopatra
       cryptsetup
@@ -289,4 +289,3 @@
     };
   };
 }
-

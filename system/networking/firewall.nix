@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   networking = {
@@ -14,7 +19,7 @@
     nftables = {
       enable = true;
     };
-  };  # ..networking
+  }; # ..networking
 
   services = {
     # https://wiki.nixos.org/wiki/OpenSnitch
@@ -48,11 +53,9 @@
             data = "${lib.getBin pkgs.systemd}/lib/systemd/systemd-timesyncd";
             type = "simple";
           };
-        };  # "0-ALLOW-timesyncd"
+        }; # "0-ALLOW-timesyncd"
 
-      };  # ..services.opensnitch.rules
-    };  # ..services.opensnitch
-  };  # ..services
+      }; # ..services.opensnitch.rules
+    }; # ..services.opensnitch
+  }; # ..services
 }
-
-

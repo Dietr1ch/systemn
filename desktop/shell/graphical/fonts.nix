@@ -20,7 +20,6 @@
       proggyfonts
       terminus_font
 
-
       # Programming
       # ===========
       # Fira
@@ -29,7 +28,6 @@
       fira-code
       fira-code-symbols
       fira-math
-
 
       # Icons, Symbols, Emoji
       # =====================
@@ -44,4 +42,3 @@
     ];
   };
 }
-

@@ -9,8 +9,8 @@
       limits = {
         threads = 4;
 
-        upload   = 25;  # 25kb/s
-        download = 25;  # 25kb/s
+        upload = 25; # 25kb/s
+        download = 25; # 25kb/s
       };
     };
   };

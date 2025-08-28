@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   services = {
@@ -15,7 +20,7 @@
 
       openFirewall = true;
       extraParams = lib.concatStringsSep " " [
-        "--priority 35"  # Slightly higher priority than https://cache.nixos.org/nix-cache-info
+        "--priority 35" # Slightly higher priority than https://cache.nixos.org/nix-cache-info
       ];
 
       # ../secrets.nix
@@ -33,11 +38,12 @@
         "${config.networking.hostName}.local" = {
           locations = {
             "/nix/" = {
-              proxyPass = let
-                            addr = config.services.nix-serve.bindAddress;
-                            port = config.services.nix-serve.port;
-                          in
-                              "http://${addr}:${toString port}/";
+              proxyPass =
+                let
+                  addr = config.services.nix-serve.bindAddress;
+                  port = config.services.nix-serve.port;
+                in
+                "http://${addr}:${toString port}/";
               # proxyWebsockets = true;
               recommendedProxySettings = true;
             };

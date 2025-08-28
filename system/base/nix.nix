@@ -12,9 +12,9 @@
     settings = {
       auto-optimise-store = true;
       extra-experimental-features = [
-        "nix-command"  # https://nix.dev/manual/nix/2.24/development/experimental-features#xp-feature-nix-command
-        "flakes"  # https://nix.dev/manual/nix/2.24/development/experimental-features#xp-feature-flakes
-        "cgroups"  # https://nix.dev/manual/nix/2.24/development/experimental-features#xp-feature-cgroups
+        "nix-command" # https://nix.dev/manual/nix/2.24/development/experimental-features#xp-feature-nix-command
+        "flakes" # https://nix.dev/manual/nix/2.24/development/experimental-features#xp-feature-flakes
+        "cgroups" # https://nix.dev/manual/nix/2.24/development/experimental-features#xp-feature-cgroups
       ];
 
       connect-timeout = lib.mkDefault 2;

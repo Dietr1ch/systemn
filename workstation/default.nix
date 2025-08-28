@@ -2,6 +2,6 @@
 
 {
   imports = [
-    ./virtualisation  # ./virtualisation/default.nix
+    ./virtualisation # ./virtualisation/default.nix
   ];
 }

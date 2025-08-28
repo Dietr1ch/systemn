@@ -2,8 +2,7 @@
 
 {
   imports = [
-    ./graphical  # ./graphical/default.nix
-    ./terminal   # ./terminal/default.nix
+    ./graphical # ./graphical/default.nix
+    ./terminal # ./terminal/default.nix
   ];
 }
-

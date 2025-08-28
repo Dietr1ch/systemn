@@ -11,9 +11,9 @@
 
       # Models: https://ollama.com/library
       loadModels = [
-        "deepseek-r1"  # https://ollama.com/library/deepseek-r1
-        "gemma3"  # https://ollama.com/library/gemma3
-        "qwq"  # https://ollama.com/library/qwq
+        "deepseek-r1" # https://ollama.com/library/deepseek-r1
+        "gemma3" # https://ollama.com/library/gemma3
+        "qwq" # https://ollama.com/library/qwq
       ];
     };
   };

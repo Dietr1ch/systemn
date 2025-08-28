@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   # https://nixos.wiki/wiki/Nginx
@@ -25,7 +30,7 @@
           locations = {
             "~ /\\." = {
               extraConfig = ''
-			          deny all;
+                deny all;
               '';
             };
 
@@ -52,8 +57,8 @@
   networking = {
     firewall = {
       allowedTCPPorts = [
-        80   # Default HTTP
-        443  # Default HTTPS
+        80 # Default HTTP
+        443 # Default HTTPS
       ];
     };
   };

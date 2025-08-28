@@ -19,14 +19,34 @@
         # data :: maximum data size (KB)
         # fsize :: maximum filesize (KB)
         # memlock :: maximum locked-in-memory address space (KB)
-        { domain = "*"; type = "soft"; item = "memlock"; value = "4096"; }   # 4MB
-        { domain = "*"; type = "hard"; item = "memlock"; value = "65536"; }  # 64M
+        {
+          domain = "*";
+          type = "soft";
+          item = "memlock";
+          value = "4096";
+        } # 4MB
+        {
+          domain = "*";
+          type = "hard";
+          item = "memlock";
+          value = "65536";
+        } # 64M
         # nofile :: maximum number of open file descriptors
         # stack :: maximum stack size (KB)
         # cpu :: maximum CPU time (minutes)
         # nproc :: maximum number of processes
-        { domain = "*"; type = "soft"; item = "nproc"; value = "4096"; }
-        { domain = "*"; type = "hard"; item = "nproc"; value = "16384"; }
+        {
+          domain = "*";
+          type = "soft";
+          item = "nproc";
+          value = "4096";
+        }
+        {
+          domain = "*";
+          type = "hard";
+          item = "nproc";
+          value = "16384";
+        }
         # as :: address space limit (KB)
         # maxlogins :: maximum number of logins for this user (this limit does not apply to user with uid=0)
         # maxsyslogins :: maximum number of all logins on system; user is not allowed to log-in if total number of all user logins is greater than specified number (this limit does not apply to user with uid=0)

@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   environment = {
@@ -12,12 +17,12 @@
       # Filesystems
       cryptsetup
       # e2fsprogs   # fsck.ext4  # TODO: Add e2fsprogs once it builds
-      f2fs-tools  # fsck.f2fs
-      ntfs3g      # NTFS
-      exfat       # ExFAT
-      gphoto2fs   # Cameras
+      f2fs-tools # fsck.f2fs
+      ntfs3g # NTFS
+      exfat # ExFAT
+      gphoto2fs # Cameras
       libgphoto2
-      jmtpfs      # MTP
+      jmtpfs # MTP
       gvfs
     ];
   };

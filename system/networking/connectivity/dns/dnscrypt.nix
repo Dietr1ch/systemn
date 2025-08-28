@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   services = {
@@ -28,7 +33,7 @@
           # };
         };
       };
-    };  # ..services.dnscrypt-proxy2
+    }; # ..services.dnscrypt-proxy2
 
     opensnitch = {
       # https://github.com/evilsocket/opensnitch/wiki/Rules
@@ -49,13 +54,13 @@
             operand = "process.path";
 
             data = "${lib.getBin pkgs.dnscrypt-proxy2}/dnscrypt-proxy";
-            type ="simple";
+            type = "simple";
           };
-        };  # "0-ALLOW-DNSCrypt"
+        }; # "0-ALLOW-DNSCrypt"
 
-      };  # ..services.opensnitch.rules
-    };  # ..services.opensnitch
-  };  # ..services
+      }; # ..services.opensnitch.rules
+    }; # ..services.opensnitch
+  }; # ..services
 
   systemd = {
     services = {
@@ -64,7 +69,7 @@
           StateDirectory = "dnscrypt-proxy";
           ReadWritePaths = "/var/lib/dnscrypt-proxy"; # Cache directory for dnscrypt-proxy2, persist this
         };
-      };  # ..systemd.services.dnscrypt-proxy2
-    };  # ..systemd.services
-  };  # ..systemd
+      }; # ..systemd.services.dnscrypt-proxy2
+    }; # ..systemd.services
+  }; # ..systemd
 }

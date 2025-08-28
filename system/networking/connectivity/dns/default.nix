@@ -24,9 +24,9 @@
   imports = [
     ./avahi.nix
 
-    ./resolved.nix     # 127.0.0.53, 127.0.0.54
-    ./adguardhome.nix  # \> 127.0.0.55
-    ./dnscrypt.nix     #    \> 127.0.0.56
+    ./resolved.nix # 127.0.0.53, 127.0.0.54
+    ./adguardhome.nix # \> 127.0.0.55
+    ./dnscrypt.nix # \> 127.0.0.56
   ];
 
   # https://nixos.wiki/wiki/Networking
@@ -55,6 +55,6 @@
         "google-analytics.com"
         "www.google-analytics.com"
       ];
-    };  # ..networking.hosts
-  };  # ..networking
+    }; # ..networking.hosts
+  }; # ..networking
 }

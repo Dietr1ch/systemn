@@ -10,10 +10,10 @@
 
       # Setting fallbackDns to avoid default list
       fallbackDns = [
-        "127.0.0.55"  # adguardhome
+        "127.0.0.55" # adguardhome
         # "127.0.0.56"  # dnscrypt-proxy2 (behind adguardhome already)
       ];
-    };  # ..services.resolved
+    }; # ..services.resolved
 
     opensnitch = {
       # https://github.com/evilsocket/opensnitch/wiki/Rules
@@ -48,7 +48,7 @@
             ];
             type = "list";
           };
-        };  # "0-OPEN-resolved-53"
+        }; # "0-OPEN-resolved-53"
         # TODO: Allow querying resolved at 127.0.0.54:53
 
         # Link-local Multicast Name Resolution (LLMNR)
@@ -86,7 +86,7 @@
             ];
             type = "list";
           };
-        };  # "0-ALLOW-resolved-llmnr"
+        }; # "0-ALLOW-resolved-llmnr"
 
         # INTENT: Resolved can reach AdGuardHome
         "0-ALLOW-resolved-adguardhome" = {
@@ -124,11 +124,11 @@
             ];
             type = "list";
           };
-        };  # "0-ALLOW-resolved-adguardhome"
+        }; # "0-ALLOW-resolved-adguardhome"
 
-      };  # ..services.opensnitch.rules
-    };  # ..services.opensnitch
-  };  # ..services
+      }; # ..services.opensnitch.rules
+    }; # ..services.opensnitch
+  }; # ..services
 
   # https://nixos.wiki/wiki/Networking
   networking = {
@@ -140,9 +140,9 @@
 
       # "127.0.0.53"  # resolved. Self
       # "127.0.0.54"  # resolved. Self
-      "127.0.0.55"  # adguardhome
+      "127.0.0.55" # adguardhome
       # "127.0.0.56"  # dnscrypt-proxy2 (behind adguardhome already)
-    ];  # ..networking.nameservers
+    ]; # ..networking.nameservers
 
     # https://search.nixos.org/options?channel=unstable&query=networking.networkmanager
     networkmanager = {
@@ -155,11 +155,11 @@
         # See https://man.archlinux.org/man/NetworkManager.conf.5#CONNECTION_SECTION
         "connection.mdns" = 2;
       };
-    };  # ..networking.networkmanager
+    }; # ..networking.networkmanager
 
     # https://search.nixos.org/options?channel=unstable&query=networking.resolvconf
     resolvconf = {
       useLocalResolver = false;
     };
-  };  # ..networking
+  }; # ..networking
 }

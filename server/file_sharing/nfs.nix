@@ -24,19 +24,25 @@
     firewall = {
       # https://serverfault.com/questions/377170/which-ports-do-i-need-to-open-in-the-firewall-to-use-nfs
       allowedTCPPorts = [
-        111   # Portmapper
-        2049  # NFS
+        111 # Portmapper
+        2049 # NFS
       ];
       allowedTCPPortRanges = [
-        { from = 4000; to = 4002; }
+        {
+          from = 4000;
+          to = 4002;
+        }
       ];
 
       allowedUDPPorts = [
-        111   # Portmapper
-        2049  # NFS
+        111 # Portmapper
+        2049 # NFS
       ];
       allowedUDPPortRanges = [
-        { from = 4000; to = 4002; }
+        {
+          from = 4000;
+          to = 4002;
+        }
       ];
     };
   };

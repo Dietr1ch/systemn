@@ -25,10 +25,10 @@
         enable = true;
 
         addresses = true;
-        workstation = true;  # Register a service of type “_workstation._tcp” on the local LAN.
+        workstation = true; # Register a service of type “_workstation._tcp” on the local LAN.
         userServices = true;
       };
-    };  # ..services.avahi
+    }; # ..services.avahi
 
     opensnitch = {
       # https://github.com/evilsocket/opensnitch/wiki/Rules
@@ -51,7 +51,7 @@
               {
                 operand = "dest.network";
 
-                data = "224.0.0.0/24";  # IPv4 Multicast (https://en.wikipedia.org/wiki/Multicast_address#IPv4)
+                data = "224.0.0.0/24"; # IPv4 Multicast (https://en.wikipedia.org/wiki/Multicast_address#IPv4)
                 type = "network";
               }
               {
@@ -70,7 +70,7 @@
             ];
             type = "list";
           };
-        };  # "0-ALLOW-Avahi-IPv4_multicast"
+        }; # "0-ALLOW-Avahi-IPv4_multicast"
 
         # XXX: Should be enabled by default once we match with `user.name`
         "0-ALLOW-Avahi-IPv6_multicast" = lib.mkIf (config.users.users.avahi.uid != null) {
@@ -110,9 +110,9 @@
             ];
             type = "list";
           };
-        };  # "0-ALLOW-Avahi-IPv6_multicast"
+        }; # "0-ALLOW-Avahi-IPv6_multicast"
 
-      };  # ..services.opensnitch.rules
-    };  # ..services.opensnitch
-  };  # ..services
+      }; # ..services.opensnitch.rules
+    }; # ..services.opensnitch
+  }; # ..services
 }

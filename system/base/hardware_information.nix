@@ -3,16 +3,16 @@
 {
   environment = {
     systemPackages = with pkgs; [
-      lshw  # Hardware
-      lsof  # Open files
+      lshw # Hardware
+      lsof # Open files
 
-      clinfo  # OpenCL
+      clinfo # OpenCL
       pciutils
       usbutils
       glxinfo
       vulkan-tools
 
-      procps  # /proc
+      procps # /proc
       lm_sensors
     ];
   };

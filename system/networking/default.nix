@@ -1,8 +1,13 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
-    ./connectivity  # connectivity/default.nix
+    ./connectivity # connectivity/default.nix
 
     ./information.nix
     ./firewall.nix

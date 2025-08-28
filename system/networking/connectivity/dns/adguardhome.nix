@@ -25,7 +25,7 @@
           port = 53;
 
           upstream_dns = [
-            "127.0.0.56:53"  # dnscrypt-proxy2
+            "127.0.0.56:53" # dnscrypt-proxy2
           ];
         };
         filtering = {
@@ -33,12 +33,18 @@
           filtering_enabled = true;
         };
         # ../../../secrets.nix
-        filters = map(url: { enabled = true; url = url; }) [
-          "https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt"  # The Big List of Hacked Malware Web Sites
-          "https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt"  # malicious url blocklist
-        ];
+        filters =
+          map
+            (url: {
+              enabled = true;
+              url = url;
+            })
+            [
+              "https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt" # The Big List of Hacked Malware Web Sites
+              "https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt" # malicious url blocklist
+            ];
       };
-    };  # ..services.adguardhome
+    }; # ..services.adguardhome
 
     opensnitch = {
       # https://github.com/evilsocket/opensnitch/wiki/Rules
@@ -47,7 +53,7 @@
         # TODO: Whitelist DNSCrypt (127.0.0.56:53)
         # TODO: Whitelist adguardteam.github.io:443
 
-      };  # ..services.opensnitch.rules
-    };  # ..services.opensnitch
-  };  # ..services
+      }; # ..services.opensnitch.rules
+    }; # ..services.opensnitch
+  }; # ..services
 }

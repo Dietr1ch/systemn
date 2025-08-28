@@ -11,8 +11,8 @@
       # https://github.com/FeralInteractive/gamemode/blob/master/example/gamemode.ini
       settings = {
         general = {
-          renice = 10;  # Use niceness -10
-          ioprio = 0;  # iopriority of clients to BE/0
+          renice = 10; # Use niceness -10
+          ioprio = 0; # iopriority of clients to BE/0
           desiredgov = "performance";
           softrealtime = "auto";
 
@@ -36,9 +36,11 @@
     # https://search.nixos.org/options?channel=unstable&query=programs.steam
     steam = {
       package = pkgs.steam.override {
-        extraPkgs = (pkgs: with pkgs; [
-          gamemode
-        ]);
+        extraPkgs = (
+          pkgs: with pkgs; [
+            gamemode
+          ]
+        );
       };
     };
   };
