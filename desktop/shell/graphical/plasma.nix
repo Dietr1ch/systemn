@@ -276,7 +276,7 @@
   qt = {
     enable = true;
     style = lib.mkDefault "breeze";
-    platformTheme = lib.mkDefault "kde6";
+    platformTheme = lib.mkDefault "kde";
   };
 
   boot = {
