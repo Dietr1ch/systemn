@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ lib, ... }:
 let
   themes = {
     # The 16 colors palette used by the virtual consoles. Leave empty to use the
