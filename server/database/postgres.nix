@@ -53,7 +53,7 @@
       exporters = {
         node = {
           enabledCollectors = [
-            "postgres"
+            # "postgres"
           ];
         };
       };
