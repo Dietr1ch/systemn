@@ -262,9 +262,15 @@
 
     plasma6 = {
       excludePackages = with pkgs.kdePackages; [
-        elisa
-        kate
-        xwaylandvideobridge
+        elisa # Simple music player aiming to provide a nice experience for its users
+        kate # Text editor
+        kdepim-runtime # Akonadi agents and resources
+        kmahjongg # KMahjongg is a tile matching game for one or two players
+        kmines # KMines is the classic Minesweeper game
+        konversation # User-friendly and fully-featured IRC client
+        kpat # KPatience offers a selection of solitaire card games
+        ksudoku # KSudoku is a logic-based symbol placement puzzle
+        ktorrent # Powerful BitTorrent client
       ];
     };
   };
