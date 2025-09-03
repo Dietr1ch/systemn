@@ -216,6 +216,11 @@
       kdePackages.kwayland
       kdePackages.qtbase
 
+      wayland-protocols
+      kdePackages.plasma-wayland-protocols
+      kdePackages.wayland-protocols
+      kdePackages.wayqt
+
       kdePackages.plasma-pa # NOTE: Enabled through Pulse Audio, hardware.pulseaudio.enable
       kdePackages.plasma-nm # NOTE: Enabled through NetworkManager, networking.networkmanager.(enable)
 
