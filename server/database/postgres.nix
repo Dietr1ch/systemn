@@ -3,6 +3,7 @@
 # https://nixos.wiki/wiki/PostgreSQL
 {
   services = {
+
     # https://search.nixos.org/options?channel=unstable&query=services.postgresql
     postgresql = {
       enable = true;
@@ -47,5 +48,16 @@
         postgis # GIS
       ];
     };
+
+    prometheus = {
+      exporters = {
+        node = {
+          enabledCollectors = [
+            "postgres"
+          ];
+        };
+      };
+    };
+
   };
 }

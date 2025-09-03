@@ -38,6 +38,17 @@
 
       };
     };
+
+    prometheus = {
+      exporters = {
+        node = {
+          enabledCollectors = [
+            "nginx"
+            "nginxlog"
+          ];
+        };
+      };
+    };
   };
 
   # https://nixos.wiki/wiki/ACME

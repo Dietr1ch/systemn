@@ -1,0 +1,45 @@
+{ config, ... }:
+
+# https://wiki.nixos.org/wiki/Prometheus
+# https://xeiaso.net/blog/prometheus-grafana-loki-nixos-2020-11-20/
+{
+  services = {
+    # https://search.nixos.org/options?channel=unstable&query=services.prometheus
+    prometheus = {
+      enable = true;
+
+      # Listens on http://localhost:9090/
+      # listenAddress = "0.0.0.0";
+      # port = 9090;
+
+      exporters = {
+        # https://search.nixos.org/options?channel=unstable&query=services.prometheus.exporters.node
+        node = {
+          enable = true;
+
+          # Listens on http://localhost:9100/
+          # listenAddress = "0.0.0.0";
+          # port = 9100;
+
+          enabledCollectors = [
+            "systemd"
+          ];
+        };
+      };
+
+      scrapeConfigs = [
+        {
+          job_name = "self-node";
+          static_configs = [
+            {
+              targets = [
+                "127.0.0.1:${toString config.services.prometheus.exporters.node.port}"
+              ];
+            }
+          ];
+        }
+      ];
+
+    };
+  };
+}
