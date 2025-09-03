@@ -262,6 +262,8 @@
 
     plasma6 = {
       excludePackages = with pkgs.kdePackages; [
+        xwaylandvideobridge
+
         elisa # Simple music player aiming to provide a nice experience for its users
         kate # Text editor
         kdepim-runtime # Akonadi agents and resources
