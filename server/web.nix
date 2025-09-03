@@ -43,8 +43,8 @@
       exporters = {
         node = {
           enabledCollectors = [
-            "nginx"
-            "nginxlog"
+            # "nginx"
+            # "nginxlog"
           ];
         };
       };

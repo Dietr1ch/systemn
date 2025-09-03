@@ -21,6 +21,8 @@
           # listenAddress = "0.0.0.0";
           # port = 9100;
 
+          # Collectors in addition to the default ones,
+          # - https://github.com/prometheus/node_exporter#enabled-by-default
           enabledCollectors = [
             "systemd"
           ];
