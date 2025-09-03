@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ pkgs, lib, ... }:
 
 {
   programs = {
@@ -15,5 +15,12 @@
     portal = {
       enable = true;
     };
+  };
+
+  environment = {
+    systemPackages = with pkgs; [
+      wayland-protocols
+      hyprland-protocols
+    ];
   };
 }
