@@ -6,8 +6,9 @@
 
 {
   imports = [
-    ./steam.nix
     ./gamemode.nix
+    ./obs.nix
+    ./steam.nix
   ];
 
   boot = {
