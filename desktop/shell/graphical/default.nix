@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -17,6 +17,11 @@
   };
 
   environment = {
+    systemPackages = with pkgs; [
+      vkdevicechooser
+      vkdisplayinfo
+    ];
+
     variables = {
       # SDL2 (https://github.com/libsdl-org/SDL/blob/SDL2/include/SDL_hints.h)
       "SDL_VIDEODRIVER" = "wayland";
