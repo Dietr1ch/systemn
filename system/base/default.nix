@@ -16,6 +16,7 @@
     # ./watchdog.nix
   ];
 
+  # TODO: Try switching to dbus-broker later
   # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/services/system/dbus.nix
-  services.dbus.implementation = "broker";
+  # services.dbus.implementation = "broker";
 }
