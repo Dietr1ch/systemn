@@ -224,6 +224,8 @@
       kdePackages.plasma-pa # NOTE: Enabled through Pulse Audio, hardware.pulseaudio.enable
       kdePackages.plasma-nm # NOTE: Enabled through NetworkManager, networking.networkmanager.(enable)
 
+      kdePackages.polkit-kde-agent-1
+
       kdePackages.kleopatra
       cryptsetup
       kdePackages.plasma-vault

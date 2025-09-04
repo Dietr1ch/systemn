@@ -21,6 +21,8 @@
     systemPackages = with pkgs; [
       wayland-protocols
       hyprland-protocols
+
+      hyprpolkitagent
     ];
   };
 }
