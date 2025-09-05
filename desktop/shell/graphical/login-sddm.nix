@@ -1,11 +1,25 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   services = {
     displayManager = {
+      # https://search.nixos.org/options?channel=unstable&query=services.displayManager.sddm
       sddm = {
         enable = true;
-        wayland.enable = true;
+
+        # ThemeDir = "/run/current-system/sw/share/sddm/themes";
+        # FacesDir = "/run/current-system/sw/share/sddm/faces";
+        # theme = ??;
+
+        wayland = {
+          enable = true;
+        };
+
+        extraPackages = with pkgs; [
+          kdePackages.qtsvg
+          kdePackages.qtmultimedia
+          kdePackages.qtvirtualkeyboard
+        ];
       };
     };
   };
