@@ -19,6 +19,9 @@
 
   environment = {
     systemPackages = with pkgs; [
+      # Required packages
+      kitty
+
       wayland-protocols
       hyprland-protocols
 
