@@ -30,8 +30,9 @@
       "SDL_VIDEO_DRIVER" = "wayland";
       "SDL_AUDIO_DRIVER" = "pipewire";
 
-      "QT_QPA_PLATFORM" = "wayland";
       "ELECTRON_OZONE_PLATFORM_HINT" = "wayland";
+      "NIXOS_OZONE_WL" = "1";
+      "QT_QPA_PLATFORM" = "wayland";
     };
   };
 }
