@@ -4,6 +4,7 @@
   hardware = {
     # https://search.nixos.org/options?channel=unstable&query=hardware.bluetooth
     bluetooth = {
+      # NOTE: This enables powerdevil
       enable = true;
 
       settings = {
