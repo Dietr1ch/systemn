@@ -201,6 +201,14 @@
       defaultSession = "plasma";
     };
 
+    displayManager = {
+      # ./login-sddm.nix
+      sddm = {
+        wayland = {
+          compositor = "kwin";
+        };
+      };
+    };
     desktopManager = {
       # ~/Code/github/Dietr1ch/nixpkgs/nixos/modules/services/desktop-managers/plasma6.nix
       plasma6 = {
