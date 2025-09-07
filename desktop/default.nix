@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -7,4 +7,10 @@
 
     ./sound.nix
   ];
+
+  environment = {
+    systemPackages = with pkgs; [
+      xdg-user-dirs
+    ];
+  };
 }
