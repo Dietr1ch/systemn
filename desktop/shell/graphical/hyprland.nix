@@ -23,7 +23,7 @@
       kitty
 
       brightnessctl
-      mpc
+      playerctl
       swaylock
       wofi
 
