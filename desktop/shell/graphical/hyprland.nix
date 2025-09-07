@@ -22,10 +22,21 @@
       # Required packages
       kitty
 
+      brightnessctl
+      mpc
+      swaylock
+      wofi
+
       wayland-protocols
       hyprland-protocols
 
+      hyprcursor
+      hyprland-activewindow
+      hyprpaper
       hyprpolkitagent
+      hyprsysteminfo
+      rofi
+      waybar
     ];
   };
 }
