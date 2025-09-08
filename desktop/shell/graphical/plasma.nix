@@ -289,6 +289,7 @@
   xdg = {
     portal = {
       enable = true;
+      xdgOpenUsePortal = true;
 
       extraPortals = with pkgs; [
         kdePackages.xdg-desktop-portal-kde
