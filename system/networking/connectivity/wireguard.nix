@@ -43,4 +43,11 @@
     #   };
     # };
   };
+
+  environment = {
+    systemPackages = with pkgs; [
+      wireguard-tools
+      wireguard-vanity-keygen
+    ];
+  };
 }
