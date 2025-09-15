@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 # https://nixos.wiki/wiki/PostgreSQL
 {
@@ -47,6 +52,13 @@
         pgvector # Vector search
         postgis # GIS
       ];
+    };
+
+    # https://search.nixos.org/options?channel=unstable&query=services.pgadmin
+    pgadmin = {
+      enable = config.services.pgadmin.initialPasswordFile != null;
+
+      initialEmail = "admin@${config.networking.domain}";
     };
 
     prometheus = {
