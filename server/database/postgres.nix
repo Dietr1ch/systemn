@@ -61,15 +61,6 @@
     #   initialEmail = "admin@${config.networking.domain}";
     # };
 
-    prometheus = {
-      exporters = {
-        node = {
-          enabledCollectors = [
-            "postgres"
-          ];
-        };
-      };
-    };
 
   };
 }
