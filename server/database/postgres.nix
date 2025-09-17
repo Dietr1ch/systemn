@@ -61,6 +61,29 @@
     #   initialEmail = "admin@${config.networking.domain}";
     # };
 
+    prometheus = {
+      exporters = {
+        # https://search.nixos.org/options?channel=unstable&query=services.prometheus.exporters.postgres
+        postgres = {
+          enable = true;
+
+          port = 9101;
+          telemetryPath = "/metrics";
+        };
+      };
+      scrapeConfigs = [
+        {
+          job_name = "self-postgres";
+          static_configs = [
+            {
+              targets = [
+                "127.0.0.1:${toString config.services.prometheus.exporters.postgres.port}"
+              ];
+            }
+          ];
+        }
+      ];
+    };
 
   };
 }
