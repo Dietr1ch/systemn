@@ -9,7 +9,7 @@
     # https://search.nixos.org/options?channel=unstable&query=services.dnscrypt-proxy2
     #
     # Listens DNS on 127.0.0.56:53
-    dnscrypt-proxy2 = {
+    dnscrypt-proxy = {
       enable = true;
 
       # https://github.com/DNSCrypt/dnscrypt-proxy/blob/master/dnscrypt-proxy/example-dnscrypt-proxy.toml
@@ -32,7 +32,7 @@
           # };
         };
       };
-    }; # ..services.dnscrypt-proxy2
+    }; # ..services.dnscrypt-proxy
 
     opensnitch = {
       # https://github.com/evilsocket/opensnitch/wiki/Rules
