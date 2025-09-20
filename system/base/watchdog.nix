@@ -8,7 +8,7 @@
       Manager = {
         # The amount of time which can elapse before a watchdog hardware device
         # will automatically reboot the system.
-        RuntimeWatchdogSec = "20s";
+        RuntimeWatchdogSec = "10s";
 
         # The amount of time which can elapse after a reboot has been triggered
         # before a watchdog hardware device will automatically reboot the
