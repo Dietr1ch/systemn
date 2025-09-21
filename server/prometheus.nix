@@ -29,6 +29,7 @@
           # Collectors in addition to the default ones,
           # - https://github.com/prometheus/node_exporter#enabled-by-default
           enabledCollectors = [
+            "processes"
             "systemd"
           ];
         };
