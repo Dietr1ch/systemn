@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 # https://wiki.nixos.org/wiki/Prometheus
 # https://xeiaso.net/blog/prometheus-grafana-loki-nixos-2020-11-20/
@@ -11,6 +11,11 @@
       # Listens on http://localhost:9090/
       # listenAddress = "0.0.0.0";
       # port = 9090;
+
+      # https://search.nixos.org/options?channel=unstable&query=services.prometheus.globalConfig
+      globalConfig = {
+        scrape_interval = lib.mkDefault "10s";
+      };
 
       exporters = {
         # https://search.nixos.org/options?channel=unstable&query=services.prometheus.exporters.node
@@ -29,6 +34,7 @@
         };
       };
 
+      # https://search.nixos.org/options?channel=unstable&query=services.prometheus.scrapeConfigs
       scrapeConfigs = [
         {
           job_name = "self-node";
