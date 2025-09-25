@@ -18,10 +18,11 @@
           hardware-bluetooth = import ./hardware/bluetooth.nix;
           hardware-graphics = import ./hardware/graphics.nix;
           hardware-keyboard-ergodox_ez = import ./hardware/keyboard/ergodox_ez.nix;
-          hardware-truerng = import ./hardware/truerng.nix;
+          hardware-memtest = import ./hardware/memtest.nix;
+          hardware-phone = import ./hardware/phone.nix;
           hardware-printing = import ./hardware/printing.nix;
           hardware-scanning = import ./hardware/scanning.nix;
-          hardware-phone = import ./hardware/phone.nix;
+          hardware-truerng = import ./hardware/truerng.nix;
           # Laptop
           hardware-laptop = import ./hardware/laptop; # ./hardware/laptop/default.nix
           hardware-laptop-power = import ./hardware/laptop/power.nix;
