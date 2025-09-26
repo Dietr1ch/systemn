@@ -12,6 +12,8 @@
       # listenAddress = "0.0.0.0";
       # port = 9090;
 
+      # retentionTime = lib.mkDefault "15d";
+
       # https://search.nixos.org/options?channel=unstable&query=services.prometheus.globalConfig
       globalConfig = {
         scrape_interval = lib.mkDefault "10s";
