@@ -10,13 +10,6 @@
     kdeconnect.enable = true;
     # TODO: Consider dropping kde-pim
     # kde-pim.enable = lib.mkForce false;  # Drop KDE PIM (KMail, Kontact, ...)
-
-    gnupg = {
-      # https://search.nixos.org/options?channel=unstable&query=programs.gnupg.agent
-      agent = {
-        pinentryPackage = lib.mkDefault pkgs.pinentry-qt;
-      };
-    };
   };
 
   services = {
@@ -230,8 +223,6 @@
       qt6.qtwayland
       kdePackages.kwayland
       kdePackages.qtbase
-
-      pinentry-qt
 
       wayland-protocols
       kdePackages.plasma-wayland-protocols
