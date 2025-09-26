@@ -25,7 +25,7 @@
 
         # https://www.gnupg.org/documentation/manuals/gnupg26/gpg-agent.1.html
         settings = {
-          default-cache-ttl = 300; # 5m
+          # default-cache-ttl = 60; # 1m  # Set by ../../security/yubikey.nix
         }; # ..programs.gnupg.agent.settings
       }; # ..programs.gnupg.agent
     }; # ..programs.gnupg
@@ -67,6 +67,8 @@
     ];
   };
 }
+
+
 
 
 
