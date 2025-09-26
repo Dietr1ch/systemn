@@ -1,11 +1,11 @@
 { pkgs, lib, ... }:
 
-# ~/Code/github/Dietr1ch/nixpkgs/nixos/modules/services/desktop-managers/plasma6.nix
+# ~/Projects/nixpkgs/nixos/modules/services/desktop-managers/plasma6.nix
 {
   programs = {
-    # ~/Code/github/Dietr1ch/nixpkgs/nixos/modules/programs/xwayland.nix
+    # ~/Projects/nixpkgs/nixos/modules/programs/xwayland.nix
     xwayland.enable = lib.mkDefault false; # TODO: Drop xwayland when feasible
-    # ~/Code/github/Dietr1ch/nixpkgs/nixos/modules/programs/kdeconnect.nix
+    # ~/Projects/nixpkgs/nixos/modules/programs/kdeconnect.nix
     # https://search.nixos.org/options?channel=unstable&query=kdeconnect
     kdeconnect.enable = true;
     # TODO: Consider dropping kde-pim
@@ -210,7 +210,7 @@
       };
     };
     desktopManager = {
-      # ~/Code/github/Dietr1ch/nixpkgs/nixos/modules/services/desktop-managers/plasma6.nix
+      # ~/Projects/nixpkgs/nixos/modules/services/desktop-managers/plasma6.nix
       plasma6 = {
         enable = true;
       };
