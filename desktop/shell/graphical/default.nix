@@ -20,6 +20,8 @@
     systemPackages = with pkgs; [
       vkdevicechooser
       vkdisplayinfo
+
+      vokoscreen-ng
     ];
 
     variables = {
