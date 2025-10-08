@@ -16,10 +16,12 @@
       # /etc/systemd/oomd.conf
       # https://man.archlinux.org/man/systemd-oomd.8
       # https://man.archlinux.org/man/oomd.conf.5.en
-      extraConfig = {
-        "DefaultMemoryPressureDurationSec" = "20s";
-        "DefaultMemoryPressureLimit" = "60%";
-        "SwapUsedLimit" = "80%";
+      settings = {
+        OOM = {
+          DefaultMemoryPressureDurationSec = "20s";
+          DefaultMemoryPressureLimit = "60%";
+          SwapUsedLimit = "80%";
+        };
       };
     };
 
