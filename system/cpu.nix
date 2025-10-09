@@ -2,7 +2,8 @@
 
 {
   programs = {
-    # https://search.nixos.org/options?channel=unstable&query=corectrl
+    # NOTE: Deprecated
+    # https://search.nixos.org/options?channel=unstable&query=programs.corectrl
     corectrl = {
       enable = true;
     };
@@ -26,6 +27,14 @@
       # scheduler = "scx_rusty";
       # scheduler = "scx_simple";
       # scheduler = "scx_userland";
+    };
+
+    # https://search.nixos.org/options?channel=unstable&query=programs.lact
+    lact = {
+      enable = true;
+
+      # https://github.com/ilya-zlobintsev/LACT/blob/master/docs/CONFIG.md
+      # settings = {};
     };
   };
 
