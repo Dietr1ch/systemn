@@ -9,7 +9,6 @@
       clinfo # OpenCL
       pciutils
       usbutils
-      glxinfo
       vulkan-tools
 
       procps # /proc
