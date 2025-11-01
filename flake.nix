@@ -108,13 +108,6 @@
           # glxinfo
           # vulkan-tools
           info-network = import ./info/network;
-
-          users = import ./users;
-          # Default shell
-          users-root = import ./users/root;
-          # Initial password
-          users-dietr1ch = import ./users/dietr1ch;
-          # Initial password
         };
     };
 }
