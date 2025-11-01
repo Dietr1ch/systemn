@@ -52,7 +52,7 @@
           operator = {
             operand = "process.path";
 
-            data = "${lib.getBin pkgs.dnscrypt-proxy2}/dnscrypt-proxy";
+            data = "${lib.getBin pkgs.dnscrypt-proxy}/dnscrypt-proxy";
             type = "simple";
           };
         }; # "0-ALLOW-DNSCrypt"
