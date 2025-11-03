@@ -7,8 +7,9 @@
 #   > avahi
 #   > resolved              | 127.0.0.53,127.0.0.54
 #     > adguardhome         | 127.0.0.55 Upstream filtering rules
-#       > DNSCrypt-proxy2   | 127.0.0.56 static filtering
-#         > (Friendly peer DNSCrypt-proxy2)
+#       - Web UI: http://127.0.0.1:3053
+#       > DNSCrypt-proxy   | 127.0.0.56 static filtering
+#         > (Friendly peer DNSCrypt-proxy)
 #         > (Internet)
 # ≯ systemd-resolved (disabled)
 

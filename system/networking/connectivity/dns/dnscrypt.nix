@@ -8,7 +8,7 @@
   services = {
     # https://search.nixos.org/options?channel=unstable&query=services.dnscrypt-proxy2
     #
-    # Listens DNS on 127.0.0.56:53
+    # Listens DNS on 127.0.0.56:53 (only adguardhome should query it).
     dnscrypt-proxy = {
       enable = true;
 
@@ -24,7 +24,7 @@
         odoh_servers = false;
 
         # cache_min_ttl = 1 * 24 * 60 * 60;
-        cache_max_ttl = 3 * 24 * 60 * 60;
+        cache_max_ttl = 3 * 24 * 60 * 60; # 3 days
 
         sources = {
           # ../../../secrets.nix
