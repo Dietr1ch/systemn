@@ -51,6 +51,7 @@
           system-input-mouse = import ./system/input/mouse.nix;
           system-input-touchpad = import ./system/input/touchpad.nix;
           system-input-keyboard-dvorak = import ./system/input/keyboard/dvorak.nix;
+          system-input-keyboard-intl = import ./system/input/keyboard/intl.nix;
           # Networking
           system-networking = import ./system/networking; # ./system/networking/default.nix
           system-networking-connectivity = import ./system/networking/connectivity/default.nix;
