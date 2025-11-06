@@ -89,4 +89,55 @@ in
   console = {
     colors = map (lib.strings.removePrefix "#") themes.afterglow;
   };
+
+  programs = {
+    # https://search.nixos.org/options?channel=unstable&query=programs.vivid
+    # https://github.com/sharkdp/vivid
+    #
+    #     ```fish
+    #     for theme in (vivid themes)
+    #         echo "Theme: $theme"
+    #         set -lx LS_COLORS (vivid generate $theme)
+    #         ls
+    #         echo
+    #     end
+    #     ```
+    #
+    #     Themes:
+    #     - alabaster_dark
+    #     - ayu
+    #     - catppuccin-frappe
+    #     - catppuccin-latte
+    #     - catppuccin-macchiato
+    #     - catppuccin-mocha
+    #     - dracula
+    #     - gruvbox-dark
+    #     - gruvbox-dark-hard
+    #     - gruvbox-dark-soft
+    #     - gruvbox-light
+    #     - gruvbox-light-hard
+    #     - gruvbox-light-soft
+    #     - iceberg-dark
+    #     - jellybeans
+    #     - lava
+    #     - modus-operandi
+    #     - molokai
+    #     - nord
+    #     - one-dark
+    #     - one-light
+    #     - rose-pine
+    #     - rose-pine-dawn
+    #     - rose-pine-moon
+    #     - snazzy
+    #     - solarized-dark
+    #     - solarized-light
+    #     - tokyonight-moon
+    #     - tokyonight-night
+    #     - tokyonight-storm
+    #     - zenburn
+    vivid = {
+      enable = true;
+      theme = lib.mkDefault "gruvbox-dark-soft";
+    };
+  };
 }
