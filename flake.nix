@@ -16,7 +16,8 @@
           # Hardware
           # --------
           hardware-bluetooth = import ./hardware/bluetooth.nix;
-          hardware-graphics = import ./hardware/graphics.nix;
+          hardware-graphics = import ./hardware/graphics/default.nix;
+          hardware-graphics-amd = import ./hardware/graphics/amd.nix;
           hardware-keyboard-ergodox_ez = import ./hardware/keyboard/ergodox_ez.nix;
           hardware-memtest = import ./hardware/memtest.nix;
           hardware-phone = import ./hardware/phone.nix;
