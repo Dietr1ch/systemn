@@ -22,6 +22,7 @@
           hardware-phone = import ./hardware/phone.nix;
           hardware-printing = import ./hardware/printing.nix;
           hardware-scanning = import ./hardware/scanning.nix;
+          hardware-storage = import ./hardware/storage.nix;
           hardware-truerng = import ./hardware/truerng.nix;
           # Laptop
           hardware-laptop = import ./hardware/laptop; # ./hardware/laptop/default.nix
