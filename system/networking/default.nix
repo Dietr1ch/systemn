@@ -20,6 +20,15 @@
 
   # https://search.nixos.org/options?channel=unstable&query=networking
   networking = {
+    networkmanager = {
+      ethernet = {
+        macAddress = "random";
+      };
+      wifi = {
+        macAddress = "random";
+        scanRandMacAddress = true;
+      };
+    };
     dhcpcd = {
       enable = true;
 
