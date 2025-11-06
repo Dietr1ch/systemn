@@ -14,6 +14,11 @@
       ];
 
       bantime = "72h";
+      bantime-increment = {
+        enable = true;
+        maxtime = "14d";
+        rndtime = "30m";
+      };
     };
   };
 }
