@@ -2,6 +2,7 @@
   ...
 }:
 
+# https://wiki.nixos.org/wiki/WireGuard
 {
   networking = {
     # https://search.nixos.org/options?channel=unstable&query=networking.wireguard
