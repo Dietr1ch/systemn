@@ -8,8 +8,6 @@
     # https://search.nixos.org/options?channel=unstable&query=networking.wireguard
     wireguard = {
       enable = true;
-
-      # ../../secrets.nix
     };
   };
 

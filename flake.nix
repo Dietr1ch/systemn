@@ -93,23 +93,6 @@
           server-syncthing = import ./server/syncthing.nix;
           server-transmission = import ./server/transmission.nix;
           server-web = import ./server/web.nix;
-
-          # Drafts
-          # ------
-          network = import ./network;
-          # OpenSnitch
-          # NFS
-          # Samba
-
-          info = import ./info;
-          # lsusb
-          # lspci
-          # lscpu
-          # lsgpu
-          info-video = import ./info/video;
-          # glxinfo
-          # vulkan-tools
-          info-network = import ./info/network;
         };
     };
 }
