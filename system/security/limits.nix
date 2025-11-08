@@ -23,14 +23,14 @@
           domain = "*";
           type = "soft";
           item = "memlock";
-          value = "4096";
-        } # 4MB
+          value = "4096"; # 4MB
+        }
         {
           domain = "*";
           type = "hard";
           item = "memlock";
-          value = "65536";
-        } # 64M
+          value = "65536"; # 64M
+        }
         # nofile :: maximum number of open file descriptors
         # stack :: maximum stack size (KB)
         # cpu :: maximum CPU time (minutes)
