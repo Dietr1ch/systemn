@@ -15,6 +15,8 @@
           enable = true;
         };
 
+        autoNumlock = true;
+
         extraPackages = with pkgs; [
           kdePackages.qtsvg
           kdePackages.qtmultimedia
