@@ -22,6 +22,9 @@
     # https://search.nixos.org/options?channel=unstable&query=security.sudo-rs
     sudo-rs = {
       enable = true;
+
+      wheelNeedsPassword = true;
+      execWheelOnly = true;
     };
   };
 }
