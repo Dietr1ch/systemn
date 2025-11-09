@@ -37,7 +37,6 @@
 
       powerline-fonts
 
-      emojione
       noto-fonts-color-emoji
     ];
   };
