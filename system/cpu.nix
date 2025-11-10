@@ -39,8 +39,9 @@
   };
 
   environment = {
-    systemPackages = with pkgs; [
-      cpufrequtils
+    # NOTE: cpufrequtils doesn't build on aarch64
+    systemPackages = lib.optionals pkgs.stdenv.hostPlatform.isx86_64 [
+      pkgs.cpufrequtils
     ];
   };
 }
