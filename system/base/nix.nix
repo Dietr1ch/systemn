@@ -17,7 +17,8 @@
         "cgroups" # https://nix.dev/manual/nix/2.24/development/experimental-features#xp-feature-cgroups
       ];
 
-      connect-timeout = lib.mkDefault 2;
+      # Corresponds to curl's --connect-timeout.
+      connect-timeout = lib.mkDefault 5;
 
       # ../../secrets.nix
       # extra-substituters = [
