@@ -24,6 +24,9 @@
       # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html#conf-preallocate-contents
       preallocate-contents = lib.mkDefault true;
 
+      # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html#conf-use-cgroups
+      use-cgroups = lib.mkDefault true;
+
       # ../../secrets.nix
       # extra-substituters = [
       # ];
