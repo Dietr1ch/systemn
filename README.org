@@ -1,0 +1,171 @@
+* Info
+These are my personal nixos configuration building blocks.
+
+* Examples
+** Typical system configuration
+In your ~/etc/nixos/~ directory,
+
+*** flake.nix
+#+begin_src nix
+  {
+    description = "YOUR_MACHINE's NixOS configuration";
+
+    inputs = {
+      nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+      nixos-hardware.url = "github:NixOS/nixos-hardware";
+
+      systemn = {
+        url = "github:Dietr1ch/systemn";
+        inputs = {
+          nixpkgs.follows = "nixpkgs";
+        };
+      };
+    };
+
+    nixConfig = {
+      extra-substituters = [
+        "https://nix-community.cachix.org" # Cachix - nix-community
+        "https://devenv.cachix.org" # Cachix - devenv (https://devenv.sh/guides/using-with-flakes/#getting-started)
+      ];
+      extra-trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=" # Cachix - nix-community
+        "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=" # Cachix - devenv (https://devenv.sh/guides/using-with-flakes/#getting-started)
+      ];
+    };
+
+    outputs =
+      {
+        nixpkgs,
+        nixos-hardware,
+        systemn,
+        ...
+      }@attrs:
+      {
+        nixosConfigurations = {
+
+          "YOUR_MACHINE" = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            modules = [
+              # NixOS Hardware
+              # ==============
+              # CPU - AMD
+              nixos-hardware.nixosModules.common-cpu-amd # ~/Projects/nixos-hardware/common/cpu/amd/default.nix
+              nixos-hardware.nixosModules.common-cpu-amd-pstate # ~/Projects/nixos-hardware/common/cpu/amd/pstate.nix
+              nixos-hardware.nixosModules.common-cpu-amd-zenpower # ~/Projects/nixos-hardware/common/cpu/amd/zenpower.nix
+              # GPU - AMD
+              nixos-hardware.nixosModules.common-gpu-amd # ~/Projects/nixos-hardware/common/gpu/amd/default.nix
+              # SSD
+              nixos-hardware.nixosModules.common-pc-ssd # ~/Projects/nixos-hardware/common/pc/ssd/default.nix
+
+              # SystemN  ~/Projects/systemn/flake.nix
+              # =======
+              # Hardware
+              systemn.nixosModules.hardware # ~/Projects/systemn/hardware/default.nix
+              systemn.nixosModules.hardware-bluetooth # ~/Projects/systemn/hardware/bluetooth.nix
+              systemn.nixosModules.hardware-graphics # ~/Projects/systemn/hardware/graphics/default.nix
+              # systemn.nixosModules.hardware-graphics-amd # ~/Projects/systemn/hardware/graphics/amd.nix
+              # systemn.nixosModules.hardware-keyboard-ergodox_ez # ~/Projects/systemn/hardware/keyboard/ergodox_ez.nix
+              systemn.nixosModules.hardware-memtest # ~/Projects/systemn/hardware/memtest.nix
+              systemn.nixosModules.hardware-phone # ~/Projects/systemn/hardware/phone.nix
+              systemn.nixosModules.hardware-printing # ~/Projects/systemn/hardware/printing.nix
+              # systemn.nixosModules.hardware-truerng  # ~/Projects/systemn/hardware/truerng.nix
+              systemn.nixosModules.hardware-workstation # ~/Projects/systemn/hardware/workstation/default.nix
+
+              # System
+              systemn.nixosModules.system # ~/Projects/systemn/system/default.nix
+              systemn.nixosModules.system-base-hardware_information # ~/Projects/systemn/system/base/hardware_information.nix
+              systemn.nixosModules.system-base-watchdog # ~/Projects/systemn/system/base/watchdog.nix
+              # systemn.nixosModules.system-boot-efi # ~/Projects/systemn/system/boot/efi.nix
+              systemn.nixosModules.system-input-keyboard-dvorak # ~/Projects/systemn/system/input/keyboard/dvorak.nix
+              systemn.nixosModules.system-input-mouse # ~/Projects/systemn/system/input/mouse.nix
+              # systemn.nixosModules.system-input-racing_wheel # ~/Projects/systemn/system/input/racing_wheel.nix
+              systemn.nixosModules.system-networking # ~/Projects/systemn/system/networking/default.nix
+              # systemn.nixosModules.system-networking-connectivity-wireguard  # ~/Projects/systemn/system/networking/connectivity/wireguard.nix
+              # systemn.nixosModules.system-networking-connectivity-zerotier # ~/Projects/systemn/system/networking/connectivity/zerotier.nix
+              # systemn.nixosModules.system-security-yubikey # ~/Projects/systemn/system/security/yubikey.nix;
+
+              # Desktop
+              systemn.nixosModules.desktop # ~/Projects/systemn/desktop/default.nix
+              systemn.nixosModules.desktop-gaming # ~/Projects/systemn/desktop/gaming/default.nix
+              # systemn.nixosModules.desktop-shell-graphical-hyprland # ~/Projects/systemn/desktop/shell/graphical/hyprland.nix
+
+              # Workstation
+              systemn.nixosModules.workstation-virtualisation # ~/Projects/systemn/workstation/virtualisation/default.nix
+
+              # Server
+              # systemn.nixosModules.monero  # ~/Projects/systemn/server/monero.nix
+              # systemn.nixosModules.server-database-postgres # ~/Projects/systemn/server/database/postgres.nix
+              systemn.nixosModules.server-grafana # ~/Projects/systemn/server/grafana.nix
+              systemn.nixosModules.server-nix_serve # ~/Projects/systemn/server/nix-serve.nix
+              systemn.nixosModules.server-ollama # ~/Projects/systemn/server/ollama.nix
+              systemn.nixosModules.server-prometheus # ~/Projects/systemn/server/prometheus.nix
+              systemn.nixosModules.server-transmission # ~/Projects/systemn/server/transmission.nix
+              systemn.nixosModules.server-web # ~/Projects/systemn/server/web.nix
+
+              # Configuration
+              # =============
+              ./secrets # ./secrets/default.nix
+              ./configuration.nix
+            ];
+          };
+
+        };
+      };
+  }
+#+end_src
+*** configuration.nix
+#+begin_src nix
+  {
+    config,
+    pkgs,
+    lib,
+    ...
+  }:
+
+  {
+    # ./flake.nix
+    imports = [
+      ./hardware-configuration.nix
+    ];
+
+    hardware = {
+      enableRedistributableFirmware = true;
+    };
+
+    environment = {
+      systemPackages = with pkgs; [
+      ];
+    };
+
+    nixpkgs = {
+      config = {
+        allowUnfreePredicate =
+          pkg:
+          builtins.elem (lib.getName pkg) [
+            "steam"
+            "steam-unwrapped"
+            "symbola"
+            "zerotierone"
+          ];
+      };
+    };
+
+    nix = {
+      # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html
+      settings = {
+        max-jobs = lib.mkDefault 16;
+        cores = 32;
+      };
+    };
+
+    system = {
+      # This value determines the NixOS release from which the default
+      # settings for stateful data, like file locations and database versions
+      # on your system were taken. It‘s perfectly fine and recommended to leave
+      # this value at the release version of the first install of this system.
+      # Before changing this value read the documentation for this option
+      # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+      stateVersion = "25.11"; # Did you read the comment?
+    };
+  }
+#+end_src
