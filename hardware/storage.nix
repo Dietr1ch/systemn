@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 
 {
   hardware = {
@@ -24,8 +24,8 @@
         # hardware.block.defaultScheduler and
         # hardware.block.defaultSchedulerRotational but may be overridden by
         # other udev rules.
-        "mmcblk[0-9]*" = "bfq";
-        "nvme[0-9]*" = "kyber";
+        "mmcblk[0-9]*" = lib.mkDefault "bfq";
+        "nvme[0-9]*" = lib.mkDefault "kyber";
       };
       defaultSchedulerRotational = "bfq";
     };
