@@ -1,14 +1,10 @@
 { pkgs, ... }:
 
 {
-  # NOTE: Kernel modules are kernel specific :/
-  boot = {
-    kernelModules = [
-      # "new-lg4ff"
-    ];
-    # extraModulePackages = with pkgs; [
-    #   # linuxPackages.new-lg4ff
-    # ];
+  hardware = {
+    new-lg4ff = {
+      enable = true;
+    };
   };
 
   environment = {
