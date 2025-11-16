@@ -15,6 +15,7 @@
         {
           # Hardware
           # --------
+          hardware = import ./hardware; # ./hardware/default.nix
           hardware-bluetooth = import ./hardware/bluetooth.nix;
           hardware-graphics = import ./hardware/graphics/default.nix;
           hardware-graphics-amd = import ./hardware/graphics/amd.nix;
