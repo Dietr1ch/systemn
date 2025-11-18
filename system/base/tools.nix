@@ -5,6 +5,7 @@
     systemPackages = with pkgs; [
       killall
 
+      fd
       ripgrep
       ## Logs
       less
