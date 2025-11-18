@@ -20,6 +20,8 @@
 
   # https://search.nixos.org/options?channel=unstable&query=networking
   networking = {
+    useNetworkd = true;
+
     networkmanager = {
       ethernet = {
         macAddress = "random";
