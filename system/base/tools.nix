@@ -1,6 +1,12 @@
 { pkgs, ... }:
 
 {
+  programs = {
+    skim = {
+      enable = true;
+    };
+  };
+
   environment = {
     systemPackages = with pkgs; [
       killall
