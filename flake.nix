@@ -75,6 +75,7 @@
           desktop-shell-graphical-office = import ./desktop/shell/graphical/office.nix;
           desktop-shell-graphical-plasma = import ./desktop/shell/graphical/plasma.nix;
           desktop-shell-terminal = import ./desktop/shell/terminal; # ./desktop/shell/terminal/default.nix
+          desktop-shell-terminal-documents = import ./desktop/shell/terminal/documents.nix;
           desktop-shell-terminal-pay_respects = import ./desktop/shell/terminal/pay-respects.nix;
           desktop-sound = import ./desktop/sound.nix;
 
