@@ -4,6 +4,7 @@
   imports = [
     ./cgroups.nix
     ./limits.nix
+    ./polkit.nix
     # ./yubikey.nix
   ];
 

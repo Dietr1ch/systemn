@@ -1,0 +1,31 @@
+{ lib, ... }:
+
+{
+  security = {
+    # https://search.nixos.org/options?channel=unstable&query=security.polkit
+    polkit = {
+      enable = true;
+
+      debug = lib.mkDefault true;
+
+      # https://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html#polkit-rules
+      # - /etc/polkit-1/rules.d/
+      #   - /etc/polkit-1/rules.d/10-nixos.rules
+      # - /usr/share/polkit-1/rules.d/
+      extraConfig = ''
+        /*
+           SystemN's extraConfig
+        */
+
+        /* Log authorization checks. */
+        polkit.addRule(function(action, subject) {
+          if (action.id == "org.freedesktop.policykit.exec") {
+            polkit.log("Exec: action=" + action, ". subject=" + subject);
+          } else {
+            polkit.log("User '" +  subject.user + "' is attempting action '" + action.id + "' from PID " + subject.pid);
+          }
+        });
+      '';
+    };
+  };
+}
