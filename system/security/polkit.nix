@@ -22,7 +22,7 @@
           if (action.id == "org.freedesktop.policykit.exec") {
             polkit.log("Exec: action=" + action, ". subject=" + subject);
           } else {
-            polkit.log("User '" +  subject.user + "' is attempting action '" + action.id + "' from PID " + subject.pid);
+            polkit.log("Action: action=" + action, ". subject=" + subject);
           }
         });
       '';
