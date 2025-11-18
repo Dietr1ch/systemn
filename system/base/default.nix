@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ ... }:
 
 {
   imports = [
@@ -8,8 +8,8 @@
     ./information.nix
     ./nix.nix
     ./preload.nix
-    ./tools.nix
     # TODO ./tracing.nix once it builds
+    ./tools.nix
 
     # Non-default subsystems
     # ./hardware_information.nix
