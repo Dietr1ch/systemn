@@ -88,6 +88,7 @@ In your ~/etc/nixos/~ directory,
               systemn.nixosModules.desktop # ~/Projects/systemn/desktop/default.nix
               systemn.nixosModules.desktop-gaming # ~/Projects/systemn/desktop/gaming/default.nix
               # systemn.nixosModules.desktop-shell-graphical-hyprland # ~/Projects/systemn/desktop/shell/graphical/hyprland.nix
+              systemn.nixosModules.desktop-shell-graphical-office # ~/Projects/systemn/desktop/shell/graphical/office.nix
 
               # Workstation
               systemn.nixosModules.workstation-virtualisation # ~/Projects/systemn/workstation/virtualisation/default.nix
