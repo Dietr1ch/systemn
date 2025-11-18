@@ -9,9 +9,6 @@
       ## Logs
       less
 
-      ## Version Control
-      git
-
       # Hashing
       b3sum
       rblake3sum
