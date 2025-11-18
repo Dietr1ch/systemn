@@ -69,7 +69,6 @@
           # -------
           desktop = import ./desktop; # ./desktop/default.nix
           desktop-gaming = import ./desktop/gaming; # ./desktop/gaming/default.nix
-          desktop-sound = import ./desktop/sound.nix;
           desktop-shell-graphical = import ./desktop/shell/graphical; # ./desktop/shell/graphical/default.nix
           desktop-shell-graphical-hyprland = import ./desktop/shell/graphical/hyprland.nix;
           desktop-shell-graphical-login = import ./desktop/shell/graphical/login-sddm.nix;
@@ -77,6 +76,7 @@
           desktop-shell-graphical-plasma = import ./desktop/shell/graphical/plasma.nix;
           desktop-shell-terminal = import ./desktop/shell/terminal; # ./desktop/shell/terminal/default.nix
           desktop-shell-terminal-pay_respects = import ./desktop/shell/terminal/pay-respects.nix;
+          desktop-sound = import ./desktop/sound.nix;
 
           # Workstation
           # -----------
