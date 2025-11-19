@@ -20,7 +20,8 @@
 
   # https://search.nixos.org/options?channel=unstable&query=networking
   networking = {
-    useNetworkd = true;
+    # https://nixos.wiki/wiki/Systemd-networkd
+    # useNetworkd = true;
 
     networkmanager = {
       ethernet = {
