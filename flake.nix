@@ -89,6 +89,8 @@
           # ------
           server-database-postgres = import ./server/database/postgres.nix;
           server-file_sharing-ipfs = import ./server/file_sharing/ipfs.nix;
+          server-file_sharing-nfs = import ./server/file_sharing/nfs.nix;
+          server-file_sharing-samba = import ./server/file_sharing/samba.nix;
           server-grafana = import ./server/grafana.nix;
           server-monero = import ./server/monero.nix;
           server-nix_serve = import ./server/nix-serve.nix;
