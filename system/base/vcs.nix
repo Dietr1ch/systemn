@@ -40,9 +40,8 @@
           "branch-name" = lib.mkDefault "rev-parse --abbrev-ref HEAD";
           "ls" = lib.mkDefault "!sh -c 'git ls-tree --name-only -r $(git branch-name)'";
 
-          "clone-last-week" =
-            lib.mkDefault "clone --single-branch --shallow-since $(date --iso-8601 --date '-7 days')";
-          "clone-last-commit" = lib.mkDefault "clone --single-branch --depth 1";
+          "clone-shallow" = lib.mkDefault "clone --single-branch --shallow-since '7 days'";
+          "clone-commit" = lib.mkDefault "clone --single-branch --depth 1";
         };
       };
     };
