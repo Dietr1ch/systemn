@@ -19,6 +19,9 @@
           "hosts deny" = "0.0.0.0/0";
           "guest account" = "nobody";
           "map to guest" = "bad user";
+          "follow symlinks" = "no";
+          "wide links" = "no";
+          "allow insecure wide links" = "no";
         };
 
         # ../../secrets.nix
