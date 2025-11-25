@@ -7,4 +7,10 @@
       enable = true;
     };
   };
+
+  boot = {
+    extraModprobeConfig = ''
+      options usbcore  autosuspend=30  # Bump USB auto-suspend time to 30s
+    '';
+  };
 }
