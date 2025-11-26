@@ -18,6 +18,9 @@
 
   environment = {
     systemPackages = with pkgs; [
+      filezilla
+      vlc
+
       vkdevicechooser
       vkdisplayinfo
 
