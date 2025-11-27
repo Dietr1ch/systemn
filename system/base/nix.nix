@@ -19,7 +19,7 @@
 
       # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html#conf-connect-timeout
       # Corresponds to curl's --connect-timeout.
-      connect-timeout = lib.mkDefault 5;
+      connect-timeout = lib.mkDefault 4;
 
       # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html#conf-preallocate-contents
       preallocate-contents = lib.mkDefault true;
