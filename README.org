@@ -87,6 +87,7 @@ In your ~/etc/nixos/~ directory,
               # Desktop
               systemn.nixosModules.desktop # ~/Projects/systemn/desktop/default.nix
               systemn.nixosModules.desktop-gaming # ~/Projects/systemn/desktop/gaming/default.nix
+              systemn.nixosModules.desktop-shell-graphical-audio # ~/Projects/systemn/desktop/shell/graphical/audio.nix;
               # systemn.nixosModules.desktop-shell-graphical-hyprland # ~/Projects/systemn/desktop/shell/graphical/hyprland.nix
               systemn.nixosModules.desktop-shell-graphical-office # ~/Projects/systemn/desktop/shell/graphical/office.nix
               systemn.nixosModules.desktop-shell-terminal-documents # ~/Projects/systemn/desktop/shell/terminal/documents.nix
