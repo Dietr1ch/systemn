@@ -92,6 +92,7 @@ In your ~/etc/nixos/~ directory,
               # systemn.nixosModules.desktop-shell-graphical-hyprland # ~/Projects/systemn/desktop/shell/graphical/hyprland.nix
               systemn.nixosModules.desktop-shell-graphical-images # ~/Projects/systemn/desktop/shell/graphical/images.nix;
               systemn.nixosModules.desktop-shell-graphical-office # ~/Projects/systemn/desktop/shell/graphical/office.nix
+              systemn.nixosModules.desktop-shell-graphical-video # ~/Projects/systemn/desktop/shell/graphical/video.nix;
               systemn.nixosModules.desktop-shell-terminal-documents # ~/Projects/systemn/desktop/shell/terminal/documents.nix
               systemn.nixosModules.desktop-sound # ~/Projects/systemn/desktop/sound.nix
 
