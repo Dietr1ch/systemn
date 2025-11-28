@@ -75,6 +75,7 @@
           desktop-shell-graphical-browser-chromium = import ./desktop/shell/graphical/browser/chromium.nix;
           desktop-shell-graphical-browser-librewolf = import ./desktop/shell/graphical/browser/librewolf.nix;
           desktop-shell-graphical-browser-misc = import ./desktop/shell/graphical/browser/misc.nix;
+          desktop-shell-graphical-cad = import ./desktop/shell/graphical/cad.nix;
           desktop-shell-graphical-hyprland = import ./desktop/shell/graphical/hyprland.nix;
           desktop-shell-graphical-login = import ./desktop/shell/graphical/login-sddm.nix;
           desktop-shell-graphical-office = import ./desktop/shell/graphical/office.nix;
