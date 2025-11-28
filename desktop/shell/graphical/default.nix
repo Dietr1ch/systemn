@@ -2,6 +2,8 @@
 
 {
   imports = [
+    ./browser # ./browser/default.nix
+
     ./fonts.nix
 
     ./login-sddm.nix

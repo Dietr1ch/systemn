@@ -10,6 +10,8 @@
     kdeconnect.enable = true;
     # TODO: Consider dropping kde-pim
     # kde-pim.enable = lib.mkForce false;  # Drop KDE PIM (KMail, Kontact, ...)
+
+    chromium.enablePlasmaBrowserIntegration = true;
   };
 
   services = {

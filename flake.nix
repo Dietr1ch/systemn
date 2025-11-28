@@ -72,6 +72,10 @@
           desktop-shell-graphical = import ./desktop/shell/graphical; # ./desktop/shell/graphical/default.nix
           desktop-shell-graphical-hyprland = import ./desktop/shell/graphical/hyprland.nix;
           desktop-shell-graphical-login = import ./desktop/shell/graphical/login-sddm.nix;
+          desktop-shell-graphical-browser = import ./desktop/shell/graphical/browser/default.nix;
+          desktop-shell-graphical-browser-chromium = import ./desktop/shell/graphical/browser/chromium.nix;
+          desktop-shell-graphical-browser-librewolf = import ./desktop/shell/graphical/browser/librewolf.nix;
+          desktop-shell-graphical-browser-misc = import ./desktop/shell/graphical/browser/misc.nix;
           desktop-shell-graphical-office = import ./desktop/shell/graphical/office.nix;
           desktop-shell-graphical-plasma = import ./desktop/shell/graphical/plasma.nix;
           desktop-shell-terminal = import ./desktop/shell/terminal; # ./desktop/shell/terminal/default.nix
