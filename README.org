@@ -90,6 +90,7 @@ In your ~/etc/nixos/~ directory,
               systemn.nixosModules.desktop-shell-graphical-audio # ~/Projects/systemn/desktop/shell/graphical/audio.nix;
               systemn.nixosModules.desktop-shell-graphical-cad # ~/Projects/systemn/desktop/shell/graphical/cad.nix;
               # systemn.nixosModules.desktop-shell-graphical-hyprland # ~/Projects/systemn/desktop/shell/graphical/hyprland.nix
+              systemn.nixosModules.desktop-shell-graphical-images # ~/Projects/systemn/desktop/shell/graphical/images.nix;
               systemn.nixosModules.desktop-shell-graphical-office # ~/Projects/systemn/desktop/shell/graphical/office.nix
               systemn.nixosModules.desktop-shell-terminal-documents # ~/Projects/systemn/desktop/shell/terminal/documents.nix
               systemn.nixosModules.desktop-sound # ~/Projects/systemn/desktop/sound.nix
