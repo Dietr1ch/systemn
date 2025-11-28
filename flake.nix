@@ -61,7 +61,7 @@
           system-networking = import ./system/networking; # ./system/networking/default.nix
           system-networking-connectivity = import ./system/networking/connectivity/default.nix;
           system-networking-connectivity-dns = import ./system/networking/connectivity/dns/default.nix;
-          # system-networking-connectivity-wireguard = import ./system/networking/connectivity/wireguard.nix;
+          system-networking-connectivity-wireguard = import ./system/networking/connectivity/wireguard.nix;
           system-networking-connectivity-zerotier = import ./system/networking/connectivity/zerotier.nix;
           system-networking-firewall = import ./system/networking/firewall.nix;
 
@@ -106,6 +106,8 @@
           server-ollama = import ./server/ollama.nix;
           server-prometheus = import ./server/prometheus.nix;
           server-syncthing = import ./server/syncthing.nix;
+          server-tor = import ./server/tor.nix;
+          server-tor_relay = import ./server/tor_relay.nix;
           server-transmission = import ./server/transmission.nix;
           server-web = import ./server/web.nix;
         };
