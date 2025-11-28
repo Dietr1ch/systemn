@@ -15,9 +15,15 @@
           whitespace = lib.mkDefault "trailing-space,space-before-tab";
         };
         url = {
+          # Codeberg: ssh://git@codeberg.org/{user}/{repo}.git
+          "ssh://git@codeberg.org/" = {
+            insteadOf = lib.mkDefault "cb:";
+          };
+          # GitHub: git@github.com:{user}/{repo}.git
           "git@github.com:" = {
             insteadOf = lib.mkDefault "gh:";
           };
+          # GitHub Gist: git@github.com:{user}/{repo}.git
           "git@gist.github.com:" = {
             insteadOf = lib.mkDefault "gist:";
           };
