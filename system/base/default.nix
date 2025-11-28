@@ -2,6 +2,8 @@
 
 {
   imports = [
+    ./vcs # ./vcs/default.nix
+
     ./identity.nix
 
     ./editor.nix
@@ -10,7 +12,6 @@
     ./preload.nix
     # TODO ./tracing.nix once it builds
     ./tools.nix
-    ./vcs.nix
 
     # Non-default subsystems
     # ./hardware_information.nix
