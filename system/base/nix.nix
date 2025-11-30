@@ -15,6 +15,10 @@
         "nix-command" # https://nix.dev/manual/nix/2.32/development/experimental-features.html#xp-feature-nix-command
         "flakes" # https://nix.dev/manual/nix/2.32/development/experimental-features.html#xp-feature-flakes
         "cgroups" # https://nix.dev/manual/nix/2.32/development/experimental-features.html#xp-feature-cgroups
+        "fetch-tree" # https://nix.dev/manual/nix/2.32/development/experimental-features.html#xp-feature-fetch-tree
+        "blake3-hashes" # https://nix.dev/manual/nix/2.32/development/experimental-features.html#xp-feature-blake3-hashes
+        "git-hashing" # https://nix.dev/manual/nix/2.32/development/experimental-features.html#xp-feature-git-hashing
+        "ca-derivations" # https://nix.dev/manual/nix/2.32/development/experimental-features.html#xp-feature-ca-derivations
       ];
 
       # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html#conf-connect-timeout
