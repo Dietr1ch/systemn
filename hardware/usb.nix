@@ -10,6 +10,11 @@
 
   # https://search.nixos.org/options?channel=unstable&query=boot
   boot = {
+    # https://search.nixos.org/options?channel=unstable&query=boot.kernelParams
+    kernelParams = [
+      "usbcore.autosuspend=30"
+    ];
+
     # https://search.nixos.org/options?channel=unstable&query=boot.kernelModules
     kernelModules = [
       "usbcore"
