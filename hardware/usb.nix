@@ -8,7 +8,13 @@
     };
   };
 
+  # https://search.nixos.org/options?channel=unstable&query=boot
   boot = {
+    # https://search.nixos.org/options?channel=unstable&query=boot.kernelModules
+    kernelModules = [
+      "usbcore"
+    ];
+
     # https://search.nixos.org/options?channel=unstable&query=boot.extraModprobeConfig
     # https://nixos.wiki/wiki/Linux_kernel#Customizing_kernel_module_parameters
     #
