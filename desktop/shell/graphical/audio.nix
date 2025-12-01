@@ -6,6 +6,7 @@
       qpwgraph
 
       tuxguitar
+      kdePackages.k3b
 
       ardour
     ];
