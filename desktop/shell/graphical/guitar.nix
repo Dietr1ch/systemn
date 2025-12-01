@@ -3,11 +3,7 @@
 {
   environment = {
     systemPackages = with pkgs; [
-      qpwgraph
-
-      kdePackages.k3b
-
-      ardour
+      tuxguitar
     ];
   };
 }
