@@ -20,6 +20,8 @@
 
   environment = {
     systemPackages = with pkgs; [
+      alacritty
+
       filezilla
       vlc
 
