@@ -8,7 +8,7 @@
       kdePackages.gwenview
       krita
 
-      ffmpeg
+      ffmpeg-full
     ];
   };
 }

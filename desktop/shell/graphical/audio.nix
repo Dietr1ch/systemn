@@ -8,8 +8,6 @@
       tuxguitar
 
       ardour
-
-      ffmpeg
     ];
   };
 }

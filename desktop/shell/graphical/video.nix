@@ -6,7 +6,7 @@
       blender-hip
       kdePackages.kdenlive
 
-      ffmpeg
+      ffmpeg-full
     ];
   };
 }
