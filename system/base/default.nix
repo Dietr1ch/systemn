@@ -9,7 +9,6 @@
     ./editor.nix
     ./information.nix
     ./nix.nix
-    ./preload.nix
     # TODO ./tracing.nix once it builds
     ./tools.nix
 
