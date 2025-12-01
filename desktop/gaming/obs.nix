@@ -27,9 +27,5 @@
     variables = {
       "OBS_VKCAPTURE" = "1";
     };
-
-    systemPackages = with pkgs; [
-      gamemode
-    ];
   };
 }
