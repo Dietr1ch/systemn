@@ -5,6 +5,7 @@
     ./gamemode.nix
     ./obs.nix
     ./steam.nix
+    # ./wine.nix
   ];
 
   boot = {
@@ -27,5 +28,4 @@
       openvr
     ];
   };
-
 }
