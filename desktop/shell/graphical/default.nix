@@ -8,6 +8,8 @@
 
     ./login-sddm.nix
 
+    # ./audio.nix
+    # ./guitar.nix
     # ./hyprland.nix
     ./plasma.nix
     ./tools.nix
