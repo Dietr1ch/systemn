@@ -1,5 +1,6 @@
 { pkgs, ... }:
 
+# https://nixos.wiki/wiki/Virt-manager
 {
   programs = {
     virt-manager = {
@@ -13,7 +14,6 @@
       enable = true;
     };
 
-    # https://nixos.wiki/wiki/Virt-manager
     libvirtd = {
       enable = true;
     };
