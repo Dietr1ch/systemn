@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 # https://nixos.wiki/wiki/Virt-manager
+# https://nixos.wiki/wiki/Libvirt
 {
   programs = {
     virt-manager = {
@@ -16,6 +17,12 @@
 
     libvirtd = {
       enable = true;
+
+      qemu = {
+        package = pkgs.qemu_kvm;
+        runAsRoot = true;
+        swtpm.enable = true;
+      };
     };
   };
 
