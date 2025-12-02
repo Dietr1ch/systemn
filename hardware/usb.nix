@@ -1,5 +1,9 @@
 { ... }:
 
+let
+  # Wait 60s before auto-suspending hardware.
+  usb_autosuspend_secs = 60;
+in
 {
   hardware = {
     # https://search.nixos.org/options?channel=unstable&query=hardware.usb-modeswitch
@@ -12,7 +16,7 @@
   boot = {
     # https://search.nixos.org/options?channel=unstable&query=boot.kernelParams
     kernelParams = [
-      "usbcore.autosuspend=30"
+      "usbcore.autosuspend=${toString usb_autosuspend_secs}"
     ];
 
     # https://search.nixos.org/options?channel=unstable&query=boot.kernelModules
@@ -26,9 +30,8 @@
     # Generates,
     # - /etc/modprobe.d/
     extraModprobeConfig = ''
-      # Wait 30s before auto-suspending hardware.
       # https://www.kernel.org/doc/Documentation/usb/power-management.txt
-      options usbcore autosuspend=30
+      options usbcore autosuspend=${toString usb_autosuspend_secs}
     '';
   };
 }
