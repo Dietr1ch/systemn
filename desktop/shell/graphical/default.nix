@@ -10,6 +10,7 @@
 
     # ./hyprland.nix
     ./plasma.nix
+    ./tools.nix
   ];
 
   services = {
