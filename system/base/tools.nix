@@ -29,6 +29,8 @@
       fd
       ripgrep
 
+      parallel-full
+
       # Hashing
       b3sum
       rblake3sum
