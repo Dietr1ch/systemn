@@ -87,6 +87,10 @@ In your ~/etc/nixos/~ directory,
               # Desktop
               systemn.nixosModules.desktop # ~/Projects/systemn/desktop/default.nix
               systemn.nixosModules.desktop-gaming # ~/Projects/systemn/desktop/gaming/default.nix
+              # systemn.nixosModules.desktop-programming # ~/Projects/systemn/desktop/programming/default.nix
+              # systemn.nixosModules.desktop-programming-haskell # ~/Projects/systemn/desktop/programming/haskell.nix
+              # systemn.nixosModules.desktop-programming-python # ~/Projects/systemn/desktop/programming/python.nix
+              # systemn.nixosModules.desktop-programming-rust # ~/Projects/systemn/desktop/programming/rust.nix
               systemn.nixosModules.desktop-shell-graphical-audio # ~/Projects/systemn/desktop/shell/graphical/audio.nix;
               systemn.nixosModules.desktop-shell-graphical-browser-chromium # ~/Projects/systemn/desktop/shell/graphical/browser/chromium.nix
               systemn.nixosModules.desktop-shell-graphical-cad # ~/Projects/systemn/desktop/shell/graphical/cad.nix;
