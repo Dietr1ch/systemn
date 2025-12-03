@@ -29,6 +29,8 @@
 
           requests
           xlrd
+
+          z3-solver
         ]
       ))
 
