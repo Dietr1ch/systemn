@@ -7,5 +7,6 @@
     ./haskell.nix
     ./python.nix
     ./rust.nix
+    ./sql.nix
   ];
 }

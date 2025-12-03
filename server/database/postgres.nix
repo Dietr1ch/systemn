@@ -85,5 +85,13 @@
       ];
     };
 
-  };
+  }; # ..services
+
+  environment = {
+    systemPackages = with pkgs; [
+      pgsql-tools
+      prqlc
+      sql-formatter
+    ]; # ..environment.systemPackages
+  }; # ..environment
 }
