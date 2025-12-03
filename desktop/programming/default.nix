@@ -8,5 +8,6 @@
     ./python.nix
     ./rust.nix
     ./sql.nix
+    ./web.nix
   ];
 }
