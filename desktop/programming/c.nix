@@ -1,5 +1,6 @@
 { pkgs, ... }:
 
+# https://nixos.wiki/wiki/C
 {
   environment = {
     # Packages in sync with ~/Projects/nixland/programming/c.nix
