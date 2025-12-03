@@ -37,6 +37,6 @@
       # Tools
       ruff # Lint, Formatter
       pylyzer # LSP
-    ];
+    ]; # ..environment.systemPackages
   }; # ..environment
 }

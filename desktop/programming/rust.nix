@@ -38,6 +38,6 @@
       cargo-watch
 
       critcmp
-    ];
+    ]; # ..environment.systemPackages
   }; # ..environment
 }

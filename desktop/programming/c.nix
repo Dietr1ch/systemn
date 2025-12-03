@@ -2,9 +2,10 @@
 
 {
   environment = {
-    # Packages in sync with ~/Projects/nixland/programming/haskell.nix
+    # Packages in sync with ~/Projects/nixland/programming/c.nix
     systemPackages = with pkgs; [
-      ghc
+      gcc
+      gdb
     ]; # ..environment.systemPackages
   }; # ..environment
 }
