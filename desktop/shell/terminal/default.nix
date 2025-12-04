@@ -5,6 +5,7 @@
     ./colours.nix
     ./fonts.nix
     # ./pay-respects.nix
+    ./prompt.nix
   ];
 
   users = {
