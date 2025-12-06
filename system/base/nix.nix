@@ -4,13 +4,13 @@
   # https://search.nixos.org/options?channel=unstable&query=nix
   nix = {
     optimise = {
-      automatic = true;
+      automatic = lib.mkDefault true;
     };
 
     # Generates /etc/nix/nix.conf
     # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html#available-settings
     settings = {
-      auto-optimise-store = true;
+      auto-optimise-store = lib.mkDefault true;
       extra-experimental-features = [
         "nix-command" # https://nix.dev/manual/nix/2.32/development/experimental-features.html#xp-feature-nix-command
         "flakes" # https://nix.dev/manual/nix/2.32/development/experimental-features.html#xp-feature-flakes
