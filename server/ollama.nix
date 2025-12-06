@@ -1,4 +1,9 @@
-{ config, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   services = {
@@ -6,6 +11,8 @@
     # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/services/misc/ollama.nix
     ollama = {
       enable = true;
+
+      package = lib.mkDefault pkgs.ollama-vulkan;
 
       openFirewall = true;
 
