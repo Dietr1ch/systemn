@@ -16,6 +16,8 @@
   environment = {
     systemPackages = with pkgs; [
       htop
+      zenith
+
       nethogs
     ];
   };

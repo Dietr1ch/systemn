@@ -9,6 +9,7 @@
     ./login-sddm.nix
 
     # ./audio.nix
+    ./comms.nix
     # ./guitar.nix
     # ./hyprland.nix
     ./plasma.nix

@@ -29,6 +29,10 @@
       fd
       ripgrep
 
+      # Disk (Also in ://system/storage/default.nix)
+      dua
+      ncdu
+
       parallel-full
 
       # Hashing

@@ -3,10 +3,7 @@
 {
   environment = {
     systemPackages = with pkgs; [
-      gpu-viewer
-
-      gparted
-      meld
+      telegram-desktop
     ];
   };
 }

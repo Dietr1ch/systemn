@@ -9,6 +9,8 @@
   environment = {
     systemPackages = with pkgs; [
       ethtool
+      rsync
+      rustscan
       wget
       wol
     ];

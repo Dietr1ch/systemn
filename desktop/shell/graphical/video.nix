@@ -3,6 +3,8 @@
 {
   environment = {
     systemPackages = with pkgs; [
+      vlc
+
       blender-hip
       kdePackages.kdenlive
 

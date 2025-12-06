@@ -21,6 +21,10 @@
       gptfdisk
       smartmontools
       nvme-cli
+
+      # Disk space (Also in ://system/base/tools.nix)
+      dua
+      ncdu
     ];
   };
 }
