@@ -10,8 +10,10 @@
     # Generates /etc/nix/nix.conf
     # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html#available-settings
     settings = {
-      auto-optimise-store = lib.mkDefault false;
-
+      # Config
+      # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html#conf-use-cgroups
+      use-cgroups = lib.mkDefault true;
+      # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html#conf-extra-experimental-features
       extra-experimental-features = [
         "nix-command" # https://nix.dev/manual/nix/2.32/development/experimental-features.html#xp-feature-nix-command
         "flakes" # https://nix.dev/manual/nix/2.32/development/experimental-features.html#xp-feature-flakes
@@ -22,23 +24,26 @@
         "ca-derivations" # https://nix.dev/manual/nix/2.32/development/experimental-features.html#xp-feature-ca-derivations
       ];
 
-      # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html#conf-connect-timeout
-      # Corresponds to curl's --connect-timeout.
-      connect-timeout = lib.mkDefault 4;
-
-      http-connections = lib.mkDefault 100; # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-http-connections
-
+      # Storage
+      # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html?highlight=max-substitution-jobs#conf-auto-optimise-store
+      auto-optimise-store = lib.mkDefault false;
       # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html#conf-preallocate-contents
       preallocate-contents = lib.mkDefault true;
 
-      # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html#conf-use-cgroups
-      use-cgroups = lib.mkDefault true;
+      # Builds
+      # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html?highlight=max-substitution-jobs#conf-max-jobs
+      # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html?highlight=max-substitution-jobs#conf-cores
 
-      # ../../secrets.nix
-      # extra-substituters = [
-      # ];
-      # extra-trusted-public-keys = [
-      # ];
+      # Downloads
+      # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html?highlight=max-substitution-jobs#conf-max-substitution-jobs
+      max-substitution-jobs = lib.mkDefault 24;
+      # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-http-connections
+      http-connections = lib.mkDefault 50;
+      # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html#conf-connect-timeout
+      # Corresponds to curl's --connect-timeout.
+      connect-timeout = lib.mkDefault 5;
+      # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html?highlight=max-substitution-jobs#conf-download-attempts
+      download-attempts = lib.mkDefault 3;
     };
 
     extraOptions = ''
