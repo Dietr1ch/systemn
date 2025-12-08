@@ -25,6 +25,7 @@
   environment = {
     sessionVariables = {
       "PROTON_ENABLE_WAYLAND" = "1";
+      "PROTON_USE_DXVK" = "1";
     };
   };
 }
