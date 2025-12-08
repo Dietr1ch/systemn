@@ -3,7 +3,7 @@
 {
   services = {
     # https://search.nixos.org/options?channel=unstable&query=services.avahi
-    # ~/Code/github/Dietr1ch/nixpkgs/nixos/modules/services/networking/avahi-daemon.nix
+    # ~/Projects/nixpkgs/nixos/modules/services/networking/avahi-daemon.nix
     avahi = {
       enable = lib.mkDefault true;
 
