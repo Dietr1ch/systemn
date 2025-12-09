@@ -27,6 +27,9 @@
 
   environment = {
     systemPackages = with pkgs; [
+      wiremix
+
+      # Tools
       ffmpeg-full
       flacon
       shntool
