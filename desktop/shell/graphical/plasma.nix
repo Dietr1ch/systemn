@@ -243,6 +243,7 @@
       # Dolphin
       kdePackages.dolphin
       kdePackages.dolphin-plugins
+      kdePackages.filelight
       kdePackages.kio
       kdePackages.kio-fuse
       kdePackages.kio-gdrive
