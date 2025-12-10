@@ -1,5 +1,9 @@
 { pkgs, ... }:
 
+let
+  gaming_gov = "performance";
+  default_gov = "balanced";
+in
 {
   programs = {
     # https://search.nixos.org/options?channel=unstable&query=programs.gamemode
@@ -13,7 +17,7 @@
         general = {
           renice = 10; # Use niceness -10
           ioprio = 0; # iopriority of clients to BE/0
-          desiredgov = "performance";
+          desiredgov = gaming_gov;
           softrealtime = "auto";
 
           inhibit_screensaver = 1;
@@ -24,10 +28,12 @@
             start = pkgs.writeShellScriptBin "gamemode_start_hook" ''
               ${pkgs.libnotify}/bin/notify-send --urgency 'low' --expire-time '1500' 'GameMode started'
               ${pkgs.kdePackages.qttools}/bin/qdbus org.kde.KWin /Compositor suspend
+              ${pkgs.power-profiles-daemon}/bin/powerprofilesctl set ${gaming_gov}
             '';
             end = pkgs.writeShellScriptBin "gamemode_end_hook" ''
               ${pkgs.kdePackages.qttools}/bin/qdbus org.kde.KWin /Compositor resume
               ${pkgs.libnotify}/bin/notify-send --urgency 'low' --expire-time '1500' 'GameMode ended'
+              ${pkgs.power-profiles-daemon}/bin/powerprofilesctl set  ${default_gov}
             '';
           in
           {
