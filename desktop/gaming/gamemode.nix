@@ -124,6 +124,7 @@ in
     systemPackages = with pkgs; [
       gamemode
       libnotify
+      mangohud
     ];
   };
 }
