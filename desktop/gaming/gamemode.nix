@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 let
   gaming_gov = "performance";
@@ -15,13 +15,39 @@ in
       # https://github.com/FeralInteractive/gamemode/blob/master/example/gamemode.ini
       settings = {
         general = {
-          renice = 10; # Use niceness -10
-          ioprio = 0; # iopriority of clients to BE/0
-          desiredgov = gaming_gov;
-          softrealtime = "auto";
+          # The reaper thread will check every 5 seconds for exited clients, for
+          # config file changes, and for the CPU/iGPU power balance
+          reaper_freq = lib.mkDefault 5; # 5s
 
-          inhibit_screensaver = 1;
+          # The desired governor is used when entering GameMode instead of "performance"
+          desiredgov = gaming_gov;
+          # The default governor is used when leaving GameMode instead of restoring the original value
+          defaultgov = lib.mkDefault default_gov;
+
+          # GameMode can change the scheduler policy to SCHED_ISO on kernels which support it (currently
+          # not supported by upstream kernels). Can be set to "auto", "on" or "off". "auto" will enable
+          # with 4 or more CPU cores. "on" will always enable. Defaults to "off".
+          softrealtime = lib.mkDefault "auto";
+
+          # GameMode can renice game processes. You can put any value between 0 and 20 here, the value
+          # will be negated and applied as a nice value (0 means no change). Defaults to 0.
+          # To use this feature, the user must be added to the gamemode group (and then rebooted):
+          # sudo usermod -aG gamemode $(whoami)
+          renice = lib.mkDefault 10; # Use niceness -10
+
+          # By default, GameMode adjusts the iopriority of clients to BE/0, you can put any value
+          # between 0 and 7 here (with 0 being highest priority), or one of the special values
+          # "off" (to disable) or "reset" (to restore Linux default behavior based on CPU priority),
+          # currently, only the best-effort class is supported thus you cannot set it here
+          ioprio = lib.mkDefault 0; # iopriority of clients to BE/0
+
+          # Sets whether gamemode will inhibit the screensaver when active. Defaults to 1
+          inhibit_screensaver = lib.mkDefault 1;
+
+          # Sets whether gamemode will disable split lock mitigation when active. Defaults to 1.
+          disable_splitlock = lib.mkDefault 1;
         };
+
         # /etc/gamemode.ini
         custom =
           let
