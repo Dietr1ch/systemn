@@ -1,11 +1,13 @@
-{ ... }:
+{ lib, ... }:
 
 {
+  # https://search.nixos.org/options?channel=unstable&query=programs.chromium
   programs = {
     chromium = {
       enable = true;
 
-      defaultSearchProviderSearchURL = "https://duckduckgo.com/?q={searchTerms}";
+      enablePlasmaBrowserIntegration = true;
+      defaultSearchProviderSearchURL = lib.mkDefault "https://duckduckgo.com/?q={searchTerms}";
     };
   };
 }
