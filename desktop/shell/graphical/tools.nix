@@ -1,6 +1,14 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
+  programs = {
+    # https://search.nixos.org/options?channel=unstable&query=programs.ssh
+    ssh = {
+      enableAskPassword = true;
+      askPassword = "${pkgs.kdePackages.ksshaskpass}/bin/ksshaskpass";
+    };
+  }; # ..programs
+
   environment = {
     systemPackages = with pkgs; [
       kdePackages.kasts # TODO: Find a new home for kasts
