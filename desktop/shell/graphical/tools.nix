@@ -12,5 +12,5 @@
       gparted
       meld
     ];
-  };
+  }; # ..environment
 }

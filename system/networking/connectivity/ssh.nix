@@ -12,7 +12,7 @@
 
     # Key agents on ../../security/yubikey.nix
 
-    # https://search.nixos.org/options?channel=unstable&show=programs.gnupg.agent.enable&query=programs.gnupg
+    # https://search.nixos.org/options?channel=unstable&query=programs.gnupg
     gnupg = {
       agent = {
         enable = true;
@@ -48,7 +48,7 @@
         ${config.networking.hostName}
       '';
     };
-  };
+  }; # ..services
 
   systemd = {
     services = {
@@ -59,18 +59,11 @@
         };
       };
     };
-  };
+  }; # ..systemd
 
   environment = {
     systemPackages = with pkgs; [
       sshfs-fuse
     ];
-  };
+  }; # ..environment
 }
-
-
-
-
-
-
-
