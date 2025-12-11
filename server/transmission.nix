@@ -7,7 +7,7 @@
     transmission = {
       enable = true;
 
-      package = pkgs.transmission_4;
+      package = pkgs.transmission_4-qt6; # Can be paired with standalone in ://desktop/shell/graphical/tools.nix
 
       openPeerPorts = true;
       # https://search.nixos.org/options?channel=unstable&show=services.transmission.performanceNetParameters
