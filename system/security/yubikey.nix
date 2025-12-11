@@ -10,6 +10,7 @@
     };
     # https://search.nixos.org/options?channel=unstable&query=programs.gnupg
     gnupg = {
+
       agent = {
         enable = true;
 

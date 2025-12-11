@@ -11,6 +11,7 @@
     # TODO: Consider dropping kde-pim
     # kde-pim.enable = lib.mkForce false;  # Drop KDE PIM (KMail, Kontact, ...)
 
+    gnupg.agent.pinentryPackage = lib.mkDefault pkgs.pinentry-qt;
     chromium.enablePlasmaBrowserIntegration = true;
   };
 
