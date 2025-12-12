@@ -7,6 +7,8 @@
       gnumake
       just
 
+      binutils
+      lld
       mold
     ]; # ..environment.systemPackages
   }; # ..environment
