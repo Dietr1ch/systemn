@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}:
+{ config, pkgs, ... }:
 
 {
   programs = {
@@ -17,7 +13,7 @@
       agent = {
         enable = true;
 
-        # pinentryPackage = "??";  # User controlled
+        # pinentryPackage = "??"; # Set by the desktop environment.
 
         enableSSHSupport = true;
         enableExtraSocket = true;

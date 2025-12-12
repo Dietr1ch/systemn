@@ -15,6 +15,8 @@
       agent = {
         enable = true;
 
+        # pinentryPackage = "??"; # Set by the desktop environment.
+
         enableSSHSupport = true;
         enableBrowserSocket = true;
         enableExtraSocket = true;

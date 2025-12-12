@@ -26,8 +26,8 @@
 
         # ../../secrets.nix
       };
-    };
-  };
+    }; # ..services.samba
+  }; # ..services
 
   networking = {
     firewall = {
@@ -43,8 +43,8 @@
         445
         3702 # wsdd
       ];
-    };
-  };
+    }; # ..networking.firewall
+  }; # ..networking
 
   environment = {
     etc = {
@@ -64,5 +64,5 @@
         '';
       };
     };
-  };
+  }; # ..environment
 }
