@@ -17,8 +17,13 @@
       enable = true;
     };
 
+    # https://search.nixos.org/options?channel=unstable&query=programs.nix-index
     nix-index = {
       enable = true;
+
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+      enableZshIntegration = true;
     };
   };
 
