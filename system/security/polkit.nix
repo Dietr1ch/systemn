@@ -1,5 +1,7 @@
 { lib, ... }:
 
+# https://nixos.wiki/wiki/Polkit
+# https://search.nixos.org/options?channel=unstable&query=security.polkit
 {
   security = {
     # https://search.nixos.org/options?channel=unstable&query=security.polkit
