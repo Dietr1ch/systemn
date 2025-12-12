@@ -10,6 +10,7 @@
       prettier
 
       wasm-pack
+      wasm-bindgen-cli
     ]; # ..environment.systemPackages
   }; # ..environment
 }
