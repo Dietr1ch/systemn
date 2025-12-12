@@ -12,5 +12,6 @@
     ./web.nix
 
     ./build.nix
+    ./debugging.nix
   ];
 }
