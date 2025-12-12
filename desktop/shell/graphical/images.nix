@@ -9,6 +9,7 @@
       krita
 
       ffmpeg-full
+      imagemagick
     ];
   };
 }
