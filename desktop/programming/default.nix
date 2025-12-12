@@ -10,5 +10,7 @@
     ./rust.nix
     ./sql.nix
     ./web.nix
+
+    ./build.nix
   ];
 }
