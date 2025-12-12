@@ -13,6 +13,17 @@
 
       # NOTE: This risks bans in cloud/datacenters.
       # localDiscovery = lib.mkDefault true;
+
+      # https://github.com/ipfs/kubo/blob/master/docs/config.md
+      #
+      # Sets $IPFS_PATH/config
+      settings = {
+        Addresses = {
+          API = [
+            "/ip4/127.0.0.1/tcp/5001"
+          ];
+        };
+      };
     };
   };
 }
