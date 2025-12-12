@@ -57,6 +57,7 @@
           system-input-mouse = import ./system/input/mouse.nix;
           system-input-touchpad = import ./system/input/touchpad.nix;
           system-input-racing_wheel = import ./system/input/racing_wheel.nix;
+          system-input-leap = import ./system/input/leap.nix;
           # Networking
           system-networking = import ./system/networking; # ./system/networking/default.nix
           system-networking-connectivity = import ./system/networking/connectivity/default.nix;
