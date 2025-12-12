@@ -250,6 +250,9 @@
       kdePackages.kio-fuse
       kdePackages.kio-gdrive
       kdePackages.kio-zeroconf
+      kdePackages.kaccounts-integration
+      kdePackages.kaccounts-providers
+      kdePackages.accounts-qt
 
       # KDE Connect
       kdePackages.kdeconnect-kde
