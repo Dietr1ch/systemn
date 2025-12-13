@@ -76,8 +76,9 @@ In your ~/etc/nixos/~ directory,
               systemn.nixosModules.system-base-hardware_information # ~/Projects/systemn/system/base/hardware_information.nix
               systemn.nixosModules.system-base-watchdog # ~/Projects/systemn/system/base/watchdog.nix
               # systemn.nixosModules.system-boot-efi # ~/Projects/systemn/system/boot/efi.nix
+              systemn.nixosModules.system-input # ~/Projects/systemn/system/input/default.nix
               systemn.nixosModules.system-input-keyboard-dvorak # ~/Projects/systemn/system/input/keyboard/dvorak.nix
-              systemn.nixosModules.system-input-mouse # ~/Projects/systemn/system/input/mouse.nix
+              # systemn.nixosModules.system-input-mouse # ~/Projects/systemn/system/input/mouse.nix
               # systemn.nixosModules.system-input-racing_wheel # ~/Projects/systemn/system/input/racing_wheel.nix
               systemn.nixosModules.system-networking # ~/Projects/systemn/system/networking/default.nix
               # systemn.nixosModules.system-networking-connectivity-wireguard  # ~/Projects/systemn/system/networking/connectivity/wireguard.nix

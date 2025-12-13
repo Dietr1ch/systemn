@@ -52,6 +52,7 @@
           # Audit
           system-storage = import ./system/storage; # ./system/storage/default.nix
 
+          system-input = import ./system/input/default.nix;
           system-input-keyboard-dvorak = import ./system/input/keyboard/dvorak.nix;
           system-input-keyboard-intl = import ./system/input/keyboard/intl.nix;
           system-input-mouse = import ./system/input/mouse.nix;
