@@ -28,14 +28,6 @@
       # scheduler = "scx_simple";
       # scheduler = "scx_userland";
     };
-
-    # https://search.nixos.org/options?channel=unstable&query=programs.lact
-    lact = {
-      enable = true;
-
-      # https://github.com/ilya-zlobintsev/LACT/blob/master/docs/CONFIG.md
-      # settings = {};
-    };
   };
 
   environment = {
