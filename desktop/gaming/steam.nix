@@ -6,6 +6,18 @@
     steam = {
       enable = true;
 
+      # https://search.nixos.org/options?channel=unstable&query=programs.steam.gamescopeSession
+      gamescopeSession = {
+        enable = true;
+
+        # args = [ ];
+        # env = { };
+        # steamArgs = [
+        #   "-tenfoot"
+        #   "-pipewire-dmabuf"
+        # ];
+      };
+
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
