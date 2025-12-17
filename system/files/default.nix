@@ -15,14 +15,17 @@
 
       # Filesystems
       cryptsetup
-      # e2fsprogs   # fsck.ext4  # TODO: Add e2fsprogs once it builds
-      f2fs-tools # fsck.f2fs
-      ntfs3g # NTFS
-      exfat # ExFAT
+      e2fsprogs # fsck.ext4
+      exfat
+      f2fs-tools
+      ntfs3g
+
+      # VFS
+      gvfs
+      jmtpfs # MTP
+
       gphoto2fs # Cameras
       libgphoto2
-      jmtpfs # MTP
-      gvfs
     ];
   };
 }
