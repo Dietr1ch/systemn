@@ -239,6 +239,8 @@
       kdePackages.polkit-kde-agent-1
 
       kdePackages.kleopatra
+      # Vaults
+      cryfs
       cryptsetup
       kdePackages.plasma-vault
 

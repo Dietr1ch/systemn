@@ -12,6 +12,7 @@
     ./storage # ./storage/default.nix
 
     ./cpu.nix
+    ./crypto.nix
     ./hardware-update.nix
     ./memory.nix
   ];
