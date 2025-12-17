@@ -11,7 +11,7 @@
       quota
 
       # Inspect
-      ncdu
+      dua
 
       # Filesystems
       cryptsetup
