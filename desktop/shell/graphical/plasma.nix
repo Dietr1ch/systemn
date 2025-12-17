@@ -269,14 +269,7 @@
 
       # Ark
       kdePackages.ark
-      # Compression tools
-      arj
-      lrzip
-      pbzip2
-      pigz
-      pixz
-      xz
-      zip
+      # Compression tools on (:/system/files/compression.nix)
     ];
 
     plasma6 = {
