@@ -269,11 +269,10 @@
 
       # Ark
       kdePackages.ark
-      # TODO: Consider adding `arj` once it builds
-      # arj
+      # Compression tools
+      arj
       lrzip
-      # TODO: Consider adding `pbzip2` once it builds
-      # pbzip2
+      pbzip2
       pigz
       pixz
       xz
