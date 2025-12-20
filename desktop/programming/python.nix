@@ -14,6 +14,8 @@
           types-tqdm
           ## Type defs
           traittypes
+          ## Cache
+          joblib
 
           # Libraries
           ## Plotting
