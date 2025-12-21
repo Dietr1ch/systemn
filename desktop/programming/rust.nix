@@ -36,6 +36,8 @@
       cargo-watch
 
       critcmp
+
+      ron-lsp
     ]; # ..environment.systemPackages
   }; # ..environment
 }
