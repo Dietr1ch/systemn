@@ -37,6 +37,7 @@
 
       critcmp
 
+      just-lsp
       ron-lsp
     ]; # ..environment.systemPackages
   }; # ..environment
