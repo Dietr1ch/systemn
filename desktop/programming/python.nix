@@ -45,6 +45,7 @@
           xlrd
 
           # Solvers
+          clingo
           z3-solver
         ]
       ))
@@ -54,6 +55,8 @@
       pylyzer # LSP
 
       # Solvers
+      clingo
+      clingcon
       z3
     ]; # ..environment.systemPackages
   }; # ..environment
