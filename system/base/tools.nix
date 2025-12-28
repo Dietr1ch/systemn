@@ -38,6 +38,11 @@
       # Hashing
       b3sum
       rblake3sum
+
+      # Performance
+      perf
+      pprof
+      perf_data_converter
     ];
   };
 }
