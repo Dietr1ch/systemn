@@ -5,7 +5,7 @@
     firefox = {
       enable = true;
 
-      package = pkgs.librewolf-bin;
+      package = pkgs.librewolf;
     };
   };
 }
