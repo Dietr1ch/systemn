@@ -53,6 +53,8 @@
 
   environment = {
     systemPackages = with pkgs; [
+      age-plugin-yubikey
+
       paperkey
       pinentry-curses
       pinentry-qt

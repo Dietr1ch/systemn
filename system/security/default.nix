@@ -3,6 +3,7 @@
 {
   imports = [
     ./cgroups.nix
+    ./crypto.nix
     ./limits.nix
     ./polkit.nix
     # ./yubikey.nix
