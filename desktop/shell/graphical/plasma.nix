@@ -260,6 +260,9 @@
       kdePackages.kdeconnect-kde
       kdePackages.plasma-browser-integration
 
+      # Remote screen/desktop
+      kdePackages.krdc
+
       # Theme
       kdePackages.breeze
       # kdePackages.breeze-grub
