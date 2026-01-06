@@ -5,7 +5,7 @@
     systemPackages = with pkgs; [
       vlc
 
-      blender-hip
+      blender
       kdePackages.kdenlive
 
       ffmpeg-full
