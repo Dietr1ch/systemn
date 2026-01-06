@@ -6,7 +6,7 @@
     # ~/Projects/nixpkgs/nixos/modules/programs/xwayland.nix
     xwayland.enable = lib.mkDefault false; # TODO: Drop xwayland when feasible
     # ~/Projects/nixpkgs/nixos/modules/programs/kdeconnect.nix
-    # https://search.nixos.org/options?channel=unstable&query=kdeconnect
+    # https://search.nixos.org/options?channel=unstable&query=programs.kdeconnect
     kdeconnect.enable = true;
     # TODO: Consider dropping kde-pim
     # kde-pim.enable = lib.mkForce false;  # Drop KDE PIM (KMail, Kontact, ...)
