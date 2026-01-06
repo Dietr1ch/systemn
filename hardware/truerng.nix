@@ -11,5 +11,5 @@
     systemPackages = with pkgs; [
       coreutils
     ];
-  };
+  }; # ..environment
 }
