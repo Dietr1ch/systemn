@@ -13,7 +13,7 @@
         };
       };
 
-      # NOTE: This conflicts with WirePlumber
+      # NOTE: This conflicts with WirePlumber (://desktop/sound.nix)
       # https://github.com/pali/hsphfpd-prototype
       # hsphfpd.enable = true;
     };
