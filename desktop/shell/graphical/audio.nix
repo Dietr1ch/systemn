@@ -5,7 +5,7 @@
     systemPackages = with pkgs; [
       qpwgraph
 
-      kdePackages.k3b
+      # BROKEN: kdePackages.k3b
 
       ardour
     ];
