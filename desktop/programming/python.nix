@@ -45,7 +45,6 @@
           xlrd
 
           # Solvers
-          clingo
           z3-solver
         ]
       ))
