@@ -8,6 +8,7 @@
 
     ./editor.nix
     ./information.nix
+    ./logs.nix
     ./nix.nix
     # TODO ./tracing.nix once it builds
     ./tools.nix
