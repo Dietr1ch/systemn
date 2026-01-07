@@ -6,6 +6,7 @@
 
     ./identity.nix
 
+    ./crashes.nix
     ./editor.nix
     ./information.nix
     ./logs.nix
