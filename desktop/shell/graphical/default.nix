@@ -4,16 +4,18 @@
   imports = [
     ./browser # ./browser/default.nix
 
-    ./fonts.nix
-
-    ./login-sddm.nix
-
     # ./audio.nix
+    # ./cad.nix
     ./comms.nix
+    ./fonts.nix
     # ./guitar.nix
     # ./hyprland.nix
+    # ./images.nix
+    ./login-sddm.nix
+    # ./office.nix
     ./plasma.nix
     ./tools.nix
+    # ./video.nix
   ];
 
   services = {
