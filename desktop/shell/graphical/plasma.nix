@@ -233,7 +233,7 @@
       kdePackages.wayland-protocols
       # BROKEN: kdePackages.wayqt
 
-      kdePackages.plasma-pa # NOTE: Enabled through Pulse Audio, hardware.pulseaudio.enable
+      kdePackages.plasma-pa # NOTE: Enabled through Pulse Audio, hardware.pulseaudio.enable. Audio applet (https://bbs.archlinux.org/viewtopic.php?id=273969)
       kdePackages.plasma-nm # NOTE: Enabled through NetworkManager, networking.networkmanager.(enable)
 
       kdePackages.polkit-kde-agent-1
