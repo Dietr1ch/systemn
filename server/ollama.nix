@@ -13,6 +13,8 @@
       enable = true;
       package = lib.mkDefault pkgs.ollama-vulkan;
 
+      port = lib.mkDefault 11434;
+
       # Models: https://ollama.com/library
       loadModels = [
         "deepseek-r1" # https://ollama.com/library/deepseek-r1
