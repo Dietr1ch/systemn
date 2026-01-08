@@ -22,6 +22,27 @@
         "qwq" # https://ollama.com/library/qwq
       ];
     };
+
+    # https://search.nixos.org/options?channel=unstable&query=services.litellm
+    litellm = {
+      enable = true;
+
+      port = lib.mkDefault 11435;
+
+      # https://docs.litellm.ai/docs/proxy/configs
+      # https://github.com/anthropics/claude-code/issues/7178#issuecomment-3256343381
+      settings = {
+        model_list = (
+          map (model: {
+            model_name = "ollama-${model}";
+            litellm_params = {
+              model = "ollama/${model}";
+              api_base = "http://localhost:${toString config.services.ollama.port}";
+            };
+          }) config.services.ollama.loadModels
+        );
+      };
+    };
   };
 
   # Integrations
