@@ -8,14 +8,12 @@
 
     ./crashes.nix
     ./editor.nix
+    ./hardware_information.nix
     ./information.nix
     ./logs.nix
     ./nix.nix
     # TODO ./tracing.nix once it builds
     ./tools.nix
-
-    # Non-default subsystems
-    # ./hardware_information.nix
     # ./watchdog.nix
   ];
 
