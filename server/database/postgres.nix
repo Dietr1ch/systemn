@@ -54,14 +54,6 @@
       ];
     };
 
-    # https://search.nixos.org/options?channel=unstable&query=services.pgmanage
-    pgmanage = {
-      enable = true;
-
-      localOnly = lib.mkDefault true;
-      port = lib.mkDefault 10100;
-    };
-
     prometheus = {
       exporters = {
         # https://search.nixos.org/options?channel=unstable&query=services.prometheus.exporters.postgres
