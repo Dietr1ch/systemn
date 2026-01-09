@@ -9,8 +9,7 @@
 
       nix-diff
 
-      # NOTE nixfmt still points to nixfmt-classic
-      nixfmt-rfc-style
+      nixfmt
 
       nixpkgs-review
     ]; # ..environment.systemPackages
