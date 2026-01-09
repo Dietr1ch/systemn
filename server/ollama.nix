@@ -34,7 +34,7 @@
       settings = {
         model_list = (
           map (model: {
-            model_name = "ollama-${model}";
+            model_name = "ollama/${model}";
             litellm_params = {
               model = "ollama/${model}";
               api_base = "http://localhost:${toString config.services.ollama.port}";
