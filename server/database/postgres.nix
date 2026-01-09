@@ -49,8 +49,8 @@
         pg_uuidv7 # UUIDv7
         pgsodium # libsodium crypto
         pgtap # Unit testing
-        pgvector # Vector search
         postgis # GIS
+        vectorchord # Vector search. https://github.com/tensorchord/VectorChord/
       ];
     };
 
