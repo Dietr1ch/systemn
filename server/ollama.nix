@@ -6,19 +6,62 @@
 }:
 
 let
-  # NOTE: Check with ~ollama show~
-  # ```fish
-  #   for model in (ollama list | gawk 'NR>1 {print $1}' | sort)
-  #     ollama show $model | grep 'thinking' >/dev/null && echo $model
-  #   end
-  # ```
-  known_thinking_models = [
-    "deepseek-r1:latest"
-    "magistral:latest"
-    "qwen3:14b"
-    "qwen3:32b"
-    "qwen3:latest"
-  ];
+  model_support = {
+    # NOTE: Check with ~ollama show~
+    #
+    # ```fish
+    # for capability in 'thinking' 'tools' 'completion' 'vision' 'insert'
+    #   echo "$capability = ["
+    #   for model in (ollama list | gawk 'NR>1 {print $1}' | sort)
+    #     ollama show $model | grep -A10 'Capabilities' | grep "    $capability" >/dev/null && echo "  \"$model\""
+    #   end
+    #   echo "];"
+    # end
+    # ```
+
+    thinking = [
+      "deepseek-r1:latest"
+      "magistral:latest"
+      "qwen3:14b"
+      "qwen3:32b"
+      "qwen3:latest"
+    ];
+    tools = [
+      "magistral:latest"
+      "qwen2.5-coder:14b"
+      "qwen2.5-coder:3b"
+      "qwen2.5-coder:7b"
+      "qwen3:14b"
+      "qwen3:32b"
+      "qwen3-coder:30b"
+      "qwen3:latest"
+      "qwq:latest"
+    ];
+    completion = [
+      "deepseek-coder-v2:16b"
+      "deepseek-r1:latest"
+      "gemma3:latest"
+      "magistral:latest"
+      "phi4:latest"
+      "qwen2.5-coder:14b"
+      "qwen2.5-coder:3b"
+      "qwen2.5-coder:7b"
+      "qwen3:14b"
+      "qwen3:32b"
+      "qwen3-coder:30b"
+      "qwen3:latest"
+      "qwq:latest"
+    ];
+    vision = [
+      "gemma3:latest"
+    ];
+    insert = [
+      "deepseek-coder-v2:16b"
+      "qwen2.5-coder:14b"
+      "qwen2.5-coder:3b"
+      "qwen2.5-coder:7b"
+    ];
+  };
 in
 {
   services = {
@@ -58,10 +101,11 @@ in
 
               allowed_openai_params = [
                 "reasoning_effort"  # NOTE: I guess it's fine to always allow the parameter
+                "thinking"
               ];
             };
             model_info = {
-              supports_reasoning = lib.mkDefault (builtins.elem model known_thinking_models);
+              supports_reasoning = lib.mkDefault (builtins.elem model model_support.thinking);
             };
           }) config.services.ollama.loadModels
         );
