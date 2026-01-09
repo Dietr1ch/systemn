@@ -20,6 +20,7 @@
           hardware-graphics = import ./hardware/graphics/default.nix;
           hardware-graphics-amd = import ./hardware/graphics/amd.nix;
           hardware-keyboard-ergodox_ez = import ./hardware/keyboard/ergodox_ez.nix;
+          hardware-mouse-razer = import ./hardware/mouse/razer.nix;
           hardware-memtest = import ./hardware/memtest.nix;
           hardware-phone = import ./hardware/phone.nix;
           hardware-printing = import ./hardware/printing.nix;
