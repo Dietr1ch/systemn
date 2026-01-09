@@ -5,6 +5,7 @@
     ./c.nix
     ./cpp.nix
     ./haskell.nix
+    ./nix.nix
     ./python.nix
     ./rpc.nix
     ./rust.nix
