@@ -35,6 +35,22 @@
 
     nginx = {
       virtualHosts = {
+        # FIXME: Announce the nix. subdomain on avahi
+        "nix.${config.networking.hostName}.local" = {
+          locations = {
+            "/" = {
+              proxyPass =
+                let
+                  addr = config.services.nix-serve.bindAddress;
+                  port = config.services.nix-serve.port;
+                in
+                "http://${addr}:${toString port}/";
+              # proxyWebsockets = true;
+              recommendedProxySettings = true;
+            };
+          };
+        };
+
         "${config.networking.hostName}.local" = {
           locations = {
             "/nix/" = {
