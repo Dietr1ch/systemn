@@ -54,12 +54,13 @@
       ];
     };
 
-    # https://search.nixos.org/options?channel=unstable&query=services.pgadmin
-    # pgadmin = {
-    #   enable = config.services.pgadmin.initialPasswordFile != null;
+    # https://search.nixos.org/options?channel=unstable&query=services.pgmanage
+    pgmanage = {
+      enable = true;
 
-    #   initialEmail = "admin@${config.networking.domain}";
-    # };
+      localOnly = lib.mkDefault true;
+      port = lib.mkDefault 10100;
+    };
 
     prometheus = {
       exporters = {
