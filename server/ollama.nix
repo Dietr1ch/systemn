@@ -109,6 +109,14 @@ in
             };
           }) config.services.ollama.loadModels
         );
+
+        router_settings = {
+          model_group_alias = {
+            # FIXME: Figure out what to do with "claude-haiku-4-5-20251001" calls
+            # Route haiku calls to local qwen2.5-coder:3b
+            # "claude-haiku-4-5-20251001" = "ollama/qwen2.5-coder:3b";
+          };
+        };
       };
     };
   };
