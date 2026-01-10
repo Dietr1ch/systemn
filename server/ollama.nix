@@ -80,6 +80,11 @@ in
         "gemma3" # https://ollama.com/library/gemma3
         "qwq" # https://ollama.com/library/qwq
       ];
+
+      # NOTE: Check ~ollama serve --help~
+      environmentVariables = {
+        "OLLAMA_KEEP_ALIVE" = lib.mkDefault "5m"; # The duration that models stay loaded in memory (default "5m")
+      };
     };
 
     # https://search.nixos.org/options?channel=unstable&query=services.litellm
