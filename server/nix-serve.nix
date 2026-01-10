@@ -31,7 +31,7 @@
       #   /var/nix-store-private.pem \
       #   /var/nix-store-public.pem
       # secretKeyFile = "/var/nix-store-private.pem";
-    };
+    }; # ..services.nix-serve
 
     nginx = {
       virtualHosts = {
@@ -66,12 +66,13 @@
           };
         };
       };
-    };
-  };
+    }; # ..services.nginx
+  }; # ..services
 
   environment = {
     etc = {
-      "avahi/services/nix-serve.service" = {
+      # /etc/avahi/services/nix-serve.service
+      "/avahi/services/nix-serve.service" = {
         mode = "0444";
         text = ''
           <?xml version="1.0" standalone="no"?>
@@ -86,6 +87,6 @@
           </service-group>
         '';
       };
-    };
-  };
+    }; # ..environment.etc
+  }; # ..environment
 }
