@@ -100,7 +100,7 @@ in
               api_base = "http://localhost:${toString config.services.ollama.port}";
 
               allowed_openai_params = [
-                "reasoning_effort"  # NOTE: I guess it's fine to always allow the parameter
+                "reasoning_effort" # NOTE: I guess it's fine to always allow the parameter
                 "thinking"
               ];
             };
