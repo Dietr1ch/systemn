@@ -4,16 +4,17 @@
   imports = [
     ./browser # ./browser/default.nix
 
+    # ./env/hyprland.nix
+    ./env/plasma.nix
+
     # ./audio.nix
     # ./cad.nix
     ./comms.nix
     ./fonts.nix
     # ./guitar.nix
-    # ./hyprland.nix
     # ./images.nix
     ./login-sddm.nix
     # ./office.nix
-    ./plasma.nix
     ./tools.nix
     # ./video.nix
   ];
