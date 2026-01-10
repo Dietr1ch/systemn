@@ -50,4 +50,12 @@
       "QT_QPA_PLATFORM" = "wayland";
     };
   };
+
+  xdg = {
+    # man portals.conf(5)
+    portal = {
+      enable = true;
+      xdgOpenUsePortal = true;
+    };
+  };
 }

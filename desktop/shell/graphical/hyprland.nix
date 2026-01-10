@@ -11,14 +11,6 @@
     };
   };
 
-  xdg = {
-    portal = {
-      enable = true;
-      xdgOpenUsePortal = true;
-
-    };
-  };
-
   environment = {
     systemPackages = with pkgs; [
       # Required packages
