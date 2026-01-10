@@ -57,5 +57,18 @@
       enable = true;
       xdgOpenUsePortal = true;
     };
+
+    sounds = {
+      enable = true;
+    };
+
+    terminal-exec = {
+      enable = true;
+      settings = {
+        "default" = [
+          "alacritty.desktop"
+        ];
+      };
+    };
   };
 }
