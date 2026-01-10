@@ -17,8 +17,8 @@
         lockdPort = 4001;
         mountdPort = 4002;
       };
-    };
-  };
+    }; # ..services.nfs
+  }; # ..services
 
   networking = {
     firewall = {
@@ -44,11 +44,12 @@
           to = 4002;
         }
       ];
-    };
-  };
+    }; # ..networking.firewall
+  }; # ..networking
 
   environment = {
     etc = {
+
       "avahi/services/nfs.service" = {
         mode = "0444";
         text = ''
@@ -65,6 +66,7 @@
           </service-group>
         '';
       };
-    };
-  };
+
+    }; # ..environment.etc
+  }; # ..environment
 }

@@ -63,6 +63,7 @@
           </service-group>
         '';
       };
-    };
+
+    }; # ..environment.etc
   }; # ..environment
 }
