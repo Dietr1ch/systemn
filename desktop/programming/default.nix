@@ -11,6 +11,7 @@
     ./rust.nix
     ./sql.nix
     ./web.nix
+    # ./zig.nix
 
     ./build.nix
     ./debugging.nix

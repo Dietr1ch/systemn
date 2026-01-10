@@ -80,6 +80,7 @@
           desktop-programming-haskell = import ./desktop/programming/haskell.nix;
           desktop-programming-python = import ./desktop/programming/python.nix;
           desktop-programming-rust = import ./desktop/programming/rust.nix;
+          desktop-programming-zig = import ./desktop/programming/zig.nix;
           desktop-shell-graphical = import ./desktop/shell/graphical; # ./desktop/shell/graphical/default.nix
           desktop-shell-graphical-audio = import ./desktop/shell/graphical/audio.nix;
           desktop-shell-graphical-browser = import ./desktop/shell/graphical/browser/default.nix;
