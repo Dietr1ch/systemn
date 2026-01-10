@@ -48,6 +48,8 @@
 
   environment = {
     etc = {
+
+      # /etc/avahi/services/samba.service
       "avahi/services/samba.service" = {
         mode = "0444";
         text = ''

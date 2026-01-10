@@ -50,6 +50,7 @@
   environment = {
     etc = {
 
+      # /etc/avahi/services/nfs.service
       "avahi/services/nfs.service" = {
         mode = "0444";
         text = ''
