@@ -74,6 +74,7 @@ in
       port = lib.mkDefault 11434;
 
       # Models: https://ollama.com/library
+      syncModels = lib.mkDefault true; # Cleanup models not in loadModels
       loadModels = [
         "deepseek-r1" # https://ollama.com/library/deepseek-r1
         "gemma3" # https://ollama.com/library/gemma3
