@@ -17,7 +17,8 @@
         enable = true;
         restartIfChanged = true;
 
-        target = "wayland-session.target";
+        # https://danklinux.com/docs/dankmaterialshell/installation#compositor-specific-systemd-setup
+        target = lib.mkDefault "hyprland-session.target";
       };
     }; # ..programs.dms-shell
   }; # ..programs

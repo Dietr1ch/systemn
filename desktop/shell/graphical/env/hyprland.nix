@@ -33,4 +33,16 @@
       waybar
     ];
   };
+
+  systemd = {
+    # https://search.nixos.org/options?channel=unstable&query=systemd.targets
+    targets = {
+      "hyprland-session" = {
+        description = "An Hyprland session";
+        requires = [ "graphical-session.target" ];
+        after = [ "graphical-session.target" ];
+      };
+    };
+  }; # ..systemd
+
 }
