@@ -19,12 +19,12 @@
 
         target = "wayland-session.target";
       };
-    };
-  };
+    }; # ..programs.dms-shell
+  }; # ..programs
 
   environment = {
     systemPackages = with pkgs; [
       matugen
     ];
-  };
+  }; # ..environment
 }
