@@ -15,5 +15,6 @@
 
     ./build.nix
     ./debugging.nix
+    ./grammars.nix
   ];
 }
