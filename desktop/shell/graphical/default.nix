@@ -4,9 +4,7 @@
   imports = [
     ./browser # ./browser/default.nix
 
-    # ./env/hyprland.nix
-    # ./env/dms.nix
-    ./env/plasma.nix
+    ./env # ./env/default.nix
     ./login # ./login/default.nix
 
     # ./audio.nix
