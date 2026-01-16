@@ -6,6 +6,7 @@
     systemPackages = with pkgs; [
       gnumake
       just
+      just-lsp
 
       binutils
       lld
