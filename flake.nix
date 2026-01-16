@@ -93,7 +93,8 @@
           desktop-shell-graphical-env-plasma = import ./desktop/shell/graphical/env/plasma.nix;
           desktop-shell-graphical-guitar = import ./desktop/shell/graphical/guitar.nix;
           desktop-shell-graphical-images = import ./desktop/shell/graphical/images.nix;
-          desktop-shell-graphical-login = import ./desktop/shell/graphical/login-sddm.nix;
+          desktop-shell-graphical-login = import ./desktop/shell/graphical/login/default.nix;
+          desktop-shell-graphical-login-sddm = import ./desktop/shell/graphical/login/sddm.nix;
           desktop-shell-graphical-office = import ./desktop/shell/graphical/office.nix;
           desktop-shell-graphical-video = import ./desktop/shell/graphical/video.nix;
           desktop-shell-terminal = import ./desktop/shell/terminal; # ./desktop/shell/terminal/default.nix

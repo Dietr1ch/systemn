@@ -7,6 +7,7 @@
     # ./env/hyprland.nix
     # ./env/dms.nix
     ./env/plasma.nix
+    ./login # ./login/default.nix
 
     # ./audio.nix
     # ./cad.nix
@@ -14,7 +15,6 @@
     ./fonts.nix
     # ./guitar.nix
     # ./images.nix
-    ./login-sddm.nix
     # ./office.nix
     ./tools.nix
     # ./video.nix
