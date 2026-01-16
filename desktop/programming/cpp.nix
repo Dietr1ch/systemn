@@ -6,6 +6,8 @@
     # Packages in sync with ~/Projects/nixland/programming/cpp.nix
     systemPackages = with pkgs; [
       gcc
+
+      clang-tools
     ]; # ..environment.systemPackages
   }; # ..environment
 }
