@@ -5,6 +5,7 @@
     ./browser # ./browser/default.nix
 
     # ./env/hyprland.nix
+    # ./env/dms.nix
     ./env/plasma.nix
 
     # ./audio.nix
