@@ -8,7 +8,6 @@
 
       enableAudioWavelength = lib.mkDefault true;
       enableCalendarEvents = lib.mkDefault true;
-      enableClipboard = lib.mkDefault true;
       enableDynamicTheming = lib.mkDefault true;
       enableSystemMonitoring = lib.mkDefault true;
       enableVPN = lib.mkDefault false;
