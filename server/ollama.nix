@@ -85,6 +85,10 @@ in
       # NOTE: Check ~ollama serve --help~
       environmentVariables = {
         "OLLAMA_KEEP_ALIVE" = lib.mkDefault "5m"; # The duration that models stay loaded in memory (default "5m")
+
+        # Default context length of 4kB is too small for many tasks
+        # - https://docs.ollama.com/context-length
+        "OLLAMA_CONTEXT_LENGTH" = lib.mkDefault (toString (64 * 1024));
       };
     }; # ..services.ollama
 
