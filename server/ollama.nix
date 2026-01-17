@@ -85,7 +85,7 @@ in
       environmentVariables = {
         "OLLAMA_KEEP_ALIVE" = lib.mkDefault "5m"; # The duration that models stay loaded in memory (default "5m")
       };
-    };
+    }; # ..services.ollama
 
     # https://search.nixos.org/options?channel=unstable&query=services.litellm
     litellm = {
@@ -124,8 +124,8 @@ in
           };
         };
       };
-    };
-  };
+    }; # ..services.litellm
+  }; # ..services
 
   # Integrations
   # ------------
@@ -137,5 +137,5 @@ in
         url = "http://127.0.0.1:${toString config.services.ollama.port}/v1/chat/completions";
       };
     };
-  };
+  }; # ..programs
 }
