@@ -32,4 +32,10 @@
       enable = true;
     };
   }; # ..documentation
+
+  environment = {
+    systemPackages = with pkgs; [
+      w3m-full
+    ]; # ..environment.systemPackages
+  }; # ..environment
 }
