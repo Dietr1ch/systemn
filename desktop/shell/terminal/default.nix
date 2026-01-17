@@ -10,7 +10,7 @@
 
   users = {
     defaultUserShell = pkgs.fish;
-  };
+  }; # ..users
 
   programs = {
     fish = {
@@ -24,12 +24,12 @@
       enableBashIntegration = true;
       enableFishIntegration = true;
       enableZshIntegration = true;
-    };
-  };
+    }; # ..programs.nix-index
+  }; # ..programs
 
   documentation = {
     man = {
       enable = true;
     };
-  };
+  }; # ..documentation
 }
