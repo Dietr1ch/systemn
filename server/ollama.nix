@@ -26,6 +26,7 @@ let
       "qwen3:32b"
       "qwen3:latest"
     ];
+    # NOTE: Models require `tools` to be used by coding agents
     tools = [
       "magistral:latest"
       "qwen2.5-coder:14b"
@@ -138,4 +139,10 @@ in
       };
     };
   }; # ..programs
+
+  environment = {
+    systemPackages = with pkgs; [
+      opencode
+    ]; # ..environment.systemPackages
+  }; # ..environment
 }
