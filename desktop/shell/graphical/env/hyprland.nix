@@ -34,6 +34,17 @@
     ];
   };
 
+  xdg = {
+    portal = {
+      enable = true;
+      xdgOpenUsePortal = true;
+
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-hyprland
+      ];
+    };
+  };
+
   systemd = {
     # https://search.nixos.org/options?channel=unstable&query=systemd.targets
     targets = {

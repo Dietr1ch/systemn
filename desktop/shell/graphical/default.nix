@@ -56,6 +56,8 @@
     portal = {
       enable = true;
       xdgOpenUsePortal = true;
+
+      # NOTE: Desktop environment should add extraPortals
     };
 
     sounds = {
