@@ -88,7 +88,7 @@ in
 
         # Default context length of 4kB is too small for many tasks
         # - https://docs.ollama.com/context-length
-        "OLLAMA_CONTEXT_LENGTH" = lib.mkDefault (toString (64 * 1024));
+        "OLLAMA_CONTEXT_LENGTH" = lib.mkDefault (toString (256 * 1024));
       };
     }; # ..services.ollama
 
