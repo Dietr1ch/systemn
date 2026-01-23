@@ -8,11 +8,15 @@
     resolved = {
       enable = lib.mkDefault true;
 
-      # Setting fallbackDns to avoid default list
-      fallbackDns = [
-        "127.0.0.55" # adguardhome
-        # "127.0.0.56"  # dnscrypt-proxy2 (behind adguardhome already)
-      ];
+      settings = {
+        Resolve = {
+          # Setting fallbackDns to avoid default list
+          FallbackDNS = [
+            "127.0.0.55" # adguardhome
+            # "127.0.0.56"  # dnscrypt-proxy2 (behind adguardhome already)
+          ]; # ..services.resolved.settings.Resolve.FallbackDNS
+        }; # ..services.resolved.settings.Resolve
+      }; # ..services.resolved.settings
     }; # ..services.resolved
 
     opensnitch = {
