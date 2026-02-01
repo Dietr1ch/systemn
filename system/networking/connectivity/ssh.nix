@@ -2,6 +2,11 @@
 
 {
   programs = {
+    # https://search.nixos.org/options?channel=unstable&query=programs.ssh
+    ssh = {
+      startAgent = false;
+    }; # ..programs.ssh
+
     # https://search.nixos.org/options?channel=unstable&query=programs.mosh
     mosh = {
       enable = true;
@@ -23,9 +28,15 @@
 
         # https://www.gnupg.org/documentation/manuals/gnupg26/gpg-agent.1.html
         settings = {
-          # default-cache-ttl = 60; # 1m  # Set by ../../security/yubikey.nix
+          "default-cache-ttl" = 1 * 60; # Keep entries for 1m after each use.
+          "max-cache-ttl" = 15 * 60; # Cache entries expire after 15m.
         }; # ..programs.gnupg.agent.settings
       }; # ..programs.gnupg.agent
+
+      # https://search.nixos.org/options?channel=unstable&query=programs.gnupg.dirmngr
+      dirmngr = {
+        enable = true;
+      }; # ..programs.gnupg.dirmngr
     }; # ..programs.gnupg
   }; # ..programs
 
@@ -68,6 +79,10 @@
 
   environment = {
     systemPackages = with pkgs; [
+      paperkey
+      pinentry-curses
+      pinentry-qt
+
       sshfs-fuse
     ];
   }; # ..environment
