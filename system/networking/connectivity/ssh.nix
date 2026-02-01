@@ -40,6 +40,8 @@
       # /etc/ssh/sshd_config
       settings = {
         PasswordAuthentication = false;
+        KbdInteractiveAuthentication = false;
+        ChallengeResponseAuthentication = false;
         PermitRootLogin = "no";
         PubkeyAuthentication = true;
 
