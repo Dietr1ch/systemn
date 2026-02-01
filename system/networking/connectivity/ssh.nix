@@ -39,6 +39,9 @@
         PasswordAuthentication = false;
         PermitRootLogin = "no";
         PubkeyAuthentication = true;
+
+        # https://wiki.gnupg.org/AgentForwarding
+        StreamLocalBindUnlink = "yes";
       };
 
       banner = ''
