@@ -11,6 +11,7 @@
 
     # https://search.nixos.org/options?channel=unstable&query=programs.gnupg
     gnupg = {
+      # https://search.nixos.org/options?channel=unstable&query=programs.gnupg.agent
       agent = {
         enable = true;
 
@@ -29,11 +30,13 @@
   }; # ..programs
 
   services = {
+    # https://search.nixos.org/options?channel=unstable&query=services.openssh
     openssh = {
       enable = true;
 
       startWhenNeeded = true;
 
+      # https://search.nixos.org/options?channel=unstable&query=services.openssh.settings
       # /etc/ssh/sshd_config
       settings = {
         PasswordAuthentication = false;
