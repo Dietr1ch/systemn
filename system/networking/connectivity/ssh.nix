@@ -2,6 +2,7 @@
 
 {
   programs = {
+    # https://search.nixos.org/options?channel=unstable&query=programs.mosh
     mosh = {
       enable = true;
     }; # ..programs.mosh
