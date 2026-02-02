@@ -88,6 +88,8 @@
 
   environment = {
     systemPackages = with pkgs; [
+      wol
+
       paperkey
       pinentry-curses
       pinentry-qt
