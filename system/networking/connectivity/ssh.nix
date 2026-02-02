@@ -59,6 +59,14 @@
 
         # https://wiki.gnupg.org/AgentForwarding
         StreamLocalBindUnlink = "yes";
+
+        # Remote Environment
+        # In sync with ~/Projects/nixland/networking/ssh.nix
+        AcceptEnv = [
+          "LANG"
+          "LC_*"
+          "ROAMING_SSH_HOSTNAME"
+        ];
       };
 
       banner = ''
