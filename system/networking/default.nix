@@ -23,6 +23,7 @@
     # https://nixos.wiki/wiki/Systemd-networkd
     # useNetworkd = true;
 
+    # https://search.nixos.org/options?channel=unstable&query=networkmanager
     networkmanager = {
       ethernet = {
         macAddress = "random";
