@@ -11,7 +11,7 @@
 
   environment = {
     systemPackages = with pkgs; [
-      xow_dongle-firmware
+      xone-dongle-firmware
     ]; # ..environment.systemPackages
   }; # ..environment
 }
