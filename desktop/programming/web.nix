@@ -4,6 +4,8 @@
   environment = {
     # Packages in sync with ~/Projects/nixland/programming/web.nix
     systemPackages = with pkgs; [
+      static-web-server
+
       emmet-ls
       htmx-lsp2
 
