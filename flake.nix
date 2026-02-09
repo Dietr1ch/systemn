@@ -68,6 +68,7 @@
           system-networking-connectivity-wireguard = import ./system/networking/connectivity/wireguard.nix;
           system-networking-connectivity-zerotier = import ./system/networking/connectivity/zerotier.nix;
           system-networking-firewall = import ./system/networking/firewall.nix;
+          system-networking-i2pd = import ./system/networking/i2pd.nix;
           system-networking-yggdrasil = import ./system/networking/yggdrasil.nix;
 
           # Desktop
