@@ -68,6 +68,7 @@
           system-networking-connectivity-wireguard = import ./system/networking/connectivity/wireguard.nix;
           system-networking-connectivity-zerotier = import ./system/networking/connectivity/zerotier.nix;
           system-networking-firewall = import ./system/networking/firewall.nix;
+          system-networking-yggdrasil = import ./system/networking/yggdrasil.nix;
 
           # Desktop
           # -------
@@ -128,7 +129,6 @@
           server-tor_relay = import ./server/tor_relay.nix;
           server-transmission = import ./server/transmission.nix;
           server-web = import ./server/web.nix;
-          server-yggdrasil = import ./server/yggdrasil.nix;
         };
     };
 }
