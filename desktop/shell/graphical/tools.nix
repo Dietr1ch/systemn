@@ -7,6 +7,12 @@
       enableAskPassword = true;
       askPassword = "${pkgs.kdePackages.ksshaskpass}/bin/ksshaskpass";
     };
+
+    # https://search.nixos.org/options?channel=unstable&query=programs.localsend
+    localsend = {
+      enable = true;
+      openFirewall = true;
+    }; # ..programs.localsend
   }; # ..programs
 
   environment = {
