@@ -9,7 +9,7 @@
       lutris
 
       winetricks
-      wineWowPackages.waylandFull
+      wineWow64Packages.waylandFull
     ];
   };
 
