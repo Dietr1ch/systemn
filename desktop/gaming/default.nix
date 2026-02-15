@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./comms.nix
     ./gamemode.nix
     ./obs.nix
     ./steam.nix
