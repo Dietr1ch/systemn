@@ -9,6 +9,9 @@
       emmet-ls
       htmx-lsp2
 
+      typescript
+      typescript-language-server
+
       vscode-langservers-extracted
       prettier
 
