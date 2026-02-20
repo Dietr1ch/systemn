@@ -58,6 +58,9 @@
         };
 
         alias = {
+          "aliases" =
+            lib.mkDefault "!git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort";
+
           "exec" = lib.mkDefault "!exec ";
 
           "h" = lib.mkDefault "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short";
