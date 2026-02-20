@@ -6,6 +6,10 @@
     git = {
       enable = lib.mkDefault true;
 
+      lfs = {
+        enable = lib.mkDefault true;
+      };
+
       # https://git-scm.com/docs/git-config
       # man git-config(1)
       # Populates /etc/gitconfig
