@@ -146,6 +146,29 @@
         '';
         mode = "0444";
       };
+
+      # /etc/gitignore
+      gitignore = {
+        text = ''
+          # System-level ignores
+          #
+          # Pretty conservative since it affects everything
+          #
+          # Created from ~/Projects/systemn/system/base/vcs/git.nix
+
+          # Unix
+          ".*"
+          "!.gitignore"
+
+          # Temporary files
+          "*~"
+          "*.swp"
+
+          # Backups
+          "*.bak"
+        '';
+        mode = "0444";
+      };
     }; # ..environment.etc
     systemPackages = with pkgs; [
       mergiraf
