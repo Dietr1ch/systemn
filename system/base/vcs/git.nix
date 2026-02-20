@@ -7,7 +7,9 @@
       enable = lib.mkDefault true;
 
       # https://git-scm.com/docs/git-config
+      # man git-config(1)
       # Populates /etc/gitconfig
+      # In sync with ~/Projects/nixland/core/vcs/git.nix
       config = {
         init = {
           defaultBranch = lib.mkDefault "master";
