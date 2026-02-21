@@ -24,6 +24,7 @@
 
   environment = {
     systemPackages = with pkgs; [
+      captive-browser
       ungoogled-chromium
     ]; # ..environment.systemPackages
   }; # ..environment
