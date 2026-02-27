@@ -1,5 +1,6 @@
 { ... }:
 
+# :/server/ollama.nix
 {
   programs = {
     # https://search.nixos.org/options?channel=unstable&query=programs.pay-respects

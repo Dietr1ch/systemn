@@ -135,6 +135,7 @@ in
   # Integrations
   # ------------
   programs = {
+    # :/desktop/shell/terminal/pay-respects.nix
     pay-respects = {
       aiIntegration = {
         locale = "en-GB";
