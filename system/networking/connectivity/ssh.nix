@@ -61,7 +61,7 @@
         StreamLocalBindUnlink = "yes";
 
         # Remote Environment
-        # In sync with ~/Projects/nixland/networking/ssh.nix
+        # In sync with ~/Projects/nixland/core/ssh.nix
         AcceptEnv = [
           "LANG"
           "LC_*"
