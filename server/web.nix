@@ -15,6 +15,8 @@
 
       # Compression
       recommendedGzipSettings = true;
+      recommendedBrotliSettings = true;
+
       # Config file mentioned in /etc/systemd/system/nginx.service
       virtualHosts = {
 
