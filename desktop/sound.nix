@@ -26,7 +26,8 @@
 
       # Tools
       ffmpeg-full
-      flacon
+      # FIXME https://github.com/NixOS/nixpkgs/issues/493680
+      # BROKEN: flacon
       shntool
       sox
     ];
