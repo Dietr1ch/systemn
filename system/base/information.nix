@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   programs = {
@@ -20,5 +20,9 @@
 
       nethogs
     ];
+    variables = {
+      "HOSTNAME" = config.networking.hostName;
+      "DOMAIN" = config.networking.domain;
+    };
   };
 }
