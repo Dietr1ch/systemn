@@ -62,6 +62,7 @@
 
         # Remote Environment
         # In sync with ~/Projects/nixland/core/ssh.nix
+        # In sync with ~/Projects/nixland/shell/fish.nix
         AcceptEnv = [
           "LANG"
           "LC_*"
