@@ -7,6 +7,7 @@
     fontconfig.enable = true;
     enableGhostscriptFonts = true;
 
+    # In sync with ~/Projects/nixland/desktop/fonts.nix
     packages = with pkgs; [
       # Regular fonts
       # =============
@@ -14,6 +15,7 @@
       inconsolata
       liberation_ttf
       noto-fonts
+      open-sans
 
       # ??
       dina-font
