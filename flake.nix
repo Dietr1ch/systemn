@@ -70,6 +70,8 @@
           system-networking-firewall = import ./system/networking/firewall.nix;
           system-networking-i2pd = import ./system/networking/i2pd.nix;
           system-networking-yggdrasil = import ./system/networking/yggdrasil.nix;
+          # Updates
+          system-updates = import ./system/updates.nix;
 
           # Desktop
           # -------
