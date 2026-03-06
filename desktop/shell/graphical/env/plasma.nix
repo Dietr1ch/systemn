@@ -294,6 +294,38 @@
       enable = true;
       xdgOpenUsePortal = true;
 
+      config = {
+        # KDE
+        # ===
+        # man portals.conf (5)
+        # https://man.archlinux.org/man/portals.conf.5
+        #
+        # User configuration:
+        # - ~/.config/xdg-desktop-portal/kde-portals.conf
+        # - ~/.config/xdg-desktop-portal/portals.conf
+        # - /etc/xdg/
+        # - ~/.local/share/
+        #
+        # System configuration:
+        # - /etc/xdg/xdg-desktop-portal/
+        # - /etc/xdg/xdg-desktop-portal/kde-portals.conf
+        # - /etc/xdg/xdg-desktop-portal/portals.conf
+        #
+        # KDE Defaults:
+        # - /usr/share/xdg-desktop-portal/kde-portals.conf
+        # - ${pkgs.plasma-workspace}/share/xdg-desktop-portal/kde-portals.conf
+        kde = {
+          # "org.freedesktop.impl.portal.Secret" = [
+          #   "gnome-keyring"
+          # ];
+          # "org.freedesktop.portal.OpenURI" = [
+          #   "librewolf"
+          #   "firefox"
+          #   "chromium"
+          # ];
+        };
+      }; # ..xdg.portal.config
+
       extraPortals = with pkgs; [
         kdePackages.xdg-desktop-portal-kde
       ];
