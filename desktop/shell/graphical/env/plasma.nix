@@ -297,8 +297,8 @@
       extraPortals = with pkgs; [
         kdePackages.xdg-desktop-portal-kde
       ];
-    };
-  };
+    }; # ..xdg.portal
+  }; # ..xdg
 
   # https://search.nixos.org/options?channel=unstable&show=qt
   qt = {
