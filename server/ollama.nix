@@ -9,15 +9,15 @@ let
   model_support = {
     # NOTE: Check with ~ollama show~
     #
-    # ```fish
-    # for capability in 'thinking' 'tools' 'completion' 'vision' 'insert'
-    #   echo "$capability = ["
-    #   for model in (ollama list | gawk 'NR>1 {print $1}' | sort)
-    #     ollama show $model | grep -A10 'Capabilities' | grep "    $capability" >/dev/null && echo "  \"$model\""
+    # #+begin_src fish :results raw
+    #   for capability in 'thinking' 'tools' 'completion' 'vision' 'insert'
+    #     echo "$capability = ["
+    #     for model in (ollama list | gawk 'NR>1 {print $1}' | sort)
+    #       ollama show $model | grep -A10 'Capabilities' | grep "    $capability" >/dev/null && echo "  \"$model\""
+    #     end
+    #     echo "];"
     #   end
-    #   echo "];"
-    # end
-    # ```
+    # #+end_src
 
     thinking = [
       "deepseek-r1:latest"
