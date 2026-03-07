@@ -25,6 +25,10 @@ let
       "qwen3:14b"
       "qwen3:32b"
       "qwen3:latest"
+      "qwen3.5:2b"
+      "qwen3.5:4b"
+      "qwen3.5:9b"
+      "qwen3.5:27b"
     ];
     # NOTE: Models require `tools` to be used by coding agents
     tools = [
@@ -37,6 +41,10 @@ let
       "qwen3-coder:30b"
       "qwen3:latest"
       "qwq:latest"
+      "qwen3.5:2b"
+      "qwen3.5:4b"
+      "qwen3.5:9b"
+      "qwen3.5:27b"
     ];
     completion = [
       "deepseek-coder-v2:16b"
@@ -55,6 +63,10 @@ let
     ];
     vision = [
       "gemma3:latest"
+      "qwen3.5:2b"
+      "qwen3.5:4b"
+      "qwen3.5:9b"
+      "qwen3.5:27b"
     ];
     insert = [
       "deepseek-coder-v2:16b"
