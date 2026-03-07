@@ -1,9 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   services = {
     displayManager = {
       # https://search.nixos.org/options?channel=unstable&query=services.displayManager.sddm
+      # ~/Projects/nixpkgs/nixos/modules/services/display-managers/sddm.nix
       sddm = {
         enable = true;
 
@@ -13,6 +14,14 @@
 
         wayland = {
           enable = true;
+        };
+
+        # https://search.nixos.org/options?channel=unstable&query=services.displayManager.sddm.settings
+        # man sddm.conf (5)
+        settings = {
+          General = {
+            NumLock = lib.mkDefault "on";
+          };
         };
 
         autoNumlock = true;
