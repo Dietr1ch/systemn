@@ -277,6 +277,8 @@
 
     plasma6 = {
       excludePackages = with pkgs.kdePackages; [
+        kwin-x11 # Farewell, X11. https://github.com/NixOS/nixpkgs/pull/479797#issuecomment-3748683491
+
         elisa # Simple music player aiming to provide a nice experience for its users
         kate # Text editor
         kdepim-runtime # Akonadi agents and resources
