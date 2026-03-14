@@ -32,6 +32,7 @@ let
     ];
     # NOTE: Models require `tools` to be used by coding agents
     tools = [
+      "llama3.1:8b"
       "magistral:latest"
       "qwen2.5-coder:14b"
       "qwen2.5-coder:3b"
@@ -51,7 +52,7 @@ let
       "deepseek-r1:latest"
       "gemma3:latest"
       "magistral:latest"
-      "phi4:latest"
+      "phi4:14b"
       "qwen2.5-coder:14b"
       "qwen2.5-coder:3b"
       "qwen2.5-coder:7b"
@@ -89,9 +90,10 @@ in
       # Models: https://ollama.com/library
       syncModels = lib.mkDefault true; # Cleanup models not in loadModels
       loadModels = [
-        "deepseek-r1" # https://ollama.com/library/deepseek-r1
-        "gemma3" # https://ollama.com/library/gemma3
-        "qwq" # https://ollama.com/library/qwq
+        # https://www.canirun.ai/
+        "qwen3.5:9b" # https://ollama.com/library/qwen3.5:9b
+        "phi4:14b" # https://ollama.com/library/phi4:14b
+        "llama3.1:8b" # https://ollama.com/library/llama3.1:8b
       ];
 
       # NOTE: Check ~ollama serve --help~
