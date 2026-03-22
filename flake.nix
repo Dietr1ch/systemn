@@ -81,6 +81,7 @@
           desktop-programming = import ./desktop/programming/default.nix;
           desktop-programming-c = import ./desktop/programming/c.nix;
           desktop-programming-cpp = import ./desktop/programming/cpp.nix;
+          desktop-programming-fish = import ./desktop/programming/fish.nix;
           desktop-programming-haskell = import ./desktop/programming/haskell.nix;
           desktop-programming-python = import ./desktop/programming/python.nix;
           desktop-programming-rust = import ./desktop/programming/rust.nix;

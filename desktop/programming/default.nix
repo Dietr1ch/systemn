@@ -4,6 +4,7 @@
   imports = [
     ./c.nix
     ./cpp.nix
+    ./fish.nix
     ./haskell.nix
     ./nix.nix
     ./python.nix
