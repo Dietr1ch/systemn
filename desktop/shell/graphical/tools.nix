@@ -25,6 +25,8 @@
 
       gparted
       meld
+
+      qdigidoc
     ];
   }; # ..environment
 }
