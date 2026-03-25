@@ -4,6 +4,8 @@
   environment = {
     # Packages in sync with ~/Projects/nixland/programming/nix.nix
     systemPackages = with pkgs; [
+      devenv
+
       # LSP
       nixd
 
