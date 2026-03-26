@@ -15,6 +15,7 @@
     # ./zig.nix
 
     ./build.nix
+    ./databases.nix
     ./debugging.nix
     ./grammars.nix
   ];
