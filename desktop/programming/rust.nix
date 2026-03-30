@@ -13,7 +13,6 @@
       rust-script
 
       cargo
-      cargo-audit
       cargo-benchcmp
       cargo-bloat
       cargo-criterion
