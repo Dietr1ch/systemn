@@ -4,7 +4,6 @@
 {
   fonts = {
     fontDir.enable = true;
-    fontconfig.enable = true;
     enableGhostscriptFonts = true;
 
     # In sync with ~/Projects/nixland/desktop/fonts.nix
@@ -30,6 +29,7 @@
       fira-code
       fira-code-symbols
       fira-math
+      iosevka
 
       # Icons, Symbols, Emoji
       # =====================
@@ -40,6 +40,28 @@
       powerline-fonts
 
       noto-fonts-color-emoji
-    ];
-  };
+    ]; # ..fonts.packages
+
+    fontconfig = {
+      enable = true;
+
+      defaultFonts = {
+        serif = [
+          "Noto Serif"
+          "Liberation Serif"
+          "DejaVu Serif"
+        ];
+        sansSerif = [
+          "Noto Sans"
+          "Fira Sans"
+          "Liberation Sans"
+          "DejaVu Sans"
+        ];
+        monospace = [
+          "Fira Code"
+          "Iosevka"
+        ];
+      };
+    }; # ..fonts.fontconfig
+  }; # ..fonts
 }
