@@ -39,7 +39,9 @@
 
       powerline-fonts
 
+      nerd-fonts.symbols-only
       noto-fonts-color-emoji
+      twemoji-color-font
     ]; # ..fonts.packages
 
     fontconfig = {
@@ -60,6 +62,12 @@
         monospace = [
           "Fira Code"
           "Iosevka"
+        ];
+        emoji = [
+          "Noto Color Emoji"
+          "Noto Emoji"
+          "Noto Mono"
+          "Twemoji Mozilla"
         ];
       };
     }; # ..fonts.fontconfig
