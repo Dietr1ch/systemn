@@ -6,7 +6,7 @@
       vlc
 
       blender
-      # BROKEN: kdePackages.kdenlive
+      kdePackages.kdenlive
 
       ffmpeg-full
     ];
