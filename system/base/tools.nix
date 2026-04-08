@@ -28,6 +28,7 @@
 
       fd
       ripgrep
+      tree
 
       # Disk (Also in ://system/storage/default.nix)
       dua
