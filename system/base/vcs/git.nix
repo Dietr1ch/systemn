@@ -75,6 +75,22 @@
 
           "clone-shallow" = lib.mkDefault "clone --single-branch --shallow-since '7 days'";
           "clone-commit" = lib.mkDefault "clone --single-branch --depth 1";
+
+          # https://piechowski.io/post/git-commands-before-reading-code/
+          # What Changes the Most
+          "log-top-changed" =
+            lib.mkDefault "!git log --format=format: --name-only --since='1 year ago' | sort | uniq --count | sort --numeric-sort --reverse | head -50";
+          # Who Built This
+          "log-top-contributors" = lib.mkDefault "!git shortlog --summary --numbered --no-merges";
+          # Where Do Bugs Cluster
+          "log-bug-nest" =
+            lib.mkDefault "!git log --regexp-ignore-case --extended-regexp --grep='fix|bug|broken' --name-only --format='' | sort | uniq --count | sort --numeric-sort --reverse | head -50";
+          # Is This Project Accelerating or Dying
+          "log-commit-trend" =
+            lib.mkDefault "!git log --format='%ad' --date=format:'%Y-%m' | sort | uniq --count";
+          # How Often Is the Team Firefighting
+          "log-incidents" =
+            lib.mkDefault "!git log --oneline --regexp-ignore-case --extended-regexp --grep 'revert|hotfix|emergency|rollback' --since='1 year ago'";
         };
       };
     }; # ..programs.git
