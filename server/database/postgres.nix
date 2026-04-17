@@ -45,6 +45,7 @@
       #   sudo --user postgres psql $DATABASE --command 'create extension $EXTENSION'
       extensions = with pkgs.postgresqlPackages; [
         pg_cron # Cron jobs
+        pg_graphql # GraphQL API
         pg_hll # Hyper-log-log
         pg_uuidv7 # UUIDv7
         pgsodium # libsodium crypto
