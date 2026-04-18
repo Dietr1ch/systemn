@@ -47,6 +47,7 @@
         h3-pg # H3 hexagonal geospatial grid
         pg_cron # Cron jobs
         pg_graphql # GraphQL API
+        ip4r
         pg_hll # Hyper-log-log
         pg_uuidv7 # UUIDv7
         pgsodium # libsodium crypto
