@@ -44,6 +44,7 @@
       # Adding extensions to DB,
       #   sudo --user postgres psql $DATABASE --command 'create extension $EXTENSION'
       extensions = with pkgs.postgresqlPackages; [
+        h3-pg # H3 hexagonal geospatial grid
         pg_cron # Cron jobs
         pg_graphql # GraphQL API
         pg_hll # Hyper-log-log
