@@ -45,15 +45,15 @@
       #   sudo --user postgres psql $DATABASE --command 'create extension $EXTENSION'
       extensions = with pkgs.postgresqlPackages; [
         h3-pg # H3 hexagonal geospatial grid
-        pg_cron # Cron jobs
-        pg_graphql # GraphQL API
         ip4r
         pg-semver
+        pg_cron
+        pg_graphql
         pg_hll # Hyper-log-log
-        pg_uuidv7 # UUIDv7
+        pg_uuidv7
         pgsodium # libsodium crypto
         pgtap # Unit testing
-        postgis # GIS
+        postgis
         vectorchord # Vector search. https://github.com/tensorchord/VectorChord/
       ];
     };
