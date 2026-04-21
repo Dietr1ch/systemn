@@ -68,11 +68,9 @@
           "LC_*"
           "ROAMING_SSH_HOSTNAME"
         ];
-      };
 
-      banner = ''
-        ${config.networking.hostName}
-      '';
+        Banner = builtins.toFile "ssh_banner" config.networking.hostName;
+      };
     };
   }; # ..services
 
