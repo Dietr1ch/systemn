@@ -2,6 +2,8 @@
 
 {
   imports = [
+    ./config
+
     ./c.nix
     ./cpp.nix
     ./fish.nix
