@@ -20,6 +20,7 @@
       vscode-langservers-extracted
 
       # Tools
+      xh
       wasm-pack
       wasm-bindgen-cli
     ]; # ..environment.systemPackages

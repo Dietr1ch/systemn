@@ -35,6 +35,7 @@
 
   environment = {
     systemPackages = with pkgs; [
+      xh
       w3m-full
     ]; # ..environment.systemPackages
   }; # ..environment
