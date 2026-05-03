@@ -11,6 +11,7 @@
 
   environment = {
     systemPackages = with pkgs; [
+      xdg-ninja
       xdg-user-dirs
     ];
   };
