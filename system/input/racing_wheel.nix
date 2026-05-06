@@ -2,7 +2,13 @@
 
 {
   hardware = {
+    # https://search.nixos.org/options?channel=unstable&query=hardware.new-lg4ff
     new-lg4ff = {
+      enable = true;
+    };
+
+    # https://search.nixos.org/options?channel=unstable&query=hardware.usb-modeswitch
+    usb-modeswitch = {
       enable = true;
     };
   };
@@ -17,6 +23,9 @@
     # https://search.nixos.org/options?channel=unstable&query=services.udev
     udev = {
       extraRules = ''
+        # udev rule for Logitech G923 so it switches from PS Mode to  PC mode
+        ATTR{idVendor}=="046d", ATTR{idProduct}=="c267", RUN+="${pkgs.usb-modeswitch}/bin/usb_modeswitch -v 046d -p  c267 -M 30f8090701010000 -m 03 -r 03"
+
         # https://github.com/berarma/oversteer/blob/master/data/udev/99-logitech-wheel-perms.rules
 
         # Match kernel name of device, rather than ATTRS{idProduct} and ATTRS{idVendor}
