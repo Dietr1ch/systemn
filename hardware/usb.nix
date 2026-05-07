@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 let
   # Wait 60s before auto-suspending hardware.
@@ -33,5 +33,12 @@ in
       # https://www.kernel.org/doc/Documentation/usb/power-management.txt
       options usbcore autosuspend=${toString usb_autosuspend_secs}
     '';
+  };
+
+  environment = {
+    systemPackages = with pkgs; [
+      usbutils
+      usbtop
+    ];
   };
 }
