@@ -5,18 +5,17 @@
     coredump = {
       enable = true;
 
-      # /etc/systemd/coredump.conf
-      # man coredump.conf(5)
-      extraConfig = ''
-        # SystemN configuration
-        # ---------------------
-        # ~/Projects/systemn/system/base/crashes.nix
-
-        Storage=external  # external: /var/lib/systemd/coredump/
-        Compress=yes
-        ProcessSizeMax=1G
-        ExternalSizeMax=1G
-      '';
-    };
-  };
+      # https://search.nixos.org/options?channel=unstable&query=systemd.coredump.settings
+      settings = {
+        # /etc/systemd/coredump.conf
+        # man coredump.conf(5)
+        Coredump = {
+          "Storage" = "external"; # external: /var/lib/systemd/coredump/
+          "Compress" = "yes";
+          "ProcessSizeMax" = "1G";
+          "ExternalSizeMax" = "1G";
+        };
+      }; # ..systemd.coredump.settings
+    }; # ..systemd.coredump
+  }; # ..systemd
 }
