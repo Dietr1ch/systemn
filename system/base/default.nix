@@ -8,6 +8,7 @@
 
     ./crashes.nix
     ./editor.nix
+    ./hacks.nix
     ./hardware_information.nix
     ./information.nix
     ./logs.nix
