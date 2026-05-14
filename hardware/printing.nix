@@ -8,6 +8,7 @@
 
       # https://nixos.wiki/wiki/Printing#Drivers
       drivers = with pkgs; [
+        gutenprint
         gutenprintBin
       ];
     };
