@@ -10,7 +10,8 @@
 
       winetricks
       wineWow64Packages.waylandFull
-    ];
-  };
 
+      protonup-qt
+    ]; # ..environment.systemPackages
+  }; # ..environment
 }
