@@ -16,6 +16,7 @@
   environment = {
     systemPackages = with pkgs; [
       oversteer
+      usb-modeswitch
     ];
   };
 
