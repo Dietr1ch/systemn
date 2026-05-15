@@ -39,6 +39,8 @@ in
     systemPackages = with pkgs; [
       usbutils
       usbtop
+      usb-modeswitch
+      usb-modeswitch-data
     ];
   };
 }
