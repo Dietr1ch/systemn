@@ -65,6 +65,7 @@
           system-networking = import ./system/networking; # ./system/networking/default.nix
           system-networking-connectivity = import ./system/networking/connectivity/default.nix;
           system-networking-connectivity-dns = import ./system/networking/connectivity/dns/default.nix;
+          system-networking-connectivity-dns-avahi = import ./system/networking/connectivity/dns/avahi.nix;
           system-networking-connectivity-wireguard = import ./system/networking/connectivity/wireguard.nix;
           system-networking-connectivity-zerotier = import ./system/networking/connectivity/zerotier.nix;
           system-networking-firewall = import ./system/networking/firewall.nix;
