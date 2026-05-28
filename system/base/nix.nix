@@ -25,24 +25,24 @@
       ];
 
       # Storage
-      # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html?highlight=max-substitution-jobs#conf-auto-optimise-store
+      # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html#conf-auto-optimise-store
       auto-optimise-store = lib.mkDefault false;
       # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html#conf-preallocate-contents
       preallocate-contents = lib.mkDefault true;
 
       # Builds
-      # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html?highlight=max-substitution-jobs#conf-max-jobs
-      # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html?highlight=max-substitution-jobs#conf-cores
+      # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html#conf-max-jobs
+      # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-cores
 
       # Downloads
-      # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html?highlight=max-substitution-jobs#conf-max-substitution-jobs
+      # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html#conf-max-substitution-jobs
       max-substitution-jobs = lib.mkDefault 24;
       # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-http-connections
       http-connections = lib.mkDefault 50;
       # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html#conf-connect-timeout
       # Corresponds to curl's --connect-timeout.
       connect-timeout = lib.mkDefault 5;
-      # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html?highlight=max-substitution-jobs#conf-download-attempts
+      # https://nix.dev/manual/nix/2.24/command-ref/conf-file.html#conf-download-attempts
       download-attempts = lib.mkDefault 3;
     };
 
