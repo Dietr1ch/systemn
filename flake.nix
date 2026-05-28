@@ -118,6 +118,7 @@
 
           # Server
           # ------
+          server-aria2 = import ./server/aria2.nix;
           server-certificates = import ./server/certificates.nix;
           server-database-postgres = import ./server/database/postgres.nix;
           server-file_sharing-ipfs = import ./server/file_sharing/ipfs.nix;
