@@ -9,7 +9,10 @@
       enable = lib.mkDefault true;
 
       settings = {
+        # https://www.freedesktop.org/software/systemd/man/latest/resolved.conf.html
         Resolve = {
+          MulticastDNS = "yes"; # Respond and resolve
+
           # Setting fallbackDns to avoid default list
           FallbackDNS = [
             "127.0.0.55" # adguardhome
@@ -149,6 +152,7 @@
     ]; # ..networking.nameservers
 
     # https://search.nixos.org/options?channel=unstable&query=networking.networkmanager
+    # /etc/NetworkManager/NetworkManager.conf
     networkmanager = {
       enable = true;
 

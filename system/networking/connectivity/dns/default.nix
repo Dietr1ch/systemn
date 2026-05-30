@@ -23,7 +23,7 @@
 
 {
   imports = [
-    # ./avahi.nix
+    ./avahi.nix
 
     ./resolved.nix # 127.0.0.53, 127.0.0.54
     ./adguardhome.nix # \> 127.0.0.55

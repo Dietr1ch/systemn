@@ -4,14 +4,17 @@
   services = {
     # https://search.nixos.org/options?channel=unstable&query=services.avahi
     # ~/Projects/nixpkgs/nixos/modules/services/networking/avahi-daemon.nix
+    #
+    # NOTE: We prefer using systemd's resolved, but have to use avahi to publish services
     avahi = {
       enable = lib.mkDefault true;
 
       ipv4 = true;
       ipv6 = true;
 
-      nssmdns4 = true;
-      # Whether to enable the mDNS NSS (Name Service Switch) plug-in for IPv6.
+      # Don't use the NSS (Name Service Switch) plugin. Let resolved handle resolving.
+      nssmdns4 = false;
+      # Whether to enable the mDNS NSS plug-in for IPv6.
       # Enabling it allows applications to resolve names in the .local domain by
       # transparently querying the Avahi daemon.
       # Due to the fact that most mDNS responders only register local IPv4
@@ -24,9 +27,9 @@
       publish = {
         enable = true;
 
-        addresses = true;
-        workstation = true; # Register a service of type “_workstation._tcp” on the local LAN.
-        userServices = true;
+        # addresses = true; # Publish A/AAAA name->IP records
+        # workstation = true; # Register a “_workstation._tcp” SRV record
+        userServices = true; # Publish custom SRV records
       };
     }; # ..services.avahi
 
