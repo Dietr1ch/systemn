@@ -83,6 +83,7 @@
           desktop-programming-config = import ./desktop/programming/config/default.nix;
           desktop-programming-cpp = import ./desktop/programming/cpp.nix;
           desktop-programming-fish = import ./desktop/programming/fish.nix;
+          desktop-programming-go = import ./desktop/programming/go.nix;
           desktop-programming-haskell = import ./desktop/programming/haskell.nix;
           desktop-programming-python = import ./desktop/programming/python.nix;
           desktop-programming-rust = import ./desktop/programming/rust.nix;
