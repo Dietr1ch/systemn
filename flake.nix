@@ -48,6 +48,8 @@
           system-boot-silent = import ./system/boot/silent.nix;
           system-boot-plymouth = import ./system/boot/plymouth.nix;
 
+          system-kernel-rt = import ./system/kernel/rt.nix;
+
           system-security = import ./system/security; # ./system/security/default.nix
           system-security-yubikey = import ./system/security/yubikey.nix;
           # Audit
