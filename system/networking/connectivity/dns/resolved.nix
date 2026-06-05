@@ -11,7 +11,7 @@
       settings = {
         # https://www.freedesktop.org/software/systemd/man/latest/resolved.conf.html
         Resolve = {
-          MulticastDNS = "yes"; # Respond and resolve
+          MulticastDNS = "resolve"; # resolve, but don't respond
 
           # Setting fallbackDns to avoid default list
           FallbackDNS = [

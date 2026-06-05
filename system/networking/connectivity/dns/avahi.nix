@@ -13,7 +13,7 @@
       ipv6 = true;
 
       # Don't use the NSS (Name Service Switch) plugin. Let resolved handle resolving.
-      nssmdns4 = false;
+      nssmdns4 = true;
       # Whether to enable the mDNS NSS plug-in for IPv6.
       # Enabling it allows applications to resolve names in the .local domain by
       # transparently querying the Avahi daemon.
