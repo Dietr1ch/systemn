@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  lib,
+  stdenv,
+  ...
+}:
 
 {
   programs = {
@@ -23,47 +28,54 @@
   };
 
   environment = {
-    systemPackages = with pkgs; [
-      killall
+    systemPackages =
+      with pkgs;
+      [
+        killall
 
-      fd
-      ripgrep
-      tree
+        fd
+        ripgrep
+        tree
 
-      # Disk (Also in ://system/storage/default.nix)
-      dua
-      ncdu
+        # Disk (Also in ://system/storage/default.nix)
+        dua
+        ncdu
 
-      parallel-full
+        parallel-full
 
-      # Hashing
-      b3sum
-      rblake3sum
+        # Hashing
+        b3sum
+        rblake3sum
 
-      # Performance
-      perf
-      pprof
-      # BROKEN: perf_data_converter
+        # Performance
+        perf
+        pprof
+        # BROKEN: perf_data_converter
 
-      # Crisis tools
-      # https://www.brendangregg.com/blog/2024-03-24/linux-crisis-tools.html
-      procps
-      util-linux
-      sysstat
-      iproute2
-      numactl
-      tcpdump
-      perf
-      bpftrace
-      trace-cmd
-      nicstat
-      ethtool
-      tiptop
-      cpuid
-      msr-tools
-      # More
-      ptcpdump
-      bpftools
-    ];
+        # Crisis tools
+        # https://www.brendangregg.com/blog/2024-03-24/linux-crisis-tools.html
+        procps
+        util-linux
+        sysstat
+        iproute2
+        numactl
+        tcpdump
+        perf
+        bpftrace
+        trace-cmd
+        nicstat
+        ethtool
+        tiptop
+
+        msr-tools
+        # More
+        ptcpdump
+        bpftools
+      ]
+      ++ lib.optionals pkgs.stdenv.hostPlatform.isx86_64 [
+        cpuid
+      ]
+      ++ lib.optionals pkgs.stdenv.hostPlatform.isAarch64 [
+      ];
   };
 }
