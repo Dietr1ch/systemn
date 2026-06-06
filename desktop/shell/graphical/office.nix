@@ -3,7 +3,8 @@
 {
   environment = {
     systemPackages = with pkgs; [
-      libreoffice-qt6-fresh
+      # BROKEN: libreoffice-qt6-fresh
+      libreoffice-qt6
       kdePackages.okular
     ];
   };
