@@ -1,7 +1,7 @@
 { lib, ... }:
 
 let
-  english = "en_GB.UTF-8";
+  english = "en_IE.UTF-8";
   # french = "fr_FR.UTF-8";
   # german = "de_DE.UTF-8";
   # spanish = "es_CL.UTF-8";
@@ -19,7 +19,7 @@ in
     #   "de_DE.UTF-8/UTF-8"
 
     #   "en_CA.UTF-8/UTF-8"
-    #   "en_GB.UTF-8/UTF-8"
+    #   "en_IE.UTF-8/UTF-8"
     #   "en_US.UTF-8/UTF-8"
 
     #   "es_CL.UTF-8/UTF-8"
