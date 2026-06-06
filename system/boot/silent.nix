@@ -3,10 +3,8 @@
 {
   boot = {
     loader = {
-      # Hide the OS choice for bootloaders.
-      # It's still possible to open the bootloader list by pressing any key
-      # It will just not appear on screen unless a key is pressed
-      timeout = lib.mkDefault 0;
+      # Shorten the bootloader selection timeout.
+      timeout = lib.mkDefault 2;
     };
 
     # Enable "Silent Boot"
