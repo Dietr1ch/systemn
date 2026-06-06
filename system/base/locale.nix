@@ -9,6 +9,7 @@ in
 {
   i18n = {
     defaultLocale = lib.mkDefault english;
+    defaultCharset = "UTF-8";
 
     # ../../secrets.nix
     # NOTE: Has to be in this format: "de_DE.UTF-8/UTF-8"
