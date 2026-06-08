@@ -29,7 +29,6 @@
       fira-code
       fira-code-symbols
       fira-math
-      iosevka
 
       # Icons, Symbols, Emoji
       # =====================
@@ -61,7 +60,6 @@
         ];
         monospace = [
           "Fira Code"
-          "Iosevka"
         ];
         emoji = [
           "Noto Color Emoji"
