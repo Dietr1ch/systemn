@@ -20,10 +20,15 @@
       # Config file mentioned in /etc/systemd/system/nginx.service
       virtualHosts = {
 
-        # $HOSTNAME.local
-        "${config.networking.hostName}.local" = {
+        # $HOSTNAME
+        "${config.networking.hostName}" = {
           # addSSL = true;
           # enableACME = true;
+
+          serverAliases = [
+            # $HOSTNAME.local
+            "${config.networking.hostName}.local"
+          ];
 
           # https://search.nixos.org/options?channel=unstable&query=services.nginx.virtualHosts.%3Cname%3E.locations
           # https://nginx.org/en/docs/http/ngx_http_core_module.html#location
