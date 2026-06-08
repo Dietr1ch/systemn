@@ -30,6 +30,10 @@
       # BROKEN: flacon
       shntool
       sox
+
+      beets
+      python313Packages.beets
+      python313Packages.beetcamp
     ];
   };
 }
