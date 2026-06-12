@@ -38,6 +38,13 @@
       # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-cores
 
       # Downloads
+      # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-substituters
+      substituters = [
+        # https://nixos.wiki/wiki/Maintainers:Fastly
+        "https://aseipp-nix-cache.global.ssl.fastly.net" # Beta IPv4-only
+        # "https://aseipp-nix-cache.freetls.fastly.net" # Beta + IPv6 + HTTP/2
+      ];
+
       # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-max-substitution-jobs
       max-substitution-jobs = lib.mkDefault 24;
       # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-http-connections
