@@ -11,6 +11,9 @@
     # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#available-settings
     settings = {
       # Config
+      # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-use-xdg-base-directories
+      use-xdg-base-directories = true;
+
       # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-use-cgroups
       use-cgroups = lib.mkDefault true;
       # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-extra-experimental-features
