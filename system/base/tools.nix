@@ -41,7 +41,7 @@
         dua
         ncdu
 
-        parallel-full
+        parallel
 
         # Hashing
         b3sum
