@@ -8,8 +8,6 @@
     polkit = {
       enable = true;
 
-      debug = lib.mkDefault true;
-
       # https://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html#polkit-rules
       # - /etc/polkit-1/rules.d/
       #   - /etc/polkit-1/rules.d/10-nixos.rules
