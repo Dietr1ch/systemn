@@ -79,6 +79,7 @@
           # -------
           desktop = import ./desktop; # ./desktop/default.nix
           desktop-gaming = import ./desktop/gaming; # ./desktop/gaming/default.nix
+          desktop-gaming-chess = import ./desktop/gaming/chess.nix;
           desktop-gaming-wine = import ./desktop/gaming/wine.nix;
           desktop-programming = import ./desktop/programming/default.nix;
           desktop-programming-c = import ./desktop/programming/c.nix;

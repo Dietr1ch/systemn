@@ -2,6 +2,7 @@
 
 {
   imports = [
+    # ./chess.nix
     ./comms.nix
     ./gamemode.nix
     ./obs.nix
