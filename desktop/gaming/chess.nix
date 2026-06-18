@@ -8,7 +8,6 @@
       uchess
       gnuchess
       en-croissant
-      chessdb
     ];
   };
 }
