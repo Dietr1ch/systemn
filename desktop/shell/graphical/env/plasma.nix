@@ -288,6 +288,10 @@
         kpat # KPatience offers a selection of solitaire card games
         ksudoku # KSudoku is a logic-based symbol placement puzzle
         ktorrent # Powerful BitTorrent client
+
+        discover
+        knewstuff
+        ktexteditor
       ];
     };
   };
