@@ -18,6 +18,9 @@
   environment = {
     systemPackages = with pkgs; [
       kdePackages.kasts # TODO: Find a new home for kasts
+      kdePackages.spectacle
+      # TODO: Consider dropping vokoscreen once spectacle hits feature parity
+      vokoscreen-ng
 
       transmission_4-qt6 # For pairing with ://server/transmission.nix
 
