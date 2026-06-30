@@ -17,7 +17,6 @@
 
   environment = {
     systemPackages = with pkgs; [
-      kdePackages.kasts # TODO: Find a new home for kasts
       kdePackages.spectacle
       # TODO: Consider dropping vokoscreen once spectacle hits feature parity
       vokoscreen-ng
