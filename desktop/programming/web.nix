@@ -15,7 +15,6 @@
       subfont
 
       # Language servers
-      emmet-ls
       htmx-lsp2
       vscode-langservers-extracted
 
