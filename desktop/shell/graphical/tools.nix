@@ -21,7 +21,7 @@
       # TODO: Consider dropping vokoscreen once spectacle hits feature parity
       vokoscreen-ng
 
-      transmission_4-qt6 # For pairing with ://server/transmission.nix
+      transmission_4-qt # For pairing with ://server/transmission.nix
 
       gpu-viewer
 
