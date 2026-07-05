@@ -25,6 +25,7 @@
         "blake3-hashes" # https://nix.dev/manual/nix/2.34/development/experimental-features.html#xp-feature-blake3-hashes
         "git-hashing" # https://nix.dev/manual/nix/2.34/development/experimental-features.html#xp-feature-git-hashing
         "ca-derivations" # https://nix.dev/manual/nix/2.34/development/experimental-features.html#xp-feature-ca-derivations
+        "pipe-operators" # https://nix.dev/manual/nix/2.34/development/experimental-features.html#xp-feature-pipe-operators
       ];
 
       # Storage
