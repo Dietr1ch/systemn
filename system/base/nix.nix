@@ -8,51 +8,51 @@
     };
 
     # Generates /etc/nix/nix.conf
-    # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#available-settings
+    # https://nix.dev/manual/nix/2.34/command-ref/conf-file.html#available-settings
     settings = {
       # Config
-      # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-use-xdg-base-directories
+      # https://nix.dev/manual/nix/2.34/command-ref/conf-file.html#conf-use-xdg-base-directories
       use-xdg-base-directories = true;
 
-      # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-use-cgroups
+      # https://nix.dev/manual/nix/2.34/command-ref/conf-file.html#conf-use-cgroups
       use-cgroups = lib.mkDefault true;
-      # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-extra-experimental-features
+      # https://nix.dev/manual/nix/2.34/command-ref/conf-file.html#conf-extra-experimental-features
       extra-experimental-features = [
-        "nix-command" # https://nix.dev/manual/nix/2.32/development/experimental-features.html#xp-feature-nix-command
-        "flakes" # https://nix.dev/manual/nix/2.32/development/experimental-features.html#xp-feature-flakes
-        "cgroups" # https://nix.dev/manual/nix/2.32/development/experimental-features.html#xp-feature-cgroups
-        "fetch-tree" # https://nix.dev/manual/nix/2.32/development/experimental-features.html#xp-feature-fetch-tree
-        "blake3-hashes" # https://nix.dev/manual/nix/2.32/development/experimental-features.html#xp-feature-blake3-hashes
-        "git-hashing" # https://nix.dev/manual/nix/2.32/development/experimental-features.html#xp-feature-git-hashing
-        "ca-derivations" # https://nix.dev/manual/nix/2.32/development/experimental-features.html#xp-feature-ca-derivations
+        "nix-command" # https://nix.dev/manual/nix/2.34/development/experimental-features.html#xp-feature-nix-command
+        "flakes" # https://nix.dev/manual/nix/2.34/development/experimental-features.html#xp-feature-flakes
+        "cgroups" # https://nix.dev/manual/nix/2.34/development/experimental-features.html#xp-feature-cgroups
+        "fetch-tree" # https://nix.dev/manual/nix/2.34/development/experimental-features.html#xp-feature-fetch-tree
+        "blake3-hashes" # https://nix.dev/manual/nix/2.34/development/experimental-features.html#xp-feature-blake3-hashes
+        "git-hashing" # https://nix.dev/manual/nix/2.34/development/experimental-features.html#xp-feature-git-hashing
+        "ca-derivations" # https://nix.dev/manual/nix/2.34/development/experimental-features.html#xp-feature-ca-derivations
       ];
 
       # Storage
-      # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-auto-optimise-store
+      # https://nix.dev/manual/nix/2.34/command-ref/conf-file.html#conf-auto-optimise-store
       auto-optimise-store = lib.mkDefault false;
-      # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-preallocate-contents
+      # https://nix.dev/manual/nix/2.34/command-ref/conf-file.html#conf-preallocate-contents
       preallocate-contents = lib.mkDefault true;
 
       # Builds
-      # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-max-jobs
-      # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-cores
+      # https://nix.dev/manual/nix/2.34/command-ref/conf-file.html#conf-max-jobs
+      # https://nix.dev/manual/nix/2.34/command-ref/conf-file.html#conf-cores
 
       # Downloads
-      # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-substituters
+      # https://nix.dev/manual/nix/2.34/command-ref/conf-file.html#conf-substituters
       substituters = [
         # https://nixos.wiki/wiki/Maintainers:Fastly
         "https://aseipp-nix-cache.global.ssl.fastly.net" # Beta IPv4-only
         # "https://aseipp-nix-cache.freetls.fastly.net" # Beta + IPv6 + HTTP/2
       ];
 
-      # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-max-substitution-jobs
+      # https://nix.dev/manual/nix/2.34/command-ref/conf-file.html#conf-max-substitution-jobs
       max-substitution-jobs = lib.mkDefault 24;
-      # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-http-connections
+      # https://nix.dev/manual/nix/2.34/command-ref/conf-file.html#conf-http-connections
       http-connections = lib.mkDefault 50;
-      # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-connect-timeout
+      # https://nix.dev/manual/nix/2.34/command-ref/conf-file.html#conf-connect-timeout
       # Corresponds to curl's --connect-timeout.
       connect-timeout = lib.mkDefault 5;
-      # https://nix.dev/manual/nix/2.32/command-ref/conf-file.html#conf-download-attempts
+      # https://nix.dev/manual/nix/2.34/command-ref/conf-file.html#conf-download-attempts
       download-attempts = lib.mkDefault 3;
     };
 
