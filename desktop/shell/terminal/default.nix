@@ -3,6 +3,7 @@
 {
   imports = [
     ./colours.nix
+    # ./documents.nix
     ./fonts.nix
     # ./pay-respects.nix
     ./prompt.nix
