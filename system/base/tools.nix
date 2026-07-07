@@ -31,6 +31,8 @@
     systemPackages =
       with pkgs;
       [
+        just
+
         killall
 
         fd
