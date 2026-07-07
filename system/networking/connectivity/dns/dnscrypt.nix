@@ -6,7 +6,7 @@
 
 {
   services = {
-    # https://search.nixos.org/options?channel=unstable&query=services.dnscrypt-proxy2
+    # https://search.nixos.org/options?channel=unstable&query=services.dnscrypt-proxy
     #
     # Listens DNS on 127.0.0.56:53 (only adguardhome should query it).
     dnscrypt-proxy = {
@@ -63,12 +63,12 @@
 
   systemd = {
     services = {
-      dnscrypt-proxy2 = {
+      dnscrypt-proxy = {
         serviceConfig = {
           StateDirectory = "dnscrypt-proxy";
-          ReadWritePaths = "/var/lib/dnscrypt-proxy"; # Cache directory for dnscrypt-proxy2, persist this
+          ReadWritePaths = "/var/lib/dnscrypt-proxy"; # Cache directory for dnscrypt-proxy, persist this
         };
-      }; # ..systemd.services.dnscrypt-proxy2
+      }; # ..systemd.services.dnscrypt-proxy
     }; # ..systemd.services
   }; # ..systemd
 }

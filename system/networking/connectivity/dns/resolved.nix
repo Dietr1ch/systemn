@@ -16,7 +16,7 @@
           # Setting fallbackDns to avoid default list
           FallbackDNS = [
             "127.0.0.55" # adguardhome
-            # "127.0.0.56"  # dnscrypt-proxy2 (behind adguardhome already)
+            # "127.0.0.56"  # dnscrypt-proxy (behind adguardhome already)
           ]; # ..services.resolved.settings.Resolve.FallbackDNS
         }; # ..services.resolved.settings.Resolve
       }; # ..services.resolved.settings
@@ -148,7 +148,7 @@
       # "127.0.0.53"  # resolved. Self
       # "127.0.0.54"  # resolved. Self
       "127.0.0.55" # adguardhome
-      # "127.0.0.56"  # dnscrypt-proxy2 (behind adguardhome already)
+      # "127.0.0.56"  # dnscrypt-proxy (behind adguardhome already)
     ]; # ..networking.nameservers
 
     # https://search.nixos.org/options?channel=unstable&query=networking.networkmanager

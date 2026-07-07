@@ -25,7 +25,7 @@
           port = 53;
 
           upstream_dns = [
-            "127.0.0.56:53" # dnscrypt-proxy2
+            "127.0.0.56:53" # dnscrypt-proxy
           ];
         };
         filtering = {
