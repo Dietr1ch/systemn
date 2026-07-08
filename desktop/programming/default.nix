@@ -21,12 +21,4 @@
     ./debugging.nix
     ./grammars.nix
   ];
-
-  environment = {
-    # Packages in sync with ~/Projects/nixland/programming/default.nix
-    systemPackages = with pkgs; [
-      # Tools
-      tokei
-    ]; # ..environment.systemPackages
-  }; # ..environment
 }

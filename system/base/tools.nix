@@ -38,6 +38,7 @@
         fd
         ripgrep
         tree
+        tokei
 
         # Disk (Also in ://system/storage/default.nix)
         dua
