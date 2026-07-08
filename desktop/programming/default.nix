@@ -12,7 +12,6 @@
     ./python.nix
     ./rpc.nix
     ./rust.nix
-    ./sql.nix
     ./web.nix
     # ./zig.nix
 

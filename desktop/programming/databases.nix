@@ -9,6 +9,9 @@
 
       # SQL
       sqruff
+      pgsql-tools
+      prqlc
+      sql-formatter
 
       # Postgres
       postgres-language-server
