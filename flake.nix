@@ -83,6 +83,7 @@
           desktop-gaming-chess = import ./desktop/gaming/chess.nix;
           desktop-gaming-wine = import ./desktop/gaming/wine.nix;
           desktop-programming = import ./desktop/programming/default.nix;
+          desktop-programming-android = import ./desktop/programming/android.nix;
           desktop-programming-c = import ./desktop/programming/c.nix;
           desktop-programming-config = import ./desktop/programming/config/default.nix;
           desktop-programming-cpp = import ./desktop/programming/cpp.nix;

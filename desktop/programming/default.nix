@@ -4,6 +4,7 @@
   imports = [
     ./config
 
+    ./android.nix
     ./asp.nix
     ./c.nix
     ./cpp.nix

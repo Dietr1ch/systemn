@@ -11,9 +11,6 @@
   environment = {
     systemPackages = with pkgs; [
       android-tools
-
-      apksigner
-      apktool
-    ];
+    ]; # ..environment.systemPackages
   }; # ..environment
 }
