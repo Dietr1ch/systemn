@@ -14,6 +14,8 @@
       nixfmt
 
       nixpkgs-review
+      nixpkgs-track
+      nixpkgs-vet
     ]; # ..environment.systemPackages
   }; # ..environment
 }
