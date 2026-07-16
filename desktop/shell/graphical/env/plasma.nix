@@ -240,7 +240,7 @@
 
       kdePackages.kleopatra
       # Vaults
-      cryfs
+      # TODO: Add cryfs once v2 comes out and restores FUSE 3 support
       cryptsetup
       kdePackages.plasma-vault
 
