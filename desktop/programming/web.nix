@@ -22,6 +22,7 @@
       xh
       wasm-pack
       wasm-bindgen-cli
+      oha
     ]; # ..environment.systemPackages
   }; # ..environment
 }
