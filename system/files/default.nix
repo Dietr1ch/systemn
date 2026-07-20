@@ -22,7 +22,6 @@
 
       # VFS
       gvfs
-      jmtpfs # MTP
 
       gphoto2fs # Cameras
       libgphoto2
