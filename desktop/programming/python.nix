@@ -30,7 +30,7 @@
           ## Polars (https://docs.pola.rs/user-guide/installation/)
           polars
           altair
-          vega
+          # BROKEN: vega
           vl-convert-python
 
           # HTTP
