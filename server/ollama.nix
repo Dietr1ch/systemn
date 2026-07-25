@@ -105,45 +105,6 @@ in
         "OLLAMA_CONTEXT_LENGTH" = lib.mkDefault (toString (256 * 1024));
       };
     }; # ..services.ollama
-
-    # https://search.nixos.org/options?channel=unstable&query=services.litellm
-    litellm = {
-      enable = true;
-
-      port = lib.mkDefault 11435;
-
-      # https://docs.litellm.ai/docs/proxy/configs
-      # https://github.com/anthropics/claude-code/issues/7178#issuecomment-3256343381
-      settings = {
-        model_list = (
-          map (model: {
-            # NOTE: Models need their parameters known in advance :/
-            # - https://github.com/BerriAI/litellm/issues/11680
-            model_name = "ollama/${model}";
-            litellm_params = {
-              model = "ollama/${model}";
-              api_base = "http://localhost:${toString config.services.ollama.port}";
-
-              allowed_openai_params = [
-                "reasoning_effort" # NOTE: I guess it's fine to always allow the parameter
-                "thinking"
-              ];
-            };
-            model_info = {
-              supports_reasoning = lib.mkDefault (builtins.elem model model_support.thinking);
-            };
-          }) config.services.ollama.loadModels
-        );
-
-        router_settings = {
-          model_group_alias = {
-            # FIXME: Figure out what to do with "claude-haiku-4-5-20251001" calls
-            # Route haiku calls to local qwen2.5-coder:3b
-            # "claude-haiku-4-5-20251001" = "ollama/qwen2.5-coder:3b";
-          };
-        };
-      };
-    }; # ..services.litellm
   }; # ..services
 
   # Integrations
