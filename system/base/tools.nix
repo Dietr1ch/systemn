@@ -35,6 +35,7 @@
 
         killall
 
+        file
         fd
         ripgrep
         tree
