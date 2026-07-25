@@ -26,7 +26,7 @@
           tensorflow
           ## Pandas
           pandas
-          pandas-stubs
+          # BROKEN: pandas-stubs
           ## Polars (https://docs.pola.rs/user-guide/installation/)
           polars
           altair
