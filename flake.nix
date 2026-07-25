@@ -100,6 +100,7 @@
           desktop-shell-graphical-browser-librewolf = import ./desktop/shell/graphical/browser/librewolf.nix;
           desktop-shell-graphical-browser-misc = import ./desktop/shell/graphical/browser/misc.nix;
           desktop-shell-graphical-cad = import ./desktop/shell/graphical/cad.nix;
+          desktop-shell-graphical-documents = import ./desktop/shell/graphical/documents.nix;
           desktop-shell-graphical-env = import ./desktop/shell/graphical/env/default.nix;
           desktop-shell-graphical-env-dms = import ./desktop/shell/graphical/env/dms.nix;
           desktop-shell-graphical-env-hyprland = import ./desktop/shell/graphical/env/hyprland.nix;

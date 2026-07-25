@@ -10,6 +10,7 @@
     # ./audio.nix
     # ./cad.nix
     ./comms.nix
+    # ./documents.nix
     ./fonts.nix
     # ./guitar.nix
     # ./images.nix
