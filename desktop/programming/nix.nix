@@ -13,6 +13,9 @@
 
       nixfmt
 
+      nix-prefetch
+      nix-prefetch-git
+      nix-prefetch-github
       nixpkgs-review
       nixpkgs-track
       nixpkgs-vet
