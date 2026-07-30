@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-  };
+  }; # ..inputs
 
   outputs =
     { self, nixpkgs, ... }@inputs:
@@ -142,6 +142,6 @@
           server-tor_relay = import ./server/tor_relay.nix;
           server-transmission = import ./server/transmission.nix;
           server-web = import ./server/web.nix;
-        };
-    };
+        }; # ..outputs.nixosModules
+    }; # ..outputs
 }
