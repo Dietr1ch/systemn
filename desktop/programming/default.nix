@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   imports = [
@@ -20,6 +20,7 @@
     ./build.nix
     ./databases.nix
     ./debugging.nix
+    ./formatting.nix
     ./grammars.nix
   ];
 }
