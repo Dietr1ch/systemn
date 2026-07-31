@@ -24,7 +24,8 @@
         "fetch-tree" # https://nix.dev/manual/nix/2.34/development/experimental-features.html#xp-feature-fetch-tree
         "blake3-hashes" # https://nix.dev/manual/nix/2.34/development/experimental-features.html#xp-feature-blake3-hashes
         "git-hashing" # https://nix.dev/manual/nix/2.34/development/experimental-features.html#xp-feature-git-hashing
-        "ca-derivations" # https://nix.dev/manual/nix/2.34/development/experimental-features.html#xp-feature-ca-derivations
+        # TODO: Try out ca-derivations once the devenv incompatibily is resolved. (https://github.com/cachix/devenv/issues/2364)
+        # "ca-derivations" # https://nix.dev/manual/nix/2.34/development/experimental-features.html#xp-feature-ca-derivations
         "pipe-operators" # https://nix.dev/manual/nix/2.34/development/experimental-features.html#xp-feature-pipe-operators
       ];
 
