@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -23,4 +23,10 @@
     ./formatting.nix
     ./grammars.nix
   ];
+
+  environment = {
+    systemPackages = with pkgs; [
+      ast-grep
+    ]; # ..environment.systemPackages
+  }; # ..environment
 }
