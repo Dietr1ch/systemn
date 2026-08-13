@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   services = {
@@ -128,4 +133,33 @@
       ]; # ..system.nssDatabases.hosts
     }; # ..system.nssDatabases
   }; # ..system
+
+  systemd = {
+    services = {
+      "avahi-cname" = {
+        description = "Publish CNAME records for host via Avahi";
+        after = [
+          "network.target"
+          "network-online.target"
+          "avahi-daemon.service"
+        ];
+        wants = [
+          "network-online.target"
+        ];
+        requires = [
+          "avahi-daemon.service"
+        ];
+
+        wantedBy = [ "multi-user.target" ];
+
+        serviceConfig = {
+          Type = "simple";
+          ExecStart = "${pkgs.go-avahi-cname}/bin/go-avahi-cname subdomain";
+          Restart = "always";
+          RestartSec = "5";
+          User = "nobody";
+        };
+      }; # ..systemd.services."avahi-cname"
+    }; # ..systemd.services
+  }; # ..systemd
 }

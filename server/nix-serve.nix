@@ -94,31 +94,4 @@
       };
     }; # ..environment.etc
   }; # ..environment
-
-  systemd = {
-    services = {
-      "avahi-alias-nix" = {
-        description = "Publish forge.my-nixos.local alias via Avahi";
-        after = [
-          "avahi-daemon.service"
-          "nginx.service"
-
-          "nix-serve.service"
-        ];
-        wants = [
-          "forgejo.service"
-          "nginx.service"
-        ];
-        wantedBy = [ "multi-user.target" ];
-
-        serviceConfig = {
-          Type = "simple";
-          ExecStart = "${pkgs.go-avahi-cname}/bin/go-avahi-cname nix.${config.networking.hostName}.local ${config.networking.hostName}.local";
-          Restart = "always";
-          RestartSec = "5";
-          User = "nobody";
-        };
-      }; # ..systemd.services."avahi-alias-nix"
-    }; # ..systemd.services
-  }; # ..systemd
 }
