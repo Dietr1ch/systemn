@@ -118,4 +118,14 @@
       }; # ..services.opensnitch.rules
     }; # ..services.opensnitch
   }; # ..services
+
+  system = {
+    # /etc/nsswitch.conf
+    nssDatabases = {
+      hosts = lib.mkMerge [
+        # (lib.mkOrder 1499 [ "dns" ])
+        (lib.mkOrder 1501 [ "mdns4" ])
+      ]; # ..system.nssDatabases.hosts
+    }; # ..system.nssDatabases
+  }; # ..system
 }
