@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -25,4 +25,10 @@
       '';
     };
   };
+
+  environment = {
+    systemPackages = with pkgs; [
+      bubblewrap
+    ]; # ..environment.systemPackages
+  }; # ..environment
 }
