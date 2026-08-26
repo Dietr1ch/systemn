@@ -1,6 +1,17 @@
 { pkgs, lib, ... }:
 
 {
+  nixpkgs.overlays = [
+    (self: super: {
+      ungoogled-chromium = super.ungoogled-chromium.overrideAttrs (oldAttrs: {
+        # Unset the LD_PRELOAD variable to avoid crashes when using a custom system-wide allocator
+        postFixup = (oldAttrs.postFixup or "") + ''
+          wrapProgram $out/bin/chromium --unset LD_PRELOAD
+        '';
+      });
+    })
+  ];
+
   # https://search.nixos.org/options?channel=unstable&query=programs.chromium
   programs = {
     chromium = {
