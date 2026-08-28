@@ -123,6 +123,7 @@ in
   environment = {
     systemPackages = with pkgs; [
       opencode
+      snip
     ]; # ..environment.systemPackages
   }; # ..environment
 }
