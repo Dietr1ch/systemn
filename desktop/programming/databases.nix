@@ -8,6 +8,7 @@
       swi-prolog-gui
 
       # SQL
+      sqls
       sqruff
       pgsql-tools
       prqlc
