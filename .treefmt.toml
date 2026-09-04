@@ -1,0 +1,13 @@
+#:schema https://www.schemastore.org/treefmt.json
+
+# The formatter multiplexer - https://github.com/numtide/treefmt
+#
+# Resources,
+# - https://treefmt.com/latest/getting-started/configure/
+
+
+walk = "git"
+
+[formatter.nix]
+command = "nixfmt"
+includes = ["*.nix"]

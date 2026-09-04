@@ -2,6 +2,7 @@
 
 # Git
 !.gitignore
+!.treefmt.toml
 
 # TODOs
 TODOs.org
