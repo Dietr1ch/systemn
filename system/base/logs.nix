@@ -7,11 +7,12 @@
     journald = {
       # /etc/systemd/journald.conf
       # man journald.conf(5)
-      extraConfig = ''
-        [Journal]
-        SystemMaxUse=100M
-        MaxRetentionSec=1week
-      '';
+      settings = {
+        Journal = {
+          "SystemMaxUse" = "100M";
+          "MaxRetentionSec" = "1week";
+        };
+      };
     };
   };
 
