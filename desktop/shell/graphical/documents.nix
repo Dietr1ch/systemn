@@ -3,7 +3,9 @@
 {
   environment = {
     systemPackages = with pkgs; [
-      texliveMedium
+      # texliveMinimal
+      texliveBasic
+      # texliveMedium
     ];
   };
 }
