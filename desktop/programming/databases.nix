@@ -15,6 +15,7 @@
       sql-formatter
 
       # Postgres
+      pgmodeler
       postgres-language-server
 
       # DuckDB
