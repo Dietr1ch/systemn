@@ -20,60 +20,36 @@ let
     # #+end_src
 
     thinking = [
-      "deepseek-r1:latest"
-      "magistral:latest"
-      "qwen3:14b"
-      "qwen3:32b"
-      "qwen3:latest"
-      "qwen3.5:2b"
-      "qwen3.5:4b"
+      "hf.co/unsloth/Qwen3.8-27B-GGUF:UD-Q2_K_XL"
+      "hf.co/unsloth/Qwen3.8-27B-GGUF:UD-IQ3_XXS"
+      "hf.co/unsloth/Qwen3.8-27B-GGUF:UD-Q3_K_XL"
       "qwen3.5:9b"
-      "qwen3.5:27b"
     ];
-    # NOTE: Models require `tools` to be used by coding agents
     tools = [
-      "llama3.1:8b"
-      "magistral:latest"
-      "qwen2.5-coder:14b"
+      "hf.co/unsloth/Qwen3.8-27B-GGUF:UD-Q2_K_XL"
+      "hf.co/unsloth/Qwen3.8-27B-GGUF:UD-IQ3_XXS"
+      "hf.co/unsloth/Qwen3.8-27B-GGUF:UD-Q3_K_XL"
       "qwen2.5-coder:3b"
       "qwen2.5-coder:7b"
-      "qwen3:14b"
-      "qwen3:32b"
-      "qwen3-coder:30b"
-      "qwen3:latest"
-      "qwq:latest"
-      "qwen3.5:2b"
-      "qwen3.5:4b"
-      "qwen3.5:9b"
-      "qwen3.5:27b"
+      "qwen2.5-coder:14b"
     ];
     completion = [
-      "deepseek-coder-v2:16b"
-      "deepseek-r1:latest"
-      "gemma3:latest"
-      "magistral:latest"
-      "phi4:14b"
-      "qwen2.5-coder:14b"
+      "hf.co/unsloth/Qwen3.8-27B-GGUF:UD-Q2_K_XL"
+      "hf.co/unsloth/Qwen3.8-27B-GGUF:UD-IQ3_XXS"
+      "hf.co/unsloth/Qwen3.8-27B-GGUF:UD-Q3_K_XL"
       "qwen2.5-coder:3b"
       "qwen2.5-coder:7b"
-      "qwen3:14b"
-      "qwen3:32b"
-      "qwen3-coder:30b"
-      "qwen3:latest"
-      "qwq:latest"
+      "qwen2.5-coder:14b"
     ];
     vision = [
-      "gemma3:latest"
-      "qwen3.5:2b"
-      "qwen3.5:4b"
-      "qwen3.5:9b"
-      "qwen3.5:27b"
+      "hf.co/unsloth/Qwen3.8-27B-GGUF:UD-Q2_K_XL"
+      "hf.co/unsloth/Qwen3.8-27B-GGUF:UD-IQ3_XXS"
+      "hf.co/unsloth/Qwen3.8-27B-GGUF:UD-Q3_K_XL"
     ];
     insert = [
-      "deepseek-coder-v2:16b"
-      "qwen2.5-coder:14b"
       "qwen2.5-coder:3b"
       "qwen2.5-coder:7b"
+      "qwen2.5-coder:14b"
     ];
   };
 in
@@ -90,10 +66,12 @@ in
       # Models: https://ollama.com/library
       syncModels = lib.mkDefault true; # Cleanup models not in loadModels
       loadModels = [
-        # https://www.canirun.ai/
-        "qwen3.5:9b" # https://ollama.com/library/qwen3.5:9b
-        "phi4:14b" # https://ollama.com/library/phi4:14b
-        "llama3.1:8b" # https://ollama.com/library/llama3.1:8b
+        "hf.co/unsloth/Qwen3.8-27B-GGUF:UD-Q2_K_XL" # https://huggingface.co/unsloth/Qwen3.8-27B-GGUF?show_file_info=Qwen3.8-27B-UD-Q2_K_XL.gguf
+        "hf.co/unsloth/Qwen3.8-27B-GGUF:UD-IQ3_XXS" # https://hf.co/unsloth/Qwen3.8-27B-GGUF?show_file_info=Qwen3.8-27B-UD-IQ3_XXS.gguf
+        "hf.co/unsloth/Qwen3.8-27B-GGUF:UD-Q3_K_XL" # https://huggingface.co/unsloth/Qwen3.8-27B-GGUF?show_file_info=Qwen3.8-27B-UD-Q3_K_XL.gguf
+        "qwen2.5-coder:3b" # https://ollama.com/library/qwen2.5-coder:3b
+        "qwen2.5-coder:7b" # https://ollama.com/library/qwen2.5-coder:7b
+        "qwen2.5-coder:14b" # https://ollama.com/library/qwen2.5-coder:14b
       ];
 
       # NOTE: Check ~ollama serve --help~
@@ -114,7 +92,7 @@ in
     pay-respects = {
       aiIntegration = {
         locale = "en-GB";
-        model = "deepseek-r1";
+        model = "qwen2.5-coder:14b";
         url = "http://127.0.0.1:${toString config.services.ollama.port}/v1/chat/completions";
       };
     };
