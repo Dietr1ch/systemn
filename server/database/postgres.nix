@@ -12,6 +12,7 @@
     # https://search.nixos.org/options?channel=unstable&query=services.postgresql
     postgresql = {
       enable = true;
+      package = pkgs.postgresql_19;
 
       enableJIT = true;
 
