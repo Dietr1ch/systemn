@@ -132,6 +132,7 @@
           server-file_sharing-samba = import ./server/file_sharing/samba.nix;
           server-grafana = import ./server/grafana.nix;
           server-immich = import ./server/immich.nix;
+          server-jellyfin = import ./server/jellyfin.nix;
           server-monero = import ./server/monero.nix;
           server-nix_serve = import ./server/nix-serve.nix;
           server-nix_ssh = import ./server/nix-ssh.nix;
