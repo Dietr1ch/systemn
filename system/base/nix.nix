@@ -42,9 +42,20 @@
       # Downloads
       # https://nix.dev/manual/nix/2.35/command-ref/conf-file.html#conf-substituters
       extra-substituters = [
+        # Cache v2
         # https://nixos.wiki/wiki/Maintainers:Fastly
         "https://aseipp-nix-cache.global.ssl.fastly.net" # Beta IPv4-only
         "https://aseipp-nix-cache.freetls.fastly.net" # Beta + IPv6 + HTTP/2
+
+        # nixpkgs-update-cache (don't query by default)
+        # "http://nixpkgs-update-cache.nix-community.org"
+      ];
+      # https://nix.dev/manual/nix/2.35/command-ref/conf-file.html#conf-trusted-public-keys
+      extra-trusted-public-keys = [
+        # (Cache v2 uses the same public keys)
+
+        # nixpkgs-update-cache
+        "nixpkgs-update-cache.nix-community.org-1:U8d6wiQecHUPJFSqHN9GSSmNkmdiFW7GW7WNAnHW0SM="
       ];
 
       # https://nix.dev/manual/nix/2.35/command-ref/conf-file.html#conf-max-substitution-jobs
