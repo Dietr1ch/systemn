@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
-# TODO: Configure Jellyfin
+# https://wiki.nixos.org/wiki/Jellyfin
+# https://nixos.wiki/wiki/Jellyfin
 {
   services = {
     # https://search.nixos.org/options?channel=unstable&query=services.jellyfin
