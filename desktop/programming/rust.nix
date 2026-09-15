@@ -26,7 +26,7 @@
       cargo-outdated
       cargo-pgo
       cargo-public-api
-      cargo-semver-checks
+      # BROKEN: cargo-semver-checks
       cargo-show-asm
       cargo-spellcheck
       cargo-toml-lint
