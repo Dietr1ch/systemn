@@ -6,11 +6,6 @@
     dms-shell = {
       enable = true;
 
-      enableAudioWavelength = lib.mkDefault true;
-      enableCalendarEvents = lib.mkDefault true;
-      enableDynamicTheming = lib.mkDefault true;
-      enableVPN = lib.mkDefault false;
-
       systemd = {
         enable = true;
         restartIfChanged = true;
