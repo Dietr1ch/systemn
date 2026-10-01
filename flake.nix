@@ -27,6 +27,7 @@
           hardware-scanning = import ./hardware/scanning.nix;
           hardware-storage = import ./hardware/storage.nix;
           hardware-truerng = import ./hardware/truerng.nix;
+          hardware-hdd = import ./hardware/hdd.nix;
           hardware-usb = import ./hardware/usb.nix;
           # Laptop
           hardware-laptop = import ./hardware/laptop; # ./hardware/laptop/default.nix
