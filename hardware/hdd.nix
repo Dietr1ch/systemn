@@ -14,4 +14,14 @@ in
       '';
     }; # ..services.udev
   }; # ..services
+
+  environment = {
+    systemPackages = with pkgs; [
+      quota
+
+      iotop
+
+      hdparm
+    ]; # ..environment.systemPackages
+  }; # ..environment
 }
