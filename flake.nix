@@ -27,6 +27,7 @@
           hardware-scanning = import ./hardware/scanning.nix;
           hardware-storage = import ./hardware/storage.nix; # (default)
           hardware-truerng = import ./hardware/truerng.nix;
+          hardware-monitor = import ./hardware/monitor.nix;
           hardware-hdd = import ./hardware/hdd.nix;
           hardware-i2c = import ./hardware/i2c.nix;
           hardware-usb = import ./hardware/usb.nix; # (default)
