@@ -11,7 +11,7 @@
 
       plugins = with pkgs.obs-studio-plugins; [
         input-overlay
-        obs-advanced-masks
+        # BROKEN: obs-advanced-masks
         obs-backgroundremoval
         obs-gstreamer
         obs-pipewire-audio-capture
