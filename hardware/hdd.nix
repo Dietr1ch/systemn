@@ -7,17 +7,18 @@ let
   hdd_autosuspend_value = hdd_autosuspend_secs / 5;
 in
 {
+  # LVM
+  # https://nixos.wiki/wiki/LVM
   boot = {
     initrd = {
       kernelModules = [
-        # LVM
-        # https://nixos.wiki/wiki/LVM
         "dm-snapshot"
         "dm-raid"
         "dm-cache-default"
       ]; # ..boot.initrd.kernelModules
     }; # ..boot.initrd
   }; # ..boot
+  services.lvm.boot.thin.enable = true;
 
   services = {
     udev = {
