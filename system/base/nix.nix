@@ -14,6 +14,9 @@
       # https://nix.dev/manual/nix/2.35/command-ref/conf-file.html#conf-use-xdg-base-directories
       use-xdg-base-directories = true;
 
+      # https://nix.dev/manual/nix/2.35/command-ref/conf-file.html#conf-fallback
+      fallback = true; # Ensure we can still build when a server is not accessible
+
       # https://nix.dev/manual/nix/2.35/command-ref/conf-file.html#conf-use-cgroups
       use-cgroups = lib.mkDefault true;
       # https://nix.dev/manual/nix/2.35/command-ref/conf-file.html#conf-extra-experimental-features
@@ -68,11 +71,6 @@
       # https://nix.dev/manual/nix/2.35/command-ref/conf-file.html#conf-download-attempts
       download-attempts = lib.mkDefault 3;
     };
-
-    extraOptions = ''
-      # Ensure we can still build when a server is not accessible
-      fallback = true
-    '';
 
     gc = {
       automatic = true;
