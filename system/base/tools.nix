@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, lib, ... }:
 
 {
   programs = {
@@ -75,10 +71,7 @@
         ptcpdump
         bpftools
       ]
-      ++ lib.optionals pkgs.stdenv.hostPlatform.isx86_64 [
-        cpuid
-      ]
-      ++ lib.optionals pkgs.stdenv.hostPlatform.isAarch64 [
-      ];
+      ++ lib.optionals pkgs.stdenv.hostPlatform.isx86_64 [ cpuid ]
+      ++ lib.optionals pkgs.stdenv.hostPlatform.isAarch64 [ ];
   };
 }
