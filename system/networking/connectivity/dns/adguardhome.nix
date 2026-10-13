@@ -8,30 +8,31 @@
     adguardhome = {
       enable = true;
 
-      # Web UI: http://127.0.0.1:3053
-      host = "127.0.0.1";
-      port = 3053;
       mutableSettings = false;
 
       # https://github.com/AdguardTeam/AdGuardHome/wiki/Configuration#configuration-file
       settings = {
         enable = true;
 
+        http = {
+          # Web UI: http://127.0.0.1:3053
+          address = "127.0.0.1:3053";
+        }; # ..services.adguardhome.settings.http
+
         dns = {
           # Serve on 127.0.0.55:53
-          bind_hosts = [
-            "127.0.0.55"
-          ];
+          bind_hosts = [ "127.0.0.55" ];
           port = 53;
 
           upstream_dns = [
             "127.0.0.56:53" # dnscrypt-proxy
           ];
-        };
+        }; # ..services.adguardhome.settings.dns
         filtering = {
           protection_enabled = true;
           filtering_enabled = true;
-        };
+        }; # ..services.adguardhome.settings.filtering
+
         # ../../../secrets.nix
         filters =
           map
@@ -43,7 +44,7 @@
               "https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt" # The Big List of Hacked Malware Web Sites
               "https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt" # malicious url blocklist
             ];
-      };
+      }; # ..services.adguardhome.settings
     }; # ..services.adguardhome
 
     opensnitch = {
