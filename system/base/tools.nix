@@ -26,6 +26,8 @@
     systemPackages =
       with pkgs;
       [
+        zellij
+
         just
 
         killall
