@@ -11,10 +11,11 @@
     ./hacks.nix
     ./hardware_information.nix
     ./information.nix
+    # ./locale.nix
     ./logs.nix
     ./nix.nix
-    # TODO ./tracing.nix once it builds
     ./tools.nix
+    # TODO ./tracing.nix once it builds
     # ./watchdog.nix
   ];
 
