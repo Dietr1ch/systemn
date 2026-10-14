@@ -44,6 +44,6 @@ in
       "LC_NAME" = lib.mkDefault english;
       "LC_PAPER" = lib.mkDefault english;
       "LC_TELEPHONE" = lib.mkDefault english;
-    };
-  };
+    }; # ..i18n.extraLocaleSettings
+  }; # ..i18n
 }
