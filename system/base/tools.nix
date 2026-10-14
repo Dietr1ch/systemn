@@ -40,6 +40,7 @@
 
         # Disk (Also in ://system/storage/default.nix)
         dua
+        duf
         ncdu
 
         parallel

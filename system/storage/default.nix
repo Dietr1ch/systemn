@@ -24,6 +24,7 @@
 
       # Disk space (Also in ://system/base/tools.nix)
       dua
+      duf
       ncdu
     ];
   };
