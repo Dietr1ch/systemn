@@ -26,9 +26,17 @@
     systemPackages =
       with pkgs;
       [
-        zellij
+        git
 
+        bat
+        eza
+        fish
+        helix
         just
+        jq
+        starship
+        yazi
+        zellij
 
         killall
 
