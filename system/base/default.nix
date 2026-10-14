@@ -11,7 +11,6 @@
     ./hacks.nix
     ./hardware_information.nix
     ./information.nix
-    # ./locale.nix
     ./logs.nix
     ./nix.nix
     ./tools.nix
