@@ -14,6 +14,7 @@
       rustscan
       wget
       wol
+      xh
     ];
   };
 }
