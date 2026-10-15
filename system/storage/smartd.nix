@@ -10,7 +10,7 @@
       #     device = "/dev/nvme0";
       #     # options = "-d sat";
       #   }
-      # ];
-    };
-  };
+      # ]; # ..services.smartd.devices
+    }; # ..services.smartd
+  }; # ..services
 }
