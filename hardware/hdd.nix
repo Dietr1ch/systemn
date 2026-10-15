@@ -35,6 +35,7 @@ in
       iotop
 
       hdparm
+      hddtemp
     ]; # ..environment.systemPackages
   }; # ..environment
 }
