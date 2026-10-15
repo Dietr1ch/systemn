@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 # https://wiki.nixos.org/wiki/Grafana
 # https://grafana.com/docs/grafana/latest/setup-grafana/configure-grafana/
@@ -15,6 +15,7 @@
           enforce_domain = true;
           enable_gzip = true;
           # domain = "grafana.your.domain";
+          domain = lib.mkDefault "${config.networking.hostName}.local";
 
           # Alternatively, if you want to serve Grafana from a subpath:
           # Served from /grafana
