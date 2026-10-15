@@ -2,8 +2,11 @@
 
 {
   services = {
+    # https://search.nixos.org/options?channel=unstable&query=services.smartd
     smartd = {
       enable = true;
+
+      autodetect = true;
 
       # devices = [
       #   {
