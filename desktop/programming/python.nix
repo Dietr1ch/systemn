@@ -23,7 +23,7 @@
           ## Numeric
           numpy
           scipy
-          tensorflow
+          # BROKEN: tensorflow (google-pasta-0.2.0 is broken on python3.14)
           ## Pandas
           pandas
           # BROKEN: pandas-stubs
