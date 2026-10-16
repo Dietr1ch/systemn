@@ -32,8 +32,8 @@
       sox
 
       beets
-      python313Packages.beets
-      python313Packages.beetcamp
+      python314Packages.beets
+      python314Packages.beetcamp
     ];
   };
 }
