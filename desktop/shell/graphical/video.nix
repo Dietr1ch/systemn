@@ -12,7 +12,7 @@
       blender
       kdePackages.kdenlive
 
-      ffmpeg-full
+      ffmpeg
     ];
   };
 }
