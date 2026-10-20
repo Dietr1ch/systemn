@@ -5,7 +5,7 @@
   nix = {
     optimise = {
       automatic = lib.mkDefault false;
-    };
+    }; # ..nix.optimise
 
     # Generates /etc/nix/nix.conf
     # https://nix.dev/manual/nix/2.35/command-ref/conf-file.html#available-settings
@@ -70,12 +70,12 @@
       connect-timeout = lib.mkDefault 5;
       # https://nix.dev/manual/nix/2.35/command-ref/conf-file.html#conf-download-attempts
       download-attempts = lib.mkDefault 3;
-    };
+    }; # ..nix.settings
 
     gc = {
       automatic = true;
       dates = "weekly";
       options = "--delete-older-than 14d";
-    };
-  };
+    }; # ..nix.gc
+  }; # ..nix
 }
