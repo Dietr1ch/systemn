@@ -46,8 +46,8 @@
           };
         };
 
-      };
-    };
+      }; # ..services.nginx.virtualHosts
+    }; # ..services.nginx
 
     prometheus = {
       exporters = {
@@ -57,9 +57,9 @@
             # "nginxlog"
           ];
         };
-      };
-    };
-  };
+      }; # ..services.prometheus.exporters
+    }; # ..services.prometheus
+  }; # ..services
 
   # https://nixos.wiki/wiki/ACME
   security = {
@@ -67,8 +67,8 @@
       # acceptTerms = true;
       # defaults = {
       # };
-    };
-  };
+    }; # ..security.acme
+  }; # ..security
 
   networking = {
     firewall = {
@@ -76,6 +76,6 @@
         80 # Default HTTP
         443 # Default HTTPS
       ];
-    };
-  };
+    }; # ..networking.firewall
+  }; # ..networking
 }
