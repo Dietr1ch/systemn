@@ -78,4 +78,24 @@
       options = "--delete-older-than 14d";
     }; # ..nix.gc
   }; # ..nix
+
+  # https://search.nixos.org/options?channel=unstable&query=systemd
+  systemd = {
+    services = {
+      # /etc/systemd/system/nix-daemon.service
+      "nix-daemon" = {
+        # https://www.freedesktop.org/software/systemd/man/systemd.service.html
+        serviceConfig = {
+          # Resource Control
+          # ----------------
+          # https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html#
+
+          # https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html#CPUWeight=weight
+          CPUWeight = "idle";
+          # https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html#CPUQuota=
+          CPUQuota = "80%"; # Hard cap CPU usage at 80%
+        };
+      }; # ..systemd.services."nix-daemon"
+    }; # ..systemd.services
+  }; # ..systemd
 }
