@@ -14,9 +14,6 @@
     avahi = {
       enable = lib.mkDefault true;
 
-      ipv4 = true;
-      ipv6 = true;
-
       # Don't use the NSS (Name Service Switch) plugin. Let resolved handle resolving.
       nssmdns4 = true;
       # Whether to enable the mDNS NSS plug-in for IPv6.
@@ -28,6 +25,18 @@
       nssmdns6 = false;
 
       openFirewall = true;
+
+      # https://search.nixos.org/options?channel=unstable&query=services.avahi.settings
+      settings = {
+        server = {
+          use-ipv4 = true;
+          use-ipv6 = true;
+        }; # ..services.avahi.settings.server
+
+        publish = {
+          publish-addresses = true;
+        }; # ..services.avahi.settings.publish
+      }; # ..services.avahi.settings
 
       publish = {
         enable = true;
