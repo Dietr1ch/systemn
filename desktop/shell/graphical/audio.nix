@@ -7,6 +7,7 @@
 
       # BROKEN: kdePackages.k3b
 
+      # BROKEN: audacity
       ardour
     ];
   };
