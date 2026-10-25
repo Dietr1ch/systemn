@@ -7,12 +7,6 @@
       timeout = lib.mkDefault 2;
     };
 
-    # Enable "Silent Boot"
-    initrd = {
-      # Keep boot silent
-      verbose = false;
-    };
-
     consoleLogLevel = 0;
     kernelParams = [
       "quiet"
