@@ -105,7 +105,7 @@
           desktop-shell-graphical-cad = import ./desktop/shell/graphical/cad.nix;
           desktop-shell-graphical-documents = import ./desktop/shell/graphical/documents.nix;
           desktop-shell-graphical-env = import ./desktop/shell/graphical/env/default.nix;
-          desktop-shell-graphical-env-dms = import ./desktop/shell/graphical/env/dms.nix;
+          desktop-shell-graphical-env-dux = import ./desktop/shell/graphical/env/dux.nix;
           desktop-shell-graphical-env-hyprland = import ./desktop/shell/graphical/env/hyprland.nix;
           desktop-shell-graphical-env-plasma = import ./desktop/shell/graphical/env/plasma.nix;
           desktop-shell-graphical-guitar = import ./desktop/shell/graphical/guitar.nix;
