@@ -92,8 +92,6 @@
 
           # https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html#CPUWeight=weight
           CPUWeight = "idle";
-          # https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html#CPUQuota=
-          CPUQuota = "80%"; # Hard cap CPU usage at 80%
         };
       }; # ..systemd.services."nix-daemon"
     }; # ..systemd.services
