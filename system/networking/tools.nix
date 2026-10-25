@@ -8,6 +8,7 @@
   };
   environment = {
     systemPackages = with pkgs; [
+      aria2
       dogedns
       ethtool
       rsync
