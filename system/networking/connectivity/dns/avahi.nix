@@ -27,6 +27,7 @@
       openFirewall = true;
 
       # https://search.nixos.org/options?channel=unstable&query=services.avahi.settings
+      # man 5 avahi-daemon.conf
       settings = {
         server = {
           use-ipv4 = true;
@@ -34,17 +35,16 @@
         }; # ..services.avahi.settings.server
 
         publish = {
-          publish-addresses = true;
+          # Enable publishing
+          disable-publishing = false;
+
+          disable-user-service-publishing = false; # Publish custom SRV records
+
+          publish-addresses = true; # Publish A/AAAA records. NOTE: NixOS defaults to false, unlike avahi.
+          publish-domain = true; # NOTE: NixOS defaults to false, unlike avahi.
+          publish-workstation = true; # Register a “_workstation._tcp” SRV record
         }; # ..services.avahi.settings.publish
       }; # ..services.avahi.settings
-
-      publish = {
-        enable = true;
-
-        # addresses = true; # Publish A/AAAA name->IP records
-        # workstation = true; # Register a “_workstation._tcp” SRV record
-        userServices = true; # Publish custom SRV records
-      };
     }; # ..services.avahi
 
     opensnitch = {
