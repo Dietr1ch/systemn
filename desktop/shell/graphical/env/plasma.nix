@@ -203,15 +203,6 @@
       defaultSession = "plasma";
     };
 
-    displayManager = {
-      # https://search.nixos.org/options?channel=unstable&query=services.displayManager.sddm
-      # ./login-sddm.nix
-      sddm = {
-        wayland = {
-          compositor = "kwin";
-        };
-      };
-    };
     desktopManager = {
       # ~/Projects/nixpkgs/nixos/modules/services/desktop-managers/plasma6.nix
       # https://search.nixos.org/options?channel=unstable&query=services.desktopManager.plasma6
