@@ -17,6 +17,7 @@
     ./web.nix
     # ./zig.nix
 
+    ./agentic.nix
     ./build.nix
     ./databases.nix
     ./debugging.nix
