@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   security.rtkit.enable = true;
@@ -17,8 +17,21 @@
           lsp-plugins # https://search.nixos.org/packages?channel=unstable&query=lsp-plugins
         ];
       };
-    };
-  };
+
+      extraConfig = {
+        pipewire = {
+
+          "99-disable-x11-bell" = {
+            "context.properties" = {
+              "module.x11.bell" = lib.mkDefault false;
+            };
+          }; # ..services.pipewire.extraConfig.pipewire."99-disable-x11-bell"
+
+        }; # ..services.pipewire.extraConfig.pipewire
+      }; # ..services.pipewire.extraConfig
+
+    }; # ..services.pipewire
+  }; # ..services
 
   environment = {
     systemPackages = with pkgs; [
@@ -34,6 +47,6 @@
       beets
       python314Packages.beets
       python314Packages.beetcamp
-    ];
-  };
+    ]; # ..environment.systemPackages
+  }; # ..environment
 }
