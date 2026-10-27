@@ -321,9 +321,7 @@
         };
       }; # ..xdg.portal.config
 
-      extraPortals = with pkgs; [
-        kdePackages.xdg-desktop-portal-kde
-      ];
+      extraPortals = with pkgs; [ kdePackages.xdg-desktop-portal-kde ];
     }; # ..xdg.portal
   }; # ..xdg
 
