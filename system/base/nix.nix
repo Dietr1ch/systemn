@@ -1,8 +1,10 @@
-{ lib, ... }:
+{ pkgs, lib, ... }:
 
 {
   # https://search.nixos.org/options?channel=unstable&query=nix
   nix = {
+    channel.enable = false;
+
     optimise = {
       automatic = lib.mkDefault false;
     }; # ..nix.optimise
@@ -10,6 +12,8 @@
     # Generates /etc/nix/nix.conf
     # https://nix.dev/manual/nix/2.35/command-ref/conf-file.html#available-settings
     settings = {
+      nix-path = [ "nixpkgs=${pkgs.path}" ];
+
       # Config
       # https://nix.dev/manual/nix/2.35/command-ref/conf-file.html#conf-use-xdg-base-directories
       use-xdg-base-directories = true;
