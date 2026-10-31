@@ -91,7 +91,7 @@ in
     # :/desktop/shell/terminal/pay-respects.nix
     pay-respects = {
       aiIntegration = {
-        locale = "en-GB";
+        locale = "en-AU";
         model = "qwen2.5-coder:14b";
         url = "http://127.0.0.1:${toString config.services.ollama.port}/v1/chat/completions";
       };
