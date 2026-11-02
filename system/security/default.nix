@@ -18,7 +18,7 @@
       wheelNeedsPassword = true;
       execWheelOnly = true;
 
-      # man sudoers (5)
+      # man:sudoers(5)
       # /etc/sudoers
       extraConfig = ''
         Defaults !pwfeedback

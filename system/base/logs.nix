@@ -6,7 +6,7 @@
     # https://github.com/NixOS/nixpkgs/tree/master/nixos/modules/system/boot/systemd/journald.nix
     journald = {
       # /etc/systemd/journald.conf
-      # man journald.conf(5)
+      # man:journald.conf(5)
       settings = {
         Journal = {
           "SystemMaxUse" = "100M";

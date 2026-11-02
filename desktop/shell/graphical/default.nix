@@ -53,7 +53,7 @@
   };
 
   xdg = {
-    # man portals.conf(5)
+    # man:portals.conf(5)
     portal = {
       enable = true;
       xdgOpenUsePortal = true;

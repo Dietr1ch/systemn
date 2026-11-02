@@ -27,7 +27,7 @@
       openFirewall = true;
 
       # https://search.nixos.org/options?channel=unstable&query=services.avahi.settings
-      # man 5 avahi-daemon.conf
+      # man:avahi-daemon.conf(5)
       settings = {
         server = {
           use-ipv4 = true;

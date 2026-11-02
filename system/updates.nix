@@ -17,7 +17,7 @@
       };
 
       flake = lib.mkDefault "/etc/nixos";
-      # man nix3-flake-update(1)
+      # man:nix3-flake-update(1)
       flags = [
         "--print-build-logs"
         "--commit-lock-file"

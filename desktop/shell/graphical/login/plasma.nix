@@ -9,7 +9,7 @@
         enable = true;
 
         # https://search.nixos.org/options?channel=unstable&query=services.displayManager.plasma-login-manager.settings
-        # man:plasmalogin.conf (5)
+        # man:plasmalogin.conf(5)
         # - /etc/plasmalogin.conf
         # - /etc/plasmalogin.conf.d/
         #   - /etc/plasmalogin.conf.d/00-nixos-defaults.conf

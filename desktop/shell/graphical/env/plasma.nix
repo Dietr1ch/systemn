@@ -292,7 +292,7 @@
       config = {
         # KDE
         # ===
-        # man portals.conf (5)
+        # man:portals.conf(5)
         # https://man.archlinux.org/man/portals.conf.5
         #
         # User configuration:

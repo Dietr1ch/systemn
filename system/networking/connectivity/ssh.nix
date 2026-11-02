@@ -49,7 +49,7 @@
 
       # https://search.nixos.org/options?channel=unstable&query=services.openssh.settings
       # /etc/ssh/sshd_config
-      # man 5 sshd_config
+      # man:sshd_config(5)
       settings = {
         PasswordAuthentication = false;
         KbdInteractiveAuthentication = false;
