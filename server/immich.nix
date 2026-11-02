@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 # https://wiki.nixos.org/wiki/Immich
 
@@ -89,6 +89,23 @@
       }; # ..services.nginx.virtualHosts
     }; # ..services.nginx
   }; # ..services
+
+  systemd = {
+    services = {
+      # man:systemd.unit
+      # man:systemd.service
+      "immich-server" = {
+        unitConfig = {
+          RequiresMountsFor = lib.concatStringsSep " " [ config.services.immich.mediaLocation ];
+        }; # ..systemd.services."immich".Service
+      }; # ..systemd.services."immich"
+      "immich-machine-learning" = {
+        unitConfig = {
+          RequiresMountsFor = lib.concatStringsSep " " [ config.services.immich.mediaLocation ];
+        }; # ..systemd.services."immich".Service
+      }; # ..systemd.services."immich"
+    }; # ..systemd.services
+  }; # ..systemd
 
   users = {
     users = {
