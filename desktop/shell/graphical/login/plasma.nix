@@ -22,4 +22,19 @@
       }; # ..services.displayManager.plasma-login-manager
     }; # ..services.displayManager
   }; # ..services
+
+  systemd = {
+    # https://search.nixos.org/options?channel=unstable&query=systemd.services
+    services = {
+      "plasmalogin" = {
+        # man:systemd.service(5)
+        serviceConfig = {
+          Restart = "always";
+          RestartSec = "4s";
+          RestartSteps = "5";
+          RestartMaxDelaySec = "60s";
+        }; # ..systemd.services."plasmalogin".serviceConfig
+      }; # ..systemd.services."plasmalogin"
+    }; # ..systemd.services
+  }; # ..systemd
 }
