@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   services = {
@@ -20,4 +25,16 @@
       };
     };
   };
+
+  systemd = {
+    services = {
+      # man:systemd.unit
+      # man:systemd.service
+      "transmission" = {
+        unitConfig = {
+          RequiresMountsFor = lib.concatStringsSep " " [ config.services.transmission.settings.download-dir ];
+        }; # ..systemd.services."transmission".Service
+      }; # ..systemd.services."transmission"
+    }; # ..systemd.services
+  }; # ..systemd
 }
