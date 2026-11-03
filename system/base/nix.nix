@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   # https://search.nixos.org/options?channel=unstable&query=nix
@@ -96,6 +101,10 @@
 
           # https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html#CPUWeight=weight
           CPUWeight = "idle";
+
+          # https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html#CPUQuota
+          # Limit overall CPU usage to 80% per core
+          CPUQuota = lib.mkDefault "${toString (80 * config.nix.settings.cores)}%";
         };
       }; # ..systemd.services."nix-daemon"
     }; # ..systemd.services
