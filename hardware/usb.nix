@@ -35,10 +35,15 @@ in
     '';
   }; # ..boot
 
+  programs = {
+    usbtop = {
+      enable = true;
+    }; # ..programs.usbtop
+  }; # ..programs
+
   environment = {
     systemPackages = with pkgs; [
       usbutils
-      usbtop
       usb-modeswitch
       usb-modeswitch-data
     ]; # ..environment.systemPackages
