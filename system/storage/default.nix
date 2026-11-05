@@ -3,6 +3,7 @@
 {
   imports = [
     ./fstrim.nix
+    ./filesystems.nix
     ./smartd.nix
   ];
 
