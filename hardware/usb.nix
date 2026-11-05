@@ -9,20 +9,20 @@ in
     # https://search.nixos.org/options?channel=unstable&query=hardware.usb-modeswitch
     usb-modeswitch = {
       enable = true;
-    };
-  };
+    }; # ..hardware.usb-modeswitch
+  }; # ..hardware
 
   # https://search.nixos.org/options?channel=unstable&query=boot
   boot = {
     # https://search.nixos.org/options?channel=unstable&query=boot.kernelParams
     kernelParams = [
       "usbcore.autosuspend=${toString usb_autosuspend_secs}"
-    ];
+    ]; # ..boot.kernelParams
 
     # https://search.nixos.org/options?channel=unstable&query=boot.kernelModules
     kernelModules = [
       "usbcore"
-    ];
+    ]; # ..boot.kernelModules
 
     # https://search.nixos.org/options?channel=unstable&query=boot.extraModprobeConfig
     # https://nixos.wiki/wiki/Linux_kernel#Customizing_kernel_module_parameters
@@ -33,7 +33,7 @@ in
       # https://www.kernel.org/doc/Documentation/usb/power-management.txt
       options usbcore autosuspend=${toString usb_autosuspend_secs}
     '';
-  };
+  }; # ..boot
 
   environment = {
     systemPackages = with pkgs; [
@@ -41,6 +41,6 @@ in
       usbtop
       usb-modeswitch
       usb-modeswitch-data
-    ];
-  };
+    ]; # ..environment.systemPackages
+  }; # ..environment
 }
