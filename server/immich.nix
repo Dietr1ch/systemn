@@ -70,8 +70,8 @@
 
     nginx = {
       virtualHosts = {
-        # $HOSTNAME
-        "${config.networking.hostName}" = {
+        # immich.$HOSTNAME
+        "immich.${config.networking.hostName}" = {
           # enableACME = true;
           # forceSSL = true;
           locations."/" = {
