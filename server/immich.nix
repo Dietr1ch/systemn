@@ -118,7 +118,7 @@
           # Resource Control
           # ----------------
           # https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html#CPUWeight=weight
-          CPUWeight = "idle";
+          CPUWeight = "20";
           # https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html#CPUQuota
           # Limit overall CPU usage to 60% per core
           CPUQuota = lib.mkDefault "${toString (60 * config.nix.settings.cores)}%";
