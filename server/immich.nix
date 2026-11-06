@@ -107,7 +107,7 @@
           # Limit overall CPU usage to 60% per core
           CPUQuota = lib.mkDefault "${toString (60 * config.nix.settings.cores)}%";
         };
-      }; # ..systemd.services."immich"
+      }; # ..systemd.services."immich-server"
       "immich-machine-learning" = {
         unitConfig = {
           RequiresMountsFor = lib.concatStringsSep " " [ config.services.immich.mediaLocation ];
@@ -123,7 +123,7 @@
           # Limit overall CPU usage to 60% per core
           CPUQuota = lib.mkDefault "${toString (60 * config.nix.settings.cores)}%";
         };
-      }; # ..systemd.services."immich"
+      }; # ..systemd.services."immich-machine-learning"
     }; # ..systemd.services
   }; # ..systemd
 
