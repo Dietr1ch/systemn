@@ -98,11 +98,31 @@
         unitConfig = {
           RequiresMountsFor = lib.concatStringsSep " " [ config.services.immich.mediaLocation ];
         }; # ..systemd.services."immich".Service
+
+        # https://www.freedesktop.org/software/systemd/man/systemd.service.html
+        serviceConfig = {
+          # Resource Control
+          # ----------------
+          # https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html#CPUQuota
+          # Limit overall CPU usage to 60% per core
+          CPUQuota = lib.mkDefault "${toString (60 * config.nix.settings.cores)}%";
+        };
       }; # ..systemd.services."immich"
       "immich-machine-learning" = {
         unitConfig = {
           RequiresMountsFor = lib.concatStringsSep " " [ config.services.immich.mediaLocation ];
         }; # ..systemd.services."immich".Service
+
+        # https://www.freedesktop.org/software/systemd/man/systemd.service.html
+        serviceConfig = {
+          # Resource Control
+          # ----------------
+          # https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html#CPUWeight=weight
+          CPUWeight = "idle";
+          # https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html#CPUQuota
+          # Limit overall CPU usage to 60% per core
+          CPUQuota = lib.mkDefault "${toString (60 * config.nix.settings.cores)}%";
+        };
       }; # ..systemd.services."immich"
     }; # ..systemd.services
   }; # ..systemd
