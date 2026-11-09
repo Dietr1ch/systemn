@@ -47,6 +47,7 @@
           system-base-hardware_information = import ./system/base/hardware_information.nix;
           system-base-watchdog = import ./system/base/watchdog.nix;
           system-base-vcs-jj = import ./system/base/vcs/jj.nix;
+          system-base-vcs-mergiraf = import ./system/base/vcs/mergiraf.nix;
 
           system-boot-efi = import ./system/boot/efi.nix;
           system-boot-silent = import ./system/boot/silent.nix;
