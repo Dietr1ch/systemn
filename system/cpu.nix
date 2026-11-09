@@ -10,23 +10,32 @@
   };
 
   services = {
-    # https://search.nixos.org/options?channel=unstable&query=services.scx
-    scx = {
+    # https://search.nixos.org/options?channel=unstable&query=services.scx-loader
+    scx-loader = {
       enable = lib.mkDefault false;
 
-      # scheduler = "scx_bpfland";
-      # scheduler = "scx_central";
-      # scheduler = "scx_flatcg";
-      # scheduler = "scx_lavd";
-      # scheduler = "scx_layered";
-      # scheduler = "scx_nest";
-      # scheduler = "scx_pair";
-      # scheduler = "scx_qmap";
-      # scheduler = "scx_rlfifo";
-      # scheduler = "scx_rustland";  # Default
-      # scheduler = "scx_rusty";
-      # scheduler = "scx_simple";
-      # scheduler = "scx_userland";
+      schedsPackages = with pkgs.scx; [
+        full # include rustscheds & cscheds
+      ];
+
+      # https://github.com/sched-ext/scx-loader/blob/main/crates/scx_loader/configuration.md
+      config = {
+        # default_sched = null;
+        # default_mode = "Auto";
+
+        # scheds = { };
+
+        # auto_mode = {
+        # };
+        # gaming_mode = {
+        # };
+        # lowlatency_mode = {
+        # };
+        # powersave_mode = {
+        # };
+        # server_mode = {
+        # };
+      };
     };
   };
 
