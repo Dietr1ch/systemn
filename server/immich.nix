@@ -106,6 +106,9 @@
           # https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html#CPUQuota
           # Limit overall CPU usage to 60% per core
           CPUQuota = lib.mkDefault "${toString (60 * config.nix.settings.cores)}%";
+
+          # https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html#IOWeight=weight
+          IOWeight = "80";
         };
       }; # ..systemd.services."immich-server"
       "immich-machine-learning" = {
@@ -122,6 +125,9 @@
           # https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html#CPUQuota
           # Limit overall CPU usage to 60% per core
           CPUQuota = lib.mkDefault "${toString (60 * config.nix.settings.cores)}%";
+
+          # https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html#IOWeight=weight
+          IOWeight = "40";
         };
       }; # ..systemd.services."immich-machine-learning"
     }; # ..systemd.services
