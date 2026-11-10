@@ -12,7 +12,7 @@
   services = {
     # https://search.nixos.org/options?channel=unstable&query=services.scx-loader
     scx-loader = {
-      enable = lib.mkDefault false;
+      enable = true;
 
       schedsPackages = with pkgs.scx; [
         full # include rustscheds & cscheds
@@ -20,8 +20,8 @@
 
       # https://github.com/sched-ext/scx-loader/blob/main/crates/scx_loader/configuration.md
       config = {
-        # default_sched = null;
-        # default_mode = "Auto";
+        default_sched = null;
+        default_mode = "Auto";
 
         # scheds = { };
 
