@@ -20,7 +20,7 @@
 
       # https://github.com/sched-ext/scx-loader/blob/main/crates/scx_loader/configuration.md
       config = {
-        default_sched = null;
+        default_sched = lib.mkDefault "scx_lavd";
         default_mode = "Auto";
 
         # scheds = {
