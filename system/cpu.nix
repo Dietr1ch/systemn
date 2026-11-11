@@ -15,7 +15,8 @@
       enable = true;
 
       schedsPackages = with pkgs.scx; [
-        full # include rustscheds & cscheds
+        rustscheds
+        # cscheds
       ]; # ..services.scx-loader.schedPackages
 
       # https://github.com/sched-ext/scx-loader/blob/main/crates/scx_loader/configuration.md
