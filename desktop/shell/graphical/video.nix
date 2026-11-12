@@ -5,7 +5,6 @@
     systemPackages = with pkgs; [
       vlc
 
-      jellyfin
       jellyfin-web
       jellyfin-ffmpeg
 
