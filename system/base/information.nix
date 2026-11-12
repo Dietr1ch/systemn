@@ -19,6 +19,8 @@
       bottom
 
       nethogs
+
+      nix-output-monitor
     ];
     variables = {
       "HOSTNAME" = config.networking.hostName;
