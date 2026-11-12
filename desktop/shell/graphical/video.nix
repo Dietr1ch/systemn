@@ -6,7 +6,6 @@
       vlc
 
       jellyfin-web
-      jellyfin-ffmpeg
 
       blender
       kdePackages.kdenlive
