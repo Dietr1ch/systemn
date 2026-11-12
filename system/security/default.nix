@@ -23,8 +23,8 @@
       extraConfig = ''
         Defaults !pwfeedback
       '';
-    };
-  };
+    }; # ..security.sudo-rs
+  }; # ..security
 
   environment = {
     systemPackages = with pkgs; [
