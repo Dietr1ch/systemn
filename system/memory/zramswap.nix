@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ config, lib, ... }:
 
 # https://wiki.nixos.org/wiki/Swap
 # https://www.kernel.org/doc/Documentation/blockdev/zram.txt
@@ -7,7 +7,9 @@
     kernel = {
       sysctl = {
         # https://docs.kernel.org/admin-guide/sysctl/vm.html#swappiness
-        "vm.swappiness" = lib.mkDefault 15; # Only swap under real pressure
+        # NOTE: This measures how cheap is it to swap vs dropping cached ("free") memory.
+        # A value of 100 says that they have equal cost.
+        "vm.swappiness" = lib.mkDefault 120; # Make swapping to zram sligtly cheaper than freeing cached memory.
       }; # ..boot.kernel.sysctl
     }; # ..boot.kernel
   }; # ..boot
@@ -23,4 +25,11 @@
     # memoryPercent = 50;
     # writebackDevice = null;
   }; # ..zramSwap
+
+  assertions = [
+    {
+      assertion = config.swapDevices == [ ];
+      message = "SystemN: zramswap module: A disk-based swap device is defined. Remove it to avoid slow disk swapping.";
+    }
+  ]; # ..assertions
 }
