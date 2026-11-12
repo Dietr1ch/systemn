@@ -9,8 +9,6 @@
       enable = true;
       audio.enable = true;
 
-      jack.enable = true;
-
       wireplumber = {
         enable = true;
         extraLv2Packages = with pkgs; [
