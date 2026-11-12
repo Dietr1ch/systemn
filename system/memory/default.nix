@@ -1,10 +1,11 @@
-{
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, lib, ... }:
 
 {
+  imports = [
+    # ./zramswap.nix
+    # ./zswap.nix
+  ]; # ..imports
+
   systemd = {
     # https://search.nixos.org/options?channel=unstable&query=systemd.oomd
     oomd = {

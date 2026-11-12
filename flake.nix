@@ -68,6 +68,10 @@
           system-input-controllers = import ./system/input/controllers/default.nix;
           system-input-racing_wheel = import ./system/input/racing_wheel.nix;
           system-input-leap = import ./system/input/leap.nix;
+
+          system-memory-zramswap = import ./system/memory/zramswap.nix;
+          system-memory-zswap = import ./system/memory/zswap.nix;
+
           # Networking
           system-networking = import ./system/networking; # ./system/networking/default.nix
           system-networking-connectivity = import ./system/networking/connectivity/default.nix;
