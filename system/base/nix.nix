@@ -100,11 +100,7 @@
           # https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html#
 
           # https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html#CPUWeight=weight
-          CPUWeight = "20";
-
-          # https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html#CPUQuota
-          # Limit overall CPU usage to 80% per core
-          CPUQuota = lib.mkDefault "${toString (80 * config.nix.settings.cores)}%";
+          CPUWeight = "50";
         };
       }; # ..systemd.services."nix-daemon"
     }; # ..systemd.services
