@@ -11,6 +11,7 @@
       aria2
       dogedns
       ethtool
+      iperf
       rsync
       rustscan
       wget
