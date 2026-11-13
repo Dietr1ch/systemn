@@ -119,6 +119,34 @@ in
       ];
     }; # ..security.sudo
 
+    # https://search.nixos.org/options?channel=unstable&query=security.sudo-rs
+    sudo-rs = {
+      extraRules = [
+        {
+          groups = [
+            "games"
+          ];
+          commands = [
+            {
+              command = "${pkgs.gamemode}/bin/gamemoderun";
+              options = [ "NOPASSWD" ];
+            }
+            {
+              command = "${pkgs.gamemode}/libexec/cpugovctl";
+              options = [ "NOPASSWD" ];
+            }
+            {
+              command = "${pkgs.gamemode}/libexec/procsysctl";
+              options = [ "NOPASSWD" ];
+            }
+            {
+              command = "${pkgs.gamemode}/libexec/gpuclockctl";
+              options = [ "NOPASSWD" ];
+            }
+          ];
+        }
+      ];
+    }; # ..security.sudo-rs
   }; # ..security
 
   environment = {
