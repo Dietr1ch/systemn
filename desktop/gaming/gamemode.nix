@@ -68,7 +68,7 @@ in
             end = "${end}/bin/gamemode_end_hook";
           };
       };
-    };
+    }; # ..programs.gamemode
 
     # https://search.nixos.org/options?channel=unstable&query=programs.steam
     steam = {
@@ -79,8 +79,8 @@ in
           ]
         );
       };
-    };
-  };
+    }; # ..programs.steam
+  }; # ..programs
 
   services = {
     udev = {
@@ -88,7 +88,7 @@ in
         KERNEL=="cpu_dma_latency", GROUP="games"
       '';
     };
-  };
+  }; # ..services
 
   security = {
     sudo = {
@@ -117,8 +117,9 @@ in
           ];
         }
       ];
-    };
-  };
+    }; # ..security.sudo
+
+  }; # ..security
 
   environment = {
     systemPackages = with pkgs; [
@@ -126,5 +127,5 @@ in
       libnotify
       mangohud
     ];
-  };
+  }; # ..environment
 }
