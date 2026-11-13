@@ -3,7 +3,6 @@
 {
   services = {
     xserver = {
-      exportConfiguration = true;
       xkb = {
         options = lib.strings.concatStringsSep ", " [
           "compose:ralt"
