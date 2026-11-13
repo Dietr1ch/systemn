@@ -28,7 +28,7 @@
       cargo-public-api
       # BROKEN: cargo-semver-checks
       cargo-show-asm
-      cargo-spellcheck
+      # BROKEN: cargo-spellcheck
       cargo-toml-lint
       cargo-udeps
       # BROKEN: cargo-valgrind # https://github.com/NixOS/nixpkgs/issues/428375
