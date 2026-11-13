@@ -69,6 +69,8 @@
           system-input-racing_wheel = import ./system/input/racing_wheel.nix;
           system-input-leap = import ./system/input/leap.nix;
 
+          system-cpu-corectrl = import ./system/cpu/corectrl.nix;
+          system-cpu-scx = import ./system/cpu/scx.nix;
           system-memory-zramswap = import ./system/memory/zramswap.nix;
           system-memory-zswap = import ./system/memory/zswap.nix;
 
