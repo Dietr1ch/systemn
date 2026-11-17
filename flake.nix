@@ -140,6 +140,7 @@
           server-file_sharing-ipfs = import ./server/file_sharing/ipfs.nix;
           server-file_sharing-nfs = import ./server/file_sharing/nfs.nix;
           server-file_sharing-samba = import ./server/file_sharing/samba.nix;
+          server-forgejo = import ./server/forgejo.nix;
           server-grafana = import ./server/grafana.nix;
           server-immich = import ./server/immich.nix;
           server-jellyfin = import ./server/jellyfin.nix;
