@@ -71,7 +71,12 @@
     nginx = {
       virtualHosts = {
         # immich.$HOSTNAME
-        "immich.${config.networking.hostName}" = {
+        "immich.${config.networking.hostName}.local" = {
+          serverAliases = [
+            # immich.$HOSTNAME.local
+            "immich.${config.networking.hostName}.local"
+          ];
+
           # enableACME = true;
           # forceSSL = true;
           locations = {

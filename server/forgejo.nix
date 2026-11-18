@@ -74,7 +74,12 @@
     nginx = {
       virtualHosts = {
         # forge.$HOSTNAME
-        "forge.${config.networking.hostName}" = {
+        "forge.${config.networking.hostName}.local" = {
+          serverAliases = [
+            # forge.$HOSTNAME.local
+            "forge.${config.networking.hostName}.local"
+          ];
+
           # enableACME = true;
           # forceSSL = true;
           locations."/" = {
