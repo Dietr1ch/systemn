@@ -15,10 +15,12 @@
         };
         server = {
           # PROTOCOL = "+unix";
-          # DOMAIN = "forge.${config.networking.hostName}";
+          # DOMAIN = "forgejo.${config.networking.hostName}.${config.networking.domain}"
           # http://localhost:9999/
           HTTP_PORT = 9999;
           SSH_PORT = lib.head config.services.openssh.ports;
+
+          ROOT_URL = "http://forgejo.${config.networking.hostName}.${config.networking.domain}";
         };
         actions = {
           ENABLED = true;
@@ -73,11 +75,11 @@
 
     nginx = {
       virtualHosts = {
-        # forge.$HOSTNAME
-        "forge.${config.networking.hostName}.local" = {
+        # forgejo.$HOSTNAME.$DOMAIN
+        "forgejo.${config.networking.hostName}.${config.networking.domain}" = {
           serverAliases = [
-            # forge.$HOSTNAME.local
-            "forge.${config.networking.hostName}.local"
+            # forgejo.$HOSTNAME.local
+            "forgejo.${config.networking.hostName}.local"
           ];
 
           # enableACME = true;
