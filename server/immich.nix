@@ -70,8 +70,8 @@
 
     nginx = {
       virtualHosts = {
-        # immich.$HOSTNAME
-        "immich.${config.networking.hostName}.local" = {
+        # immich.$HOSTNAME.$DOMAIN
+        "immich.${config.networking.hostName}.${config.networking.domain}" = {
           serverAliases = [
             # immich.$HOSTNAME.local
             "immich.${config.networking.hostName}.local"
