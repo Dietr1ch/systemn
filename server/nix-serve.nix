@@ -35,13 +35,13 @@
 
     nginx = {
       virtualHosts = {
-        # FIXME: Announce the nix. subdomain on avahi
-        # nix.$HOSTNAME
-        "nix.${config.networking.hostName}" = {
+        # nix.$HOSTNAME.$DOMAIN
+        "nix.${config.networking.hostName}.${config.networking.domain}" = {
           serverAliases = [
             # nix.$HOSTNAME.local
             "nix.${config.networking.hostName}.local"
           ];
+
           locations = {
             "/" = {
               proxyPass =
@@ -52,10 +52,23 @@
                 "http://${addr}:${toString port}/";
               # proxyWebsockets = true;
               recommendedProxySettings = true;
+
+              # /etc/nginx/nginx.conf
+              extraConfig = ''
+                # SystemN (~/Projects/systemn/server/nix-serve.nix)
+                # -------
+                keepalive_timeout 300;
+                proxy_max_temp_file_size 0;
+                sendfile           on;
+                sendfile_max_chunk 1m;
+                tcp_nodelay       on;
+                tcp_nopush on;
+              '';
             };
           };
         };
 
+        # $HOSTNAME.$DOMAIN/nix
         "${config.networking.hostName}" = {
           locations = {
             "/nix/" = {
@@ -67,6 +80,18 @@
                 "http://${addr}:${toString port}/";
               # proxyWebsockets = true;
               recommendedProxySettings = true;
+
+              # /etc/nginx/nginx.conf
+              extraConfig = ''
+                # SystemN (~/Projects/systemn/server/nix-serve.nix)
+                # -------
+                keepalive_timeout 300;
+                proxy_max_temp_file_size 0;
+                sendfile           on;
+                sendfile_max_chunk 1m;
+                tcp_nodelay       on;
+                tcp_nopush on;
+              '';
             };
           };
         };
