@@ -105,11 +105,4 @@
       }; # ..systemd.services."nix-daemon"
     }; # ..systemd.services
   }; # ..systemd
-
-  assertions = [
-    {
-      assertion = config.nix.settings.cores != 0;
-      message = "'nix.settings.cores' must be set.";
-    }
-  ];
 }
