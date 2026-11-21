@@ -66,6 +66,17 @@
 
         # https://wiki.archlinux.org/title/Sysctl#Increase_the_Ephemeral_port_range
         "net.ipv4.ip_local_port_range" = "30000 65535";
+
+        # Net (https://github.com/rf11291/magicTCP#tuning-tcp-via-sysctlconf)
+        # TODO: Figure out whether this targets 1/2.5/5/10/40/100 Gbps
+        "net.ipv4.tcp_rmem" = "8192 262144 536870912";
+        "net.ipv4.tcp_wmem" = "8192 262144 536870912";
+        "net.ipv4.tcp_adv_win_scale" = -2;
+        "net.ipv4.tcp_collapse_max_bytes" = 6291456;
+        "net.ipv4.tcp_notsent_lowat" = 131072;
+        "net.ipv4.tcp_window_scaling" = 1;
+        # "net.core.default_qdisc" = "fq";
+        # "net.ipv4.tcp_congestion_control" = "bbr";
       };
     };
   };
