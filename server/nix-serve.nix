@@ -90,25 +90,4 @@
       };
     }; # ..services.nginx
   }; # ..services
-
-  environment = {
-    etc = {
-      # /etc/avahi/services/nix-serve.service
-      "/avahi/services/nix-serve.service" = {
-        mode = "0444";
-        text = ''
-          <?xml version="1.0" standalone="no"?>
-          <!DOCTYPE service-group SYSTEM "nix-serve-service.dtd">
-
-          <service-group>
-            <name replace-wildcards="yes">nix-serve server at %h</name>
-            <service>
-              <type>_nix-serve._tcp</type>
-              <port>${toString config.services.nix-serve.port}</port>
-            </service>
-          </service-group>
-        '';
-      };
-    }; # ..environment.etc
-  }; # ..environment
 }
