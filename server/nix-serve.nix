@@ -66,6 +66,7 @@
           };
         };
 
+        # TODO: Drop $HOSTNAME.$DOMAIN/nix vHost once we switch to nix.$HOSTNAME.$DOMAIN
         # $HOSTNAME.$DOMAIN/nix
         "${config.networking.hostName}" = {
           locations = {
