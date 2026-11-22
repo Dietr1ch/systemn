@@ -43,11 +43,8 @@
 
           locations = {
             "/" = {
-              proxyPass =
-                let
-                  port = config.services.nix-serve.port;
-                in
-                "http://localhost:${toString port}/";
+              proxyPass = "http://localhost:${toString config.services.nix-serve.port}/";
+
               # proxyWebsockets = true;
               recommendedProxySettings = true;
 
@@ -71,11 +68,8 @@
         "${config.networking.hostName}" = {
           locations = {
             "/nix/" = {
-              proxyPass =
-                let
-                  port = config.services.nix-serve.port;
-                in
-                "http://localhost:${toString port}/";
+              proxyPass = "http://localhost:${toString config.services.nix-serve.port}/";
+
               # proxyWebsockets = true;
               recommendedProxySettings = true;
 
