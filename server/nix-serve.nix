@@ -67,31 +67,6 @@
             };
           };
         };
-
-        # TODO: Drop $HOSTNAME.$DOMAIN/nix vHost once we switch to nix.$HOSTNAME.$DOMAIN
-        # $HOSTNAME.$DOMAIN/nix
-        "${config.networking.hostName}" = {
-          locations = {
-            "/nix/" = {
-              proxyPass = "http://localhost:${toString config.services.nix-serve.port}/";
-
-              # proxyWebsockets = true;
-              recommendedProxySettings = true;
-
-              # /etc/nginx/nginx.conf
-              extraConfig = ''
-                # SystemN (~/Projects/systemn/server/nix-serve.nix)
-                # -------
-                keepalive_timeout 300;
-                proxy_max_temp_file_size 0;
-                sendfile           on;
-                sendfile_max_chunk 1m;
-                tcp_nodelay       on;
-                tcp_nopush on;
-              '';
-            };
-          };
-        };
       };
     }; # ..services.nginx
   }; # ..services
