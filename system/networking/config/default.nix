@@ -13,10 +13,10 @@
         # Performance (https://wiki.archlinux.org/title/Sysctl#Improving_performance)
         # -----------
         # https://wiki.archlinux.org/title/Sysctl#Increasing_the_size_of_the_receive_queue
-        "net.core.netdev_max_backlog" = 16384;
+        "net.core.netdev_max_backlog" = 16 * 1024;
 
         # https://wiki.archlinux.org/title/Sysctl#Increase_the_maximum_connections
-        "net.core.somaxconn" = 8192;
+        "net.core.somaxconn" = 8 * 1024;
 
         # https://wiki.archlinux.org/title/Sysctl#Increase_the_memory_dedicated_to_the_network_interfaces
         # NOTE: This article appears to be tuning for 40Gbps interfaces, which are uncommon

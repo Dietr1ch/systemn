@@ -38,7 +38,7 @@
         "net.ipv4.tcp_fastopen" = 3;
 
         # https://wiki.archlinux.org/title/Sysctl#Tweak_the_pending_connection_handling
-        "net.ipv4.tcp_max_syn_backlog" = 8192;
+        "net.ipv4.tcp_max_syn_backlog" = 8 * 1024;
         "net.ipv4.tcp_max_tw_buckets" = 2000000;
         "net.ipv4.tcp_tw_reuse" = 1; # 1: enable for all connections | 2: enable for loopback
         "net.ipv4.tcp_fin_timeout" = 10;
