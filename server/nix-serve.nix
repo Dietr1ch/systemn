@@ -8,13 +8,12 @@
 {
   services = {
     # https://search.nixos.org/options?channel=unstable&query=nix-serve
-    #
-    # Listens HTTP on 127.0.0.1:5000
     nix-serve = {
       enable = true;
-      # Use nix-serve-ng. https://github.com/aristanetworks/nix-serve-ng
-      package = pkgs.nix-serve-ng;
 
+      package = pkgs.nix-serve-ng; # https://github.com/aristanetworks/nix-serve-ng
+
+      # Listens on http://127.0.0.1:5000
       bindAddress = "127.0.0.1";
       port = 5000;
 
@@ -46,10 +45,9 @@
             "/" = {
               proxyPass =
                 let
-                  addr = config.services.nix-serve.bindAddress;
                   port = config.services.nix-serve.port;
                 in
-                "http://${addr}:${toString port}/";
+                "http://localhost:${toString port}/";
               # proxyWebsockets = true;
               recommendedProxySettings = true;
 
@@ -74,10 +72,9 @@
             "/nix/" = {
               proxyPass =
                 let
-                  addr = config.services.nix-serve.bindAddress;
                   port = config.services.nix-serve.port;
                 in
-                "http://${addr}:${toString port}/";
+                "http://localhost:${toString port}/";
               # proxyWebsockets = true;
               recommendedProxySettings = true;
 
