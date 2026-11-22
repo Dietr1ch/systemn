@@ -64,7 +64,7 @@
         # https://en.wikipedia.org/wiki/TCP_congestion_control#TCP_BBR
         "net.ipv4.tcp_congestion_control" = "bbr";
 
-        # Net (https://github.com/rf11291/magicTCP#tuning-tcp-via-sysctlconf)
+        # Net (https://github.com/nexstorm/magicTCP)
         "net.ipv4.tcp_adv_win_scale" = -2;
         "net.ipv4.tcp_collapse_max_bytes" = 6291456;
         "net.ipv4.tcp_notsent_lowat" = 131072;
