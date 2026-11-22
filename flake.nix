@@ -142,8 +142,15 @@
           server-file_sharing-samba = import ./server/file_sharing/samba.nix;
           server-forgejo = import ./server/forgejo.nix;
           server-grafana = import ./server/grafana.nix;
-          server-immich = import ./server/immich.nix;
-          server-jellyfin = import ./server/jellyfin.nix;
+          # TODO: Drop server-immich after migrating to server-media | server-media-immich
+          server-immich = import ./server/media;
+          # TODO: Drop server-jellyfin after migrating to server-media | server-media-jellyfin
+          server-jellyfin = import ./server/media/jellyfin.nix;
+          server-media = import ./server/media; # ./server/media/default.nix;
+          server-media-immich = import ./server/media/immich.nix;
+          server-media-jellyfin = import ./server/media/jellyfin.nix;
+          server-media-seerr = import ./server/media/seerr.nix;
+          server-media-sonarr = import ./server/media/sonarr.nix;
           server-monero = import ./server/monero.nix;
           server-nix_serve = import ./server/nix-serve.nix;
           server-nix_ssh = import ./server/nix-ssh.nix;
