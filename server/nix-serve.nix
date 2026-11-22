@@ -11,7 +11,12 @@
     nix-serve = {
       enable = true;
 
-      package = pkgs.nix-serve-ng; # https://github.com/aristanetworks/nix-serve-ng
+      package = (
+        if pkgs.stdenv.hostPlatform.isx86_64 then
+          pkgs.nix-serve-ng # https://github.com/aristanetworks/nix-serve-ng
+        else
+          pkgs.nix-serve
+      );
 
       # Listens on http://127.0.0.1:5000
       bindAddress = "127.0.0.1";
