@@ -39,9 +39,9 @@
 
         # https://wiki.archlinux.org/title/Sysctl#Tweak_the_pending_connection_handling
         "net.ipv4.tcp_max_syn_backlog" = 8 * 1024;
-        "net.ipv4.tcp_max_tw_buckets" = 2000000;
+        # ?? "net.ipv4.tcp_max_tw_buckets" = 2000000;
         "net.ipv4.tcp_tw_reuse" = 1; # 1: enable for all connections | 2: enable for loopback
-        "net.ipv4.tcp_fin_timeout" = 10;
+        # ?? "net.ipv4.tcp_fin_timeout" = 10;
         "net.ipv4.tcp_slow_start_after_idle" = 0;
 
         # https://wiki.archlinux.org/title/Sysctl#Change_TCP_keepalive_parameters
@@ -65,9 +65,9 @@
         "net.ipv4.tcp_congestion_control" = "bbr";
 
         # Net (https://github.com/nexstorm/magicTCP)
-        "net.ipv4.tcp_adv_win_scale" = -2;
-        "net.ipv4.tcp_collapse_max_bytes" = 6291456;
-        "net.ipv4.tcp_notsent_lowat" = 131072;
+        # ?? "net.ipv4.tcp_adv_win_scale" = -2;
+        # ?? "net.ipv4.tcp_collapse_max_bytes" = 6291456;
+        # ?? "net.ipv4.tcp_notsent_lowat" = 131072;
         "net.ipv4.tcp_window_scaling" = 1;
       }; # ..boot.kernel.sysctl
     }; # ..boot.kernel
