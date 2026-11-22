@@ -85,6 +85,8 @@
               proxyWebsockets = true;
               recommendedProxySettings = true;
               extraConfig = ''
+                # SystemN (~/Projects/systemn/server/media/immich.nix)
+                # -------
                 client_max_body_size 50000M;
                 proxy_read_timeout   600s;
                 proxy_send_timeout   600s;

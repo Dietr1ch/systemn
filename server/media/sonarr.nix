@@ -28,7 +28,7 @@
 
               # /etc/nginx/nginx.conf
               extraConfig = ''
-                # SystemN (~/Projects/systemn/server/nix-serve.nix)
+                # SystemN (~/Projects/systemn/server/media/sonarr.nix)
                 # -------
                 keepalive_timeout 300;
                 proxy_max_temp_file_size 0;
