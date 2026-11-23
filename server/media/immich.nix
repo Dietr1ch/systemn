@@ -108,7 +108,7 @@
       "immich-server" = {
         unitConfig = {
           RequiresMountsFor = lib.concatStringsSep " " [ config.services.immich.mediaLocation ];
-        }; # ..systemd.services."immich".Service
+        };
 
         # https://www.freedesktop.org/software/systemd/man/systemd.service.html
         serviceConfig = {
@@ -125,7 +125,7 @@
       "immich-machine-learning" = {
         unitConfig = {
           RequiresMountsFor = lib.concatStringsSep " " [ config.services.immich.mediaLocation ];
-        }; # ..systemd.services."immich".Service
+        };
 
         # https://www.freedesktop.org/software/systemd/man/systemd.service.html
         serviceConfig = {
