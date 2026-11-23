@@ -56,6 +56,14 @@
     }; # ..services.nginx
   };
 
+  users = {
+    users = {
+      "transmission" = {
+        extraGroups = [ "media" ];
+      }; # ..users.users."transmission"
+    }; # ..users.users
+  }; # ..users
+
   systemd = {
     services = {
       # man:systemd.unit
