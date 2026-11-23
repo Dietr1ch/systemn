@@ -4,6 +4,7 @@
   imports = [
     ./bazarr.nix
     ./immich.nix
+    ./invidious.nix
     ./jellyfin.nix
     ./lidarr.nix
     ./prowlarr.nix
