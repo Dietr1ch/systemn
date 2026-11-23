@@ -57,9 +57,15 @@
   users = {
     users = {
       "jellyfin" = {
+        isNormalUser = false;
+        group = "jellyfin";
         extraGroups = [ "media" ];
       }; # ..users.users."jellyfin"
     }; # ..users.users
+
+    groups = {
+      "jellyfin" = { };
+    }; # ..users.groups
   }; # ..users
 
   environment = {

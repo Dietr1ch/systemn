@@ -50,8 +50,14 @@
   users = {
     users = {
       "sonarr" = {
+        isNormalUser = false;
+        group = "sonarr";
         extraGroups = [ "media" ];
       }; # ..users.users."sonarr"
     }; # ..users.users
+
+    groups = {
+      "sonarr" = { };
+    }; # ..users.groups
   }; # ..users
 }

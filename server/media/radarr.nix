@@ -50,8 +50,14 @@
   users = {
     users = {
       "radarr" = {
+        isNormalUser = false;
+        group = "radarr";
         extraGroups = [ "media" ];
       }; # ..users.users."radarr"
     }; # ..users.users
+
+    groups = {
+      "radarr" = { };
+    }; # ..users.groups
   }; # ..users
 }

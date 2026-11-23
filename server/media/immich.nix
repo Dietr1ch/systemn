@@ -147,6 +147,8 @@
   users = {
     users = {
       "immich" = {
+        isNormalUser = false;
+        group = "immich";
         extraGroups = [
           "media"
 
@@ -155,6 +157,10 @@
         ];
       }; # ..users.users."immich"
     }; # ..users.users
+
+    groups = {
+      "immich" = { };
+    }; # ..users.groups
   }; # ..users
 
   assertions = [

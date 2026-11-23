@@ -50,8 +50,13 @@
     users = {
       "seerr" = {
         isNormalUser = false;
+        group = "seerr";
         extraGroups = [ "media" ];
       }; # ..users.users."seerr"
     }; # ..users.users
+
+    groups = {
+      "seerr" = { };
+    }; # ..users.groups
   }; # ..users
 }
