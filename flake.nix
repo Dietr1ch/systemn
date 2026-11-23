@@ -143,6 +143,7 @@
           server-forgejo = import ./server/forgejo.nix;
           server-grafana = import ./server/grafana.nix;
           server-media = import ./server/media; # ./server/media/default.nix;
+          server-media-bazarr = import ./server/media/bazarr.nix;
           server-media-immich = import ./server/media/immich.nix;
           server-media-jellyfin = import ./server/media/jellyfin.nix;
           server-media-prowlarr = import ./server/media/prowlarr.nix;
