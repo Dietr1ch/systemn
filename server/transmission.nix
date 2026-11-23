@@ -29,10 +29,12 @@
       virtualHosts = {
         # transmission.$HOSTNAME.$DOMAIN
         "transmission.${config.networking.hostName}.${config.networking.domain}" = {
-          serverAliases = [
-            # transmission.$HOSTNAME.local
-            "transmission.${config.networking.hostName}.local"
-          ];
+          serverAliases =
+            [ ]
+            ++ lib.optionals (config.networking.domain != "local") [
+              # transmission.$HOSTNAME.local
+              "transmission.${config.networking.hostName}.local"
+            ];
 
           # enableACME = true;
           # forceSSL = true;

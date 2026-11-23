@@ -77,10 +77,12 @@
       virtualHosts = {
         # forgejo.$HOSTNAME.$DOMAIN
         "forgejo.${config.networking.hostName}.${config.networking.domain}" = {
-          serverAliases = [
-            # forgejo.$HOSTNAME.local
-            "forgejo.${config.networking.hostName}.local"
-          ];
+          serverAliases =
+            [ ]
+            ++ lib.optionals (config.networking.domain != "local") [
+              # forgejo.$HOSTNAME.local
+              "forgejo.${config.networking.hostName}.local"
+            ];
 
           # enableACME = true;
           # forceSSL = true;
