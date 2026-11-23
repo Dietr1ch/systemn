@@ -146,6 +146,7 @@
           server-media-bazarr = import ./server/media/bazarr.nix;
           server-media-immich = import ./server/media/immich.nix;
           server-media-jellyfin = import ./server/media/jellyfin.nix;
+          server-media-lidarr = import ./server/media/lidarr.nix;
           server-media-prowlarr = import ./server/media/prowlarr.nix;
           server-media-radarr = import ./server/media/radarr.nix;
           server-media-seerr = import ./server/media/seerr.nix;
