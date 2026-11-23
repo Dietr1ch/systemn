@@ -33,10 +33,12 @@
 
         # grafana.$HOSTNAME.$DOMAIN
         "grafana.${config.networking.hostName}.${config.networking.domain}" = {
-          serverAliases = [
-            # grafana.$HOSTNAME.local
-            "grafana.${config.networking.hostName}.local"
-          ];
+          serverAliases =
+            [ ]
+            ++ lib.optionals (config.networking.domain != "local") [
+              # grafana.$HOSTNAME.local
+              "grafana.${config.networking.hostName}.local"
+            ];
 
           locations = {
             "/" = {

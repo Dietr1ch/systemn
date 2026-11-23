@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 # https://wiki.nixos.org/wiki/Jellyfin
 # https://nixos.wiki/wiki/Jellyfin
@@ -14,10 +19,12 @@
       virtualHosts = {
         # jellyfin.$HOSTNAME.$DOMAIN
         "jellyfin.${config.networking.hostName}.${config.networking.domain}" = {
-          serverAliases = [
-            # jellyfin.$HOSTNAME.local
-            "jellyfin.${config.networking.hostName}.local"
-          ];
+          serverAliases =
+            [ ]
+            ++ lib.optionals (config.networking.domain != "local") [
+              # jellyfin.$HOSTNAME.local
+              "jellyfin.${config.networking.hostName}.local"
+            ];
 
           # enableACME = true;
           # forceSSL = true;

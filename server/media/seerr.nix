@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 {
   services = {
@@ -12,10 +12,12 @@
 
         # seerr.$HOSTNAME.$DOMAIN
         "seerr.${config.networking.hostName}.${config.networking.domain}" = {
-          serverAliases = [
-            # seerr.$HOSTNAME.local
-            "seerr.${config.networking.hostName}.local"
-          ];
+          serverAliases =
+            [ ]
+            ++ lib.optionals (config.networking.domain != "local") [
+              # seerr.$HOSTNAME.local
+              "seerr.${config.networking.hostName}.local"
+            ];
 
           # enableACME = true;
           # forceSSL = true;

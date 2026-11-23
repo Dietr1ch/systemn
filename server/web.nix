@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 {
   # https://nixos.wiki/wiki/Nginx
@@ -25,10 +25,12 @@
           # addSSL = true;
           # enableACME = true;
 
-          serverAliases = [
-            # $HOSTNAME.local
-            "${config.networking.hostName}.local"
-          ];
+          serverAliases =
+            [ ]
+            ++ lib.optionals (config.networking.domain != "local") [
+              # $HOSTNAME.local
+              "${config.networking.hostName}.local"
+            ];
 
           # https://search.nixos.org/options?channel=unstable&query=services.nginx.virtualHosts.%3Cname%3E.locations
           # https://nginx.org/en/docs/http/ngx_http_core_module.html#location

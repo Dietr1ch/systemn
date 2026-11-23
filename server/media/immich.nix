@@ -72,10 +72,12 @@
       virtualHosts = {
         # immich.$HOSTNAME.$DOMAIN
         "immich.${config.networking.hostName}.${config.networking.domain}" = {
-          serverAliases = [
-            # immich.$HOSTNAME.local
-            "immich.${config.networking.hostName}.local"
-          ];
+          serverAliases =
+            [ ]
+            ++ lib.optionals (config.networking.domain != "local") [
+              # immich.$HOSTNAME.local
+              "immich.${config.networking.hostName}.local"
+            ];
 
           # enableACME = true;
           # forceSSL = true;

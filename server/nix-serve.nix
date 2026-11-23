@@ -41,10 +41,12 @@
       virtualHosts = {
         # nix.$HOSTNAME.$DOMAIN
         "nix.${config.networking.hostName}.${config.networking.domain}" = {
-          serverAliases = [
-            # nix.$HOSTNAME.local
-            "nix.${config.networking.hostName}.local"
-          ];
+          serverAliases =
+            [ ]
+            ++ lib.optionals (config.networking.domain != "local") [
+              # nix.$HOSTNAME.local
+              "nix.${config.networking.hostName}.local"
+            ];
 
           locations = {
             "/" = {

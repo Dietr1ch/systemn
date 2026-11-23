@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 # https://wiki.nixos.org/wiki/Sonarr
 {
@@ -13,10 +13,12 @@
 
         # sonarr.$HOSTNAME.$DOMAIN
         "sonarr.${config.networking.hostName}.${config.networking.domain}" = {
-          serverAliases = [
-            # sonarr.$HOSTNAME.local
-            "sonarr.${config.networking.hostName}.local"
-          ];
+          serverAliases =
+            [ ]
+            ++ lib.optionals (config.networking.domain != "local") [
+              # sonarr.$HOSTNAME.local
+              "sonarr.${config.networking.hostName}.local"
+            ];
 
           # enableACME = true;
           # forceSSL = true;
