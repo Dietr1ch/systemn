@@ -54,6 +54,14 @@
     }; # ..services.nginx
   }; # ..services
 
+  users = {
+    users = {
+      "jellyfin" = {
+        extraGroups = [ "media" ];
+      }; # ..users.users."jellyfin"
+    }; # ..users.users
+  }; # ..users
+
   environment = {
     systemPackages = with pkgs; [
       jellyfin

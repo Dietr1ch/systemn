@@ -45,4 +45,12 @@
       }; # ..services.nginx.virtualHosts
     }; # ..services.nginx
   }; # ..services
+
+  users = {
+    users = {
+      "seerr" = {
+        extraGroups = [ "media" ];
+      }; # ..users.users."seerr"
+    }; # ..users.users
+  }; # ..users
 }

@@ -148,6 +148,8 @@
     users = {
       "immich" = {
         extraGroups = [
+          "media"
+
           "video"
           "render"
         ];

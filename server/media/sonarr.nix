@@ -46,4 +46,12 @@
       }; # ..services.nginx.virtualHosts
     }; # ..services.nginx
   }; # ..services
+
+  users = {
+    users = {
+      "sonarr" = {
+        extraGroups = [ "media" ];
+      }; # ..users.users."sonarr"
+    }; # ..users.users
+  }; # ..users
 }
