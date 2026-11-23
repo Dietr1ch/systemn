@@ -145,6 +145,7 @@
           server-media = import ./server/media; # ./server/media/default.nix;
           server-media-immich = import ./server/media/immich.nix;
           server-media-jellyfin = import ./server/media/jellyfin.nix;
+          server-media-radarr = import ./server/media/radarr.nix;
           server-media-seerr = import ./server/media/seerr.nix;
           server-media-sonarr = import ./server/media/sonarr.nix;
           server-monero = import ./server/monero.nix;
