@@ -20,8 +20,8 @@
       # Config file mentioned in /etc/systemd/system/nginx.service
       virtualHosts = {
 
-        # $HOSTNAME
-        "${config.networking.hostName}" = {
+        # $HOSTNAME.$DOMAIN
+        "${config.networking.hostName}.${config.networking.domain}" = {
           # addSSL = true;
           # enableACME = true;
 
