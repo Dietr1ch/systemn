@@ -45,4 +45,12 @@
       }; # ..services.nginx.virtualHosts
     }; # ..services.nginx
   }; # ..services
+
+  users = {
+    users = {
+      "bazarr" = {
+        extraGroups = [ "media" ];
+      }; # ..users.users."bazarr"
+    }; # ..users.users
+  }; # ..users
 }
