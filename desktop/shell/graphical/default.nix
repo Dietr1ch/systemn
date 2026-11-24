@@ -68,9 +68,7 @@
     terminal-exec = {
       enable = true;
       settings = {
-        "default" = [
-          "alacritty.desktop"
-        ];
+        "default" = [ "alacritty.desktop" ];
       };
     };
   };

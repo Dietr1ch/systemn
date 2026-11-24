@@ -1,3 +1,5 @@
 { ... }:
 
-{ imports = [ ./virtualisation ]; }
+{
+  imports = [ ./virtualisation ];
+}

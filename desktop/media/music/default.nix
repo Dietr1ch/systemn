@@ -1,3 +1,5 @@
 { ... }:
 
-{ imports = [ ./tagging.nix ]; }
+{
+  imports = [ ./tagging.nix ];
+}
