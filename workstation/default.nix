@@ -1,7 +1,3 @@
 { ... }:
 
-{
-  imports = [
-    ./virtualisation # ./virtualisation/default.nix
-  ];
-}
+{ imports = [ ./virtualisation ]; }

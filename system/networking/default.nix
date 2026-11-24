@@ -3,8 +3,8 @@
 # https://cromwell-intl.com/open-source/performance-tuning/tcp.html
 {
   imports = [
-    ./config # config/default.nix
-    ./connectivity # connectivity/default.nix
+    ./config
+    ./connectivity
 
     ./information.nix
     ./firewall.nix

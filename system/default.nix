@@ -2,15 +2,15 @@
 
 {
   imports = [
-    ./base # ./base/default.nix
-    ./boot # ./boot/default.nix
-    ./cpu # ./cpu/default.nix
-    ./files # ./files/default.nix
-    ./input # ./input/default.nix
-    ./memory # ./memory/default.nix
-    ./networking # ./networking/default.nix
-    ./security # ./security/default.nix
-    ./storage # ./storage/default.nix
+    ./base
+    ./boot
+    ./cpu
+    ./files
+    ./input
+    ./memory
+    ./networking
+    ./security
+    ./storage
 
     ./crypto.nix
     ./hardware-update.nix

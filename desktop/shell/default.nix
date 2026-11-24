@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./graphical # ./graphical/default.nix
-    ./terminal # ./terminal/default.nix
+    ./graphical
+    ./terminal
 
     ./spelling.nix
   ];

@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./dns # ./dns/default.nix
+    ./dns
 
     ./fail2ban.nix
     ./ssh.nix

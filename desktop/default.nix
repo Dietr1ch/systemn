@@ -2,10 +2,10 @@
 
 {
   imports = [
-    # ./gaming # ./gaming/default.nix
+    # ./gaming
     # ./media
-    # ./programming # ./programming/default.nix
-    ./shell # ./shell/default.nix
+    # ./programming
+    ./shell
 
     ./sound.nix
   ];

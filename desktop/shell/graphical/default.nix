@@ -2,10 +2,10 @@
 
 {
   imports = [
-    ./browser # ./browser/default.nix
+    ./browser
 
-    ./env # ./env/default.nix
-    ./login # ./login/default.nix
+    ./env
+    ./login
 
     # ./audio.nix
     # ./cad.nix

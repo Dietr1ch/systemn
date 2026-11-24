@@ -15,9 +15,9 @@
         {
           # Hardware
           # --------
-          hardware = import ./hardware; # ./hardware/default.nix
+          hardware = import ./hardware;
           hardware-bluetooth = import ./hardware/bluetooth.nix;
-          hardware-graphics = import ./hardware/graphics/default.nix;
+          hardware-graphics = import ./hardware/graphics;
           hardware-graphics-amd = import ./hardware/graphics/amd.nix;
           hardware-keyboard-ergodox_ez = import ./hardware/keyboard/ergodox_ez.nix;
           hardware-mouse-razer = import ./hardware/mouse/razer.nix;
@@ -32,18 +32,18 @@
           hardware-i2c = import ./hardware/i2c.nix;
           hardware-usb = import ./hardware/usb.nix; # (default)
           # Laptop
-          hardware-laptop = import ./hardware/laptop; # ./hardware/laptop/default.nix
+          hardware-laptop = import ./hardware/laptop;
           hardware-laptop-power = import ./hardware/laptop/power.nix;
           # Workstation
-          hardware-workstation = import ./hardware/workstation; # ./hardware/workstation/default.nix
+          hardware-workstation = import ./hardware/workstation;
           hardware-workstation-power = import ./hardware/workstation/power.nix;
 
           # System
           # ------
           # Things in between the hardware and the user level
-          system = import ./system; # ./system/default.nix
+          system = import ./system;
 
-          system-base = import ./system/base; # ./system/base/default.nix
+          system-base = import ./system/base;
           system-base-hardware_information = import ./system/base/hardware_information.nix;
           system-base-watchdog = import ./system/base/watchdog.nix;
           system-base-vcs-jj = import ./system/base/vcs/jj.nix;
@@ -55,17 +55,17 @@
 
           system-kernel-rt = import ./system/kernel/rt.nix;
 
-          system-security = import ./system/security; # ./system/security/default.nix
+          system-security = import ./system/security;
           system-security-yubikey = import ./system/security/yubikey.nix;
           # Audit
-          system-storage = import ./system/storage; # ./system/storage/default.nix
+          system-storage = import ./system/storage;
 
-          system-input = import ./system/input/default.nix;
+          system-input = import ./system/input;
           system-input-keyboard-dvorak = import ./system/input/keyboard/dvorak.nix;
           system-input-keyboard-intl = import ./system/input/keyboard/intl.nix;
           system-input-mouse = import ./system/input/mouse.nix;
           system-input-touchpad = import ./system/input/touchpad.nix;
-          system-input-controllers = import ./system/input/controllers/default.nix;
+          system-input-controllers = import ./system/input/controllers;
           system-input-racing_wheel = import ./system/input/racing_wheel.nix;
           system-input-leap = import ./system/input/leap.nix;
 
@@ -75,9 +75,9 @@
           system-memory-zswap = import ./system/memory/zswap.nix;
 
           # Networking
-          system-networking = import ./system/networking; # ./system/networking/default.nix
-          system-networking-connectivity = import ./system/networking/connectivity/default.nix;
-          system-networking-connectivity-dns = import ./system/networking/connectivity/dns/default.nix;
+          system-networking = import ./system/networking;
+          system-networking-connectivity = import ./system/networking/connectivity;
+          system-networking-connectivity-dns = import ./system/networking/connectivity/dns;
           system-networking-connectivity-wireguard = import ./system/networking/connectivity/wireguard.nix;
           system-networking-connectivity-zerotier = import ./system/networking/connectivity/zerotier.nix;
           system-networking-firewall = import ./system/networking/firewall.nix;
@@ -88,17 +88,17 @@
 
           # Desktop
           # -------
-          desktop = import ./desktop; # ./desktop/default.nix
-          desktop-gaming = import ./desktop/gaming; # ./desktop/gaming/default.nix
+          desktop = import ./desktop;
+          desktop-gaming = import ./desktop/gaming;
           desktop-gaming-chess = import ./desktop/gaming/chess.nix;
           desktop-gaming-wine = import ./desktop/gaming/wine.nix;
           desktop-media = import ./desktop/media;
           desktop-media-music = import ./desktop/media/music;
           desktop-media-music-tagging = import ./desktop/media/music/tagging.nix;
-          desktop-programming = import ./desktop/programming/default.nix;
+          desktop-programming = import ./desktop/programming;
           desktop-programming-android = import ./desktop/programming/android.nix;
           desktop-programming-c = import ./desktop/programming/c.nix;
-          desktop-programming-config = import ./desktop/programming/config/default.nix;
+          desktop-programming-config = import ./desktop/programming/config;
           desktop-programming-cpp = import ./desktop/programming/cpp.nix;
           desktop-programming-fish = import ./desktop/programming/fish.nix;
           desktop-programming-go = import ./desktop/programming/go.nix;
@@ -106,33 +106,33 @@
           desktop-programming-python = import ./desktop/programming/python.nix;
           desktop-programming-rust = import ./desktop/programming/rust.nix;
           desktop-programming-zig = import ./desktop/programming/zig.nix;
-          desktop-shell-graphical = import ./desktop/shell/graphical; # ./desktop/shell/graphical/default.nix
+          desktop-shell-graphical = import ./desktop/shell/graphical;
           desktop-shell-graphical-audio = import ./desktop/shell/graphical/audio.nix;
-          desktop-shell-graphical-browser = import ./desktop/shell/graphical/browser/default.nix;
+          desktop-shell-graphical-browser = import ./desktop/shell/graphical/browser;
           desktop-shell-graphical-browser-chromium = import ./desktop/shell/graphical/browser/chromium.nix;
           desktop-shell-graphical-browser-librewolf = import ./desktop/shell/graphical/browser/librewolf.nix;
           desktop-shell-graphical-browser-misc = import ./desktop/shell/graphical/browser/misc.nix;
           desktop-shell-graphical-cad = import ./desktop/shell/graphical/cad.nix;
           desktop-shell-graphical-documents = import ./desktop/shell/graphical/documents.nix;
-          desktop-shell-graphical-env = import ./desktop/shell/graphical/env/default.nix;
+          desktop-shell-graphical-env = import ./desktop/shell/graphical/env;
           desktop-shell-graphical-env-dux = import ./desktop/shell/graphical/env/dux.nix;
           desktop-shell-graphical-env-hyprland = import ./desktop/shell/graphical/env/hyprland.nix;
           desktop-shell-graphical-env-plasma = import ./desktop/shell/graphical/env/plasma.nix;
           desktop-shell-graphical-guitar = import ./desktop/shell/graphical/guitar.nix;
           desktop-shell-graphical-images = import ./desktop/shell/graphical/images.nix;
-          desktop-shell-graphical-login = import ./desktop/shell/graphical/login/default.nix;
+          desktop-shell-graphical-login = import ./desktop/shell/graphical/login;
           desktop-shell-graphical-login-plasma = import ./desktop/shell/graphical/login/plasma.nix;
           desktop-shell-graphical-office = import ./desktop/shell/graphical/office.nix;
           desktop-shell-graphical-video = import ./desktop/shell/graphical/video.nix;
-          desktop-shell-terminal = import ./desktop/shell/terminal; # ./desktop/shell/terminal/default.nix
+          desktop-shell-terminal = import ./desktop/shell/terminal;
           desktop-shell-terminal-documents = import ./desktop/shell/terminal/documents.nix;
           desktop-shell-terminal-pay_respects = import ./desktop/shell/terminal/pay-respects.nix;
           desktop-sound = import ./desktop/sound.nix;
 
           # Workstation
           # -----------
-          workstation = import ./workstation; # ./workstation/default.nix
-          workstation-virtualisation = import ./workstation/virtualisation; # ./workstation/virtualisation/default.nix
+          workstation = import ./workstation;
+          workstation-virtualisation = import ./workstation/virtualisation;
           #workstation-shares = import ./workstation/shares;
 
           # Server
@@ -145,7 +145,7 @@
           server-file_sharing-samba = import ./server/file_sharing/samba.nix;
           server-forgejo = import ./server/forgejo.nix;
           server-grafana = import ./server/grafana.nix;
-          server-media = import ./server/media; # ./server/media/default.nix;
+          server-media = import ./server/media;
           server-media-bazarr = import ./server/media/bazarr.nix;
           server-media-immich = import ./server/media/immich.nix;
           server-media-invidious = import ./server/media/invidious.nix;
