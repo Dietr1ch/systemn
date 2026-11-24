@@ -14,8 +14,9 @@
           http_port = 3990;
           enforce_domain = true;
           enable_gzip = true;
-          # domain = "grafana.your.domain";
-          domain = lib.mkDefault "${config.networking.hostName}.local";
+
+          # https://grafana.com/tutorials/run-grafana-behind-a-proxy/
+          domain = lib.mkDefault "grafana.${config.networking.hostName}.${config.networking.domain}";
 
           # Alternatively, if you want to serve Grafana from a subpath:
           # Served from /grafana
