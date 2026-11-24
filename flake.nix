@@ -92,6 +92,9 @@
           desktop-gaming = import ./desktop/gaming; # ./desktop/gaming/default.nix
           desktop-gaming-chess = import ./desktop/gaming/chess.nix;
           desktop-gaming-wine = import ./desktop/gaming/wine.nix;
+          desktop-media = import ./desktop/media;
+          desktop-media-music = import ./desktop/media/music;
+          desktop-media-music-tagging = import ./desktop/media/music/tagging.nix;
           desktop-programming = import ./desktop/programming/default.nix;
           desktop-programming-android = import ./desktop/programming/android.nix;
           desktop-programming-c = import ./desktop/programming/c.nix;

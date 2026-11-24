@@ -3,6 +3,7 @@
 {
   imports = [
     # ./gaming # ./gaming/default.nix
+    # ./media
     # ./programming # ./programming/default.nix
     ./shell # ./shell/default.nix
 
