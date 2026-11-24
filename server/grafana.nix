@@ -43,12 +43,7 @@
 
           locations = {
             "/" = {
-              proxyPass =
-                let
-                  addr = config.services.grafana.settings.server.http_addr;
-                  port = config.services.grafana.settings.server.http_port;
-                in
-                "http://${toString addr}:${toString port}/";
+              proxyPass = "http://localhost:${toString config.services.grafana.settings.server.http_port}";
 
               # proxyWebsockets = true;
               recommendedProxySettings = true;
